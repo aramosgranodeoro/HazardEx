@@ -1,0 +1,60 @@
+####################
+# FRONTEND
+####################
+
+frontend/node_modules/
+frontend/dist/
+
+####################
+# BACKEND
+####################
+
+backend/.venv/
+backend/venv/
+backend/env/
+
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+
+####################
+# PYTHON
+####################
+
+*.py[cod]
+*.egg-info/
+
+####################
+# ENV
+####################
+
+.env
+.env.*
+
+####################
+# LOGS
+####################
+
+*.log
+
+####################
+# IDE
+####################
+
+.vscode/
+.idea/
+
+####################
+# BUILD
+####################
+
+dist/
+build/
+
+####################
+# SYSTEM
+####################
+
+.DS_Store
+Thumbs.db
