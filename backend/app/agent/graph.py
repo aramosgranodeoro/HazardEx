@@ -1,9 +1,9 @@
 # Build workflow
 from langgraph.graph import StateGraph
-from backend.app.agent.nodes import llm_call, tool_node
+from app.agent.nodes import llm_call, tool_node
 from langgraph.graph import MessagesState
 from langchain.messages import HumanMessage
-from endLogic import should_continue, END, START
+from app.agent.endLogic import should_continue, END, START
 from IPython.display import Image, display
 
 
@@ -29,8 +29,7 @@ agent = agent_builder.compile()
 display(Image(agent.get_graph(xray=True).draw_mermaid_png()))
 
 # Invoke
-from langchain.messages import HumanMessage
-messages = [HumanMessage(content="Cuál es la definición de violencia doméstica?")]
+messages = [HumanMessage(content="¿Donde se encuentra el fuego en la imagen?")]
 messages = agent.invoke({"messages": messages})
 for m in messages["messages"]:
     m.pretty_print()

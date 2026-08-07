@@ -1,17 +1,25 @@
 from langchain_core.tools import tool
-from triaje_multimodelo import ejecutar_triaje
-from rag_index import vectorstore
-import requests
+from app.agent.vlm.vlm_analysis import analyze_vlm_data
+from ddgs import DDGS
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_chroma import Chroma
+
+INDEX_FOLDER = "./app/agent/rag/chroma_db"
+
+embeddings = HuggingFaceEmbeddings(
+    model_name="intfloat/multilingual-e5-small",
+    model_kwargs={"device": "cpu"}
+)
+
+vectorstore = Chroma(
+    persist_directory=INDEX_FOLDER,
+    embedding_function=embeddings
+)
 
 @tool
-def vlm_tool(image_path: str, categoria: str = None) -> dict:
-    """Analiza una imagen con el modelo VLM especialista (violencia, armas, fuego, accidente, gráfico)."""
-    resultado = ejecutar_triaje(image_path, categoria_forzada=categoria)
-    return {
-        "predicted_category": resultado["predicted_category"],
-        "confidence": resultado["confidence"],
-        "description": resultado["description"]
-    }
+def vlm_tool(question: str, media_type: str, image_b64: str = "", context: str = "") -> dict:
+    """Analiza una imagen o vídeo ."""
+    return analyze_vlm_data(question, media_type, image_b64, context)
 
 @tool
 def rag_tool(query: str, k: int = 4) -> dict:
@@ -24,10 +32,23 @@ def rag_tool(query: str, k: int = 4) -> dict:
 
 @tool
 def internet_tool(query: str) -> dict:
-    """Busca en internet cuando el RAG no tiene cobertura suficiente."""
-    resp = requests.get("https://api.tavily.com/search", params={"query": query, "api_key": "..."})
-    data = resp.json()
-    return {"results": [r["content"] for r in data.get("results", [])[:3]]}
+    """
+    Busca información en Internet cuando el RAG no tiene cobertura suficiente.
+    """
+
+    with DDGS() as ddgs:
+        results = list(ddgs.text(query, max_results=3))
+
+    return {
+        "results": [
+            {
+                "title": r["title"],
+                "url": r["href"],
+                "content": r["body"]
+            }
+            for r in results
+        ]
+    }
 
 TOOLS = [vlm_tool, rag_tool, internet_tool]
 tools_by_name = {tool.name: tool for tool in TOOLS}

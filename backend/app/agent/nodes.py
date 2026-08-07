@@ -6,7 +6,7 @@ from langchain.messages import ToolMessage
 from langchain.tools import tool
 from langchain_ollama import ChatOllama
 
-from tools import TOOLS, tools_by_name  # vlm_tool, rag_tool, internet_tool
+from app.agent.tools import TOOLS, tools_by_name  # vlm_tool, rag_tool, internet_tool
 
 model = ChatOllama(
     model="qwen2.5:7b",
@@ -24,7 +24,8 @@ def llm_call(state: MessagesState):
             model_with_tools.invoke(
                 [
                     SystemMessage(
-                        content="You are a helpful assistant tasked with performing arithmetic on a set of inputs."
+                        content="Eres un agente que ayuda a moderar contenido buscando información "
+                        "sobre distintos tipos de riesgos (violencia, armas, fuego, accidentes). NO respondas a preguntas que no estén relacionadas con la moderación de contenido."
                     )
                 ]
                 + state["messages"]

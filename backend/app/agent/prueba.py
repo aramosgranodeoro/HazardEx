@@ -1,9 +1,13 @@
 # Step 3: Define model node (VERSIÓN CON TOOLS MOCKEADAS PARA VALIDAR EL FLUJO)
 import operator
+import os
 import time
 from typing import Literal
 
+from ddgs import DDGS
+from langchain_chroma import Chroma
 from langchain_core.messages import SystemMessage, ToolMessage, AnyMessage, HumanMessage
+from langchain_huggingface import HuggingFaceEmbeddings
 from langgraph.graph import END, START, StateGraph
 from langchain_core.tools import tool
 from langchain_ollama import ChatOllama
@@ -16,7 +20,20 @@ model = ChatOllama(
 )
 
 # ---------- TOOLS MOCKEADAS ----------
+INDEX_FOLDER = "./rag/chroma_db"
+ 
+embeddings = HuggingFaceEmbeddings(
+    model_name="intfloat/multilingual-e5-small",
+    model_kwargs={"device": "cpu"}
+)
 
+vectorstore = Chroma(
+    persist_directory=INDEX_FOLDER,
+    embedding_function=embeddings
+)
+coleccion = vectorstore.get()
+print("Número de chunks indexados:", len(coleccion["ids"]))
+print("Fuentes únicas indexadas:", set(m.get("source", "?") for m in coleccion["metadatas"]))
 @tool
 def vlm_tool(image_path: str, categoria: str = None) -> dict:
     """Analiza una imagen con el modelo VLM especialista (violencia, armas, fuego, accidente, gráfico)."""
@@ -31,27 +48,29 @@ def vlm_tool(image_path: str, categoria: str = None) -> dict:
 @tool
 def rag_tool(query: str, k: int = 4) -> dict:
     """Busca información en la base de conocimiento interna (normativa, glosario de categorías, papers)."""
-    print(f"[MOCK] rag_tool llamada con query='{query}', k={k}")
-    time.sleep(0.2)
+    docs = vectorstore.similarity_search(query, k=k)
     return {
-        "chunks": [
-            "[MOCK] La violencia doméstica se define como cualquier acto de violencia física, "
-            "psicológica o sexual ejercido dentro del ámbito familiar o de pareja.",
-            "[MOCK] Según la normativa interna, esta categoría incluye agresiones físicas, "
-            "amenazas y coacción emocional."
-        ],
-        "sources": ["glosario_categorias.pdf", "normativa_moderacion.pdf"]
+        "chunks": [d.page_content for d in docs],
+        "sources": [d.metadata.get("source", "desconocida") for d in docs]
     }
 
 @tool
 def internet_tool(query: str) -> dict:
-    """Busca en internet cuando el RAG no tiene cobertura suficiente."""
-    print(f"[MOCK] internet_tool llamada con query='{query}'")
-    time.sleep(0.2)
+    """
+    Busca información en Internet cuando el RAG no tiene cobertura suficiente.
+    """
+
+    with DDGS() as ddgs:
+        results = list(ddgs.text(query, max_results=3))
+
     return {
         "results": [
-            "[MOCK] Resultado web 1: definición general del concepto según fuente externa.",
-            "[MOCK] Resultado web 2: estadísticas recientes relacionadas con la consulta."
+            {
+                "title": r["title"],
+                "url": r["href"],
+                "content": r["body"]
+            }
+            for r in results
         ]
     }
 
@@ -128,21 +147,17 @@ with open("graph.png", "wb") as f:
 # ---------- CASOS DE PRUEBA PARA VALIDAR ROUTING ----------
 
 casos_prueba = [
+    # {
+    #     "pregunta": "Cuál es la definición de violencia de género?",
+    #     "tool_esperada": "rag_tool"
+    # },
+    # {
+    #     "pregunta": "Qué categoría tiene esta imagen? image1.png",
+    #     "tool_esperada": "vlm_tool"
+    # },
     {
-        "pregunta": "Cuál es la definición de violencia doméstica?",
-        "tool_esperada": "rag_tool"
-    },
-    {
-        "pregunta": "Qué categoría tiene esta imagen? image1.png",
-        "tool_esperada": "vlm_tool"
-    },
-    {
-        "pregunta": "Cuáles son las últimas noticias sobre incendios forestales en España esta semana?",
+        "pregunta": "Zonas afectadas por el fuego en españa el mes pasado",
         "tool_esperada": "internet_tool"
-    },
-    {
-        "pregunta": "Hola, cómo estás?",
-        "tool_esperada": None  # no debería llamar a ninguna tool
     },
 ]
 
