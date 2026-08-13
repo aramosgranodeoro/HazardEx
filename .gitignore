@@ -17,6 +17,11 @@ backend/__pycache__/
 backend/.pytest_cache/
 backend/.mypy_cache/
 backend/.ruff_cache/
+backend/agent/__pycache__/
+backend/app/agent/.pytest_cache/
+backend/app/agent/.mypy_cache/
+backend/app/agent/.ruff_cache/
+backend/app/agent/rag/chroma_db/
 
 ####################
 # PYTHON
