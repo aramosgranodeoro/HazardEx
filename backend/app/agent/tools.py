@@ -18,7 +18,31 @@ vectorstore = Chroma(
 
 @tool
 def vlm_tool(question: str, media_type: str, image_b64: str = "", context: str = "") -> dict:
-    """Analiza una imagen o vídeo ."""
+    """
+    Analyzes an image or video using a Vision-Language Model (VLM)
+    to answer questions about its visual content.
+
+    Use this tool when the user asks a follow-up question about the
+    image/video that was already analyzed (e.g., "what color are the
+    clothes?", "how many people are there?", "describe the scene in
+    more detail").
+
+    Args:
+        question: The user's specific question about the image/video.
+            You MUST always include this argument with the user's exact
+            or rephrased question. Never leave it empty.
+        media_type: Type of media to analyze. Must be "image" or "video".
+        image_b64: Base64-encoded image, if available in the conversation
+            context. Leave empty if you don't have it.
+        context: Additional relevant context from the conversation (for
+            example, the result of the initial analysis already performed).
+            Leave empty if not applicable.
+
+    Returns:
+        A dictionary with the VLM analysis response.
+    """
+    if not question:
+        question = "Describe in detail what is observed in the image/video."
     return analyze_vlm_data(question, media_type, image_b64, context)
 
 @tool

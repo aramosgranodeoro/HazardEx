@@ -1,6 +1,6 @@
 # Step 3: Define model node
 from langchain.messages import SystemMessage
-from langgraph.graph import MessagesState
+from app.agent.state import MessagesState
 from langchain.messages import ToolMessage
 
 from langchain.tools import tool

@@ -90,7 +90,28 @@ def frames_a_grid(frames, cols=3):
     grid.show()
     return pil_to_base64(grid)
 
-# Unificar resultados de los módulos si necesario
-def merge_results(results):
-    # Implementar lógica de limpieza según sea necesario
-    return results
+def build_analysis_text(result: dict) -> str:
+    """Convierte el dict de módulos especializados en texto legible."""
+    partes = []
+    for categoria, data in result.items():
+        if not isinstance(data, dict):
+            continue
+        detected = data.get("detected", False)
+        if not detected:
+            partes.append(f"{categoria}: no detectado")
+            continue
+
+        detections = data.get("detections", [])
+        if detections:
+            confs = ", ".join(f"{d['confidence']:.2f}" for d in detections)
+            partes.append(
+                f"{categoria}: detectado ({len(detections)} detección(es), "
+                f"confianza: {confs})"
+            )
+        else:
+            partes.append(f"{categoria}: detectado")
+
+    if not partes:
+        return "Sin resultados de los módulos especializados."
+
+    return "; ".join(partes)

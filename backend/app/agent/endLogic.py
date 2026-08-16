@@ -1,5 +1,6 @@
 from typing import Literal
-from langgraph.graph import MessagesState, StateGraph, START, END
+from langgraph.graph import StateGraph, START, END
+from app.agent.state import MessagesState
 
 # Conditional edge function to route to the tool node or end based upon whether the LLM made a tool call
 def should_continue(state: MessagesState) -> Literal["tool_node", "__end__"]:

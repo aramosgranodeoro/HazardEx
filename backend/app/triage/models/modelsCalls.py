@@ -25,13 +25,16 @@ VIOLENCE_PROMPT = """
             - People falling or being knocked down
             - Crowd suddenly gathering around a conflict
 
+            # INSTRUCTIONS
+            Choose exactly ONE label for "predicted_category":
+            - "fight" if you see signs of violence
+            - "non-fight" if you do NOT see signs of violence
+
             # OUTPUT FORMAT
-            Respond ONLY with valid JSON:
-            {
-                "predicted_category": "fight or non-fight",
-                "confidence": 0.0,
-                "description": "one sentence describing what happens across frames"
-            }
+            Respond with ONLY one valid JSON object and nothing else.
+
+            Example of a valid response:
+            {"predicted_category": "fight", "confidence": 0.87, "description": "Two people are seen exchanging blows starting at t=3."}
 """
 ACCIDENT_PROMPT = """
 # ROLE
@@ -48,6 +51,11 @@ ACCIDENT_PROMPT = """
             - Abrupt stop or erratic movement between frames
             - Debris or damage visible in later frames
             - Vehicles too close to each other suddenly appearing in the same frame
+
+            # INSTRUCTIONS
+            Choose exactly ONE label for "predicted_category":
+            - "crash" if you see signs of a traffic accident
+            - "no_crash" if you do NOT see signs of a traffic accident
 
             # OUTPUT FORMAT
             Respond ONLY with a valid JSON object:

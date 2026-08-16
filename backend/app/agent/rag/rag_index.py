@@ -13,7 +13,48 @@ INDEX_FOLDER = "chroma_db"
 MODELO_EMBEDDINGS = "intfloat/multilingual-e5-small" 
 
 # Cargar un documento 
+def load_document(ruta_archivo: str, vectorstore) -> int:
+    """Carga, trocea e indexa un único documento nuevo en el vectorstore existente."""
+    extension = os.path.splitext(ruta_archivo)[1].lower()
 
+    if extension == ".pdf":
+        loader = PyPDFLoader(ruta_archivo)
+    elif extension == ".docx":
+        from langchain_community.document_loaders import Docx2txtLoader
+        loader = Docx2txtLoader(ruta_archivo)
+    elif extension == ".txt":
+        loader = TextLoader(ruta_archivo, encoding="utf-8")
+    else:
+        raise ValueError(f"Extensión no soportada: {extension}")
+
+    documentos = loader.load()
+
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=500,
+        chunk_overlap=50,
+        separators=["\n\n", "\n", ". ", " ", ""]
+    )
+    chunks = splitter.split_documents(documentos)
+
+    # Metadato consistente para poder borrar después por nombre de archivo
+    nombre_archivo = os.path.basename(ruta_archivo)
+    for chunk in chunks:
+        chunk.metadata["source"] = nombre_archivo
+
+    vectorstore.add_documents(chunks)
+    return len(chunks)
+
+
+def delete_document(nombre_archivo: str, vectorstore) -> int:
+    """Elimina todos los chunks de un documento del índice, dado su nombre de archivo."""
+    resultado = vectorstore.get(where={"source": nombre_archivo})
+    ids_a_borrar = resultado["ids"]
+
+    if not ids_a_borrar:
+        return 0
+
+    vectorstore.delete(ids=ids_a_borrar)
+    return len(ids_a_borrar)
 
 def load_documents():
     """Carga PDFs y archivos de texto de la carpeta documents/"""

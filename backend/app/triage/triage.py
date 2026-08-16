@@ -127,4 +127,9 @@ async def run_specialized_modules(catergories, media):
             results[category] = {"message": "No specialized analysis needed for normal content."}
     print(f"Specialized module results:\n{results}\n")
     await vlm_manager.release()
+    
+    if results.keys() == 0:
+        results["message"] = "No specialized modules were activated based on the predicted categories."
+        
+    #llamar al merge_results si es necesario para unificar resultados de los módulos
     return results
