@@ -1,36 +1,87 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import ApiService from "../../ApiServices/ApiServices.js";
 import "./Sidebar.css";
 import HazardEx from '../../assets/HazardEx.png'
 
+export default function Sidebar({ onNewChat, onSelectConversation, activeThreadId }) {
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [ragOpen, setRagOpen] = useState(false);
+  const [conversations, setConversations] = useState([]);
+  const [ragDocs, setRagDocs] = useState([]);
+  const [loadingHistory, setLoadingHistory] = useState(false);
+  const [loadingRag, setLoadingRag] = useState(false);
+  const ragFileInputRef = useRef(null);
 
-const NAV_ITEMS = [
-  {
-    id: "chat",
-    label: "Chat History",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-      </svg>
-    ),
-  },
-  {
-    id: "knowledge",
-    label: "Knowledge Base",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-      </svg>
-    ),
-  },
-];
+  const loadConversations = async () => {
+    setLoadingHistory(true);
+    try {
+      setConversations(await ApiService.listConversations());
+    } catch (err) {
+      console.error("Error cargando historial:", err);
+    } finally {
+      setLoadingHistory(false);
+    }
+  };
 
-export default function Sidebar({ active = "chat", onSelect }) {
-  const [current, setCurrent] = useState(active);
+  const loadRagDocs = async () => {
+    setLoadingRag(true);
+    try {
+      setRagDocs(await ApiService.listRagDocuments());
+    } catch (err) {
+      console.error("Error cargando documentos RAG:", err);
+    } finally {
+      setLoadingRag(false);
+    }
+  };
 
-  const handleClick = (id) => {
-    setCurrent(id);
-    if (onSelect) onSelect(id);
+  useEffect(() => {
+    loadConversations();
+  }, []);
+
+  const toggleHistory = () => {
+    const next = !historyOpen;
+    setHistoryOpen(next);
+    if (next) loadConversations();
+  };
+
+  const toggleRag = () => {
+    const next = !ragOpen;
+    setRagOpen(next);
+    if (next) loadRagDocs();
+  };
+
+  const handleDeleteConversation = async (e, threadId) => {
+    e.stopPropagation();
+    if (!window.confirm("¿Eliminar esta conversación?")) return;
+    try {
+      await ApiService.deleteConversation(threadId);
+      setConversations((prev) => prev.filter((c) => c.thread_id !== threadId));
+      if (threadId === activeThreadId) onNewChat?.();
+    } catch (err) {
+      console.error("Error eliminando conversación:", err);
+    }
+  };
+
+  const handleRagFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    e.target.value = "";
+    try {
+      await ApiService.uploadRagDocument(file);
+      loadRagDocs();
+    } catch (err) {
+      alert(err?.response?.data?.detail || "Error al subir el documento");
+    }
+  };
+
+  const handleDeleteRag = async (filename) => {
+    if (!window.confirm(`¿Eliminar "${filename}" del RAG?`)) return;
+    try {
+      await ApiService.deleteRagDocument(filename);
+      setRagDocs((prev) => prev.filter((f) => f !== filename));
+    } catch (err) {
+      console.error("Error eliminando documento:", err);
+    }
   };
 
   return (
@@ -40,17 +91,78 @@ export default function Sidebar({ active = "chat", onSelect }) {
       </div>
 
       <nav className="hx-sidebar-nav">
-        {NAV_ITEMS.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            className={`hx-nav-item ${current === item.id ? "active" : ""}`}
-            onClick={() => handleClick(item.id)}
-          >
-            <span className="hx-nav-icon">{item.icon}</span>
-            <span className="hx-nav-label">{item.label}</span>
-          </button>
-        ))}
+        <button type="button" className="hx-nav-item" onClick={() => onNewChat?.()}>
+          <span className="hx-nav-icon"><i className="fa-regular fa-square-plus"></i></span>
+          <span className="hx-nav-label">Nuevo chat</span>
+        </button>
+
+        <button type="button" className={`hx-nav-item ${historyOpen ? "active" : ""}`} onClick={toggleHistory}>
+          <span className="hx-nav-icon"><i className="fa-regular fa-comments"></i></span>
+          <span className="hx-nav-label">Historial</span>
+          <i className={`fa-solid fa-chevron-down hx-chevron ${historyOpen ? "open" : ""}`}></i>
+        </button>
+        {historyOpen && (
+          <div className="hx-dropdown-panel">
+            {loadingHistory && <div className="hx-dropdown-empty">Cargando...</div>}
+            {!loadingHistory && conversations.length === 0 && (
+              <div className="hx-dropdown-empty">Sin conversaciones</div>
+            )}
+            {conversations.map((c) => (
+              <div
+                key={c.thread_id}
+                className={`hx-dropdown-item ${c.thread_id === activeThreadId ? "active" : ""}`}
+                onClick={() => onSelectConversation?.(c.thread_id)}
+              >
+                <span className="hx-dropdown-item-title" title={c.title}>{c.title}</span>
+                <button
+                  type="button"
+                  className="hx-dropdown-item-delete"
+                  onClick={(e) => handleDeleteConversation(e, c.thread_id)}
+                  title="Eliminar conversación"
+                >
+                  <i className="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <button type="button" className={`hx-nav-item ${ragOpen ? "active" : ""}`} onClick={toggleRag}>
+          <span className="hx-nav-icon"><i className="fa-solid fa-book"></i></span>
+          <span className="hx-nav-label">Fuentes</span>
+          <i className={`fa-solid fa-chevron-down hx-chevron ${ragOpen ? "open" : ""}`}></i>
+        </button>
+        {ragOpen && (
+          <div className="hx-dropdown-panel">
+            <input
+              type="file"
+              accept=".pdf,.docx,.txt,.md"
+              ref={ragFileInputRef}
+              style={{ display: "none" }}
+              onChange={handleRagFileChange}
+            />
+            <button type="button" className="hx-dropdown-add-btn" onClick={() => ragFileInputRef.current?.click()}>
+              <i className="fa-solid fa-plus"></i> Añadir fuente
+            </button>
+            {loadingRag && <div className="hx-dropdown-empty">Cargando...</div>}
+            {!loadingRag && ragDocs.length === 0 && (
+              <div className="hx-dropdown-empty">Sin documentos</div>
+            )}
+            {ragDocs.map((filename) => (
+              <div key={filename} className="hx-dropdown-item">
+                <span className="hx-dropdown-item-title" title={filename}>{filename}</span>
+                <button
+                  type="button"
+                  className="hx-dropdown-item-delete"
+                  onClick={() => handleDeleteRag(filename)}
+                  title="Eliminar documento"
+                >
+                  <i className="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
       </nav>
     </aside>
   );

@@ -3,47 +3,55 @@ from app.agent.vlm.vlm_analysis import analyze_vlm_data
 from ddgs import DDGS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
+import base64
+from app.storage.minio_client import download_media
+from langchain_core.runnables import RunnableConfig
+from app.storage.state import media_metadata
+from app.agent.rag.vectorstore_instance import vectorstore
 
-INDEX_FOLDER = "./app/agent/rag/chroma_db"
+# INDEX_FOLDER = "./app/agent/rag/chroma_db"
 
-embeddings = HuggingFaceEmbeddings(
-    model_name="intfloat/multilingual-e5-small",
-    model_kwargs={"device": "cpu"}
-)
+# embeddings = HuggingFaceEmbeddings(
+#     model_name="intfloat/multilingual-e5-small",
+#     model_kwargs={"device": "cpu"}
+# )
 
-vectorstore = Chroma(
-    persist_directory=INDEX_FOLDER,
-    embedding_function=embeddings
-)
+# vectorstore = Chroma(
+#     persist_directory=INDEX_FOLDER,
+#     embedding_function=embeddings
+# )
 
 @tool
-def vlm_tool(question: str, media_type: str, image_b64: str = "", context: str = "") -> dict:
+def vlm_tool(question: str, config: RunnableConfig) -> dict:
     """
-    Analyzes an image or video using a Vision-Language Model (VLM)
-    to answer questions about its visual content.
+    Analyzes the image or video that was already uploaded and analyzed
+    in this conversation, to answer follow-up questions about its content.
 
     Use this tool when the user asks a follow-up question about the
-    image/video that was already analyzed (e.g., "what color are the
-    clothes?", "how many people are there?", "describe the scene in
-    more detail").
+    image/video already analyzed.
 
     Args:
         question: The user's specific question about the image/video.
-            You MUST always include this argument with the user's exact
-            or rephrased question. Never leave it empty.
-        media_type: Type of media to analyze. Must be "image" or "video".
-        image_b64: Base64-encoded image, if available in the conversation
-            context. Leave empty if you don't have it.
-        context: Additional relevant context from the conversation (for
-            example, the result of the initial analysis already performed).
-            Leave empty if not applicable.
+            You MUST always include this argument. Never leave it empty.
 
     Returns:
         A dictionary with the VLM analysis response.
     """
-    if not question:
-        question = "Describe in detail what is observed in the image/video."
-    return analyze_vlm_data(question, media_type, image_b64, context)
+    thread_id = config["configurable"]["thread_id"]
+
+    media_bytes = download_media(thread_id)
+    if media_bytes is None:
+        return {"answer": "No hay imagen o vídeo asociado a esta conversación.", "confidence": "unknown", "raw": ""}
+
+    metadata = media_metadata.get(thread_id, {"media_type": "photo"})
+    image_b64 = base64.b64encode(media_bytes).decode("utf-8")
+
+    return analyze_vlm_data(
+        question=question,
+        media_type=metadata["media_type"],
+        image_b64=image_b64,
+        context="",
+    )
 
 @tool
 def rag_tool(query: str, k: int = 4) -> dict:

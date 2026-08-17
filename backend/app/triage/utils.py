@@ -6,6 +6,25 @@ import io
 import cv2
 import tempfile
 import os
+from datetime import datetime
+
+MESES_ES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+
+def get_month() -> str:
+    now = datetime.now()
+    return f"{now.day} {MESES_ES[now.month - 1]}"
+
+def generic_media_title(media_type: str) -> str:
+    etiqueta = "Vídeo" if media_type == "video" else "Imagen"
+    return f"{etiqueta} - {get_month()}"
+
+def truncate_title(text: str, max_words: int = 8) -> str:
+    words = text.strip().split()
+    if not words:
+        return "Nueva conversación"
+    if len(words) <= max_words:
+        return text.strip()
+    return " ".join(words[:max_words]) + "..."
 
 def byte_to_base64(image_bytes):
     """Convierte bytes de una imagen en una cadena base64."""
@@ -68,9 +87,6 @@ def extract_frames(video_bytes: bytes, n: int = 9) -> list[Image.Image]:
     finally:
         os.unlink(tmp_path)  # limpieza garantizada, incluso si algo falla arriba
 
-
-# ── Grid de frames ────────────────────────────────────────────────────────────
-
 def frames_a_grid(frames, cols=3):
     """
     Dibuja un grid de frames con timestamps y devuelve la imagen resultante.
@@ -90,28 +106,123 @@ def frames_a_grid(frames, cols=3):
     grid.show()
     return pil_to_base64(grid)
 
+import json
+
+
 def build_analysis_text(result: dict) -> str:
-    """Convierte el dict de módulos especializados en texto legible."""
+    """Convierte el dict de módulos especializados en texto legible.
+    
+    Soporta varios formatos de salida:
+    - Detección (fuego, armas): {"detected": bool, "detections": [...]}
+    - VLM tipo respuesta (news, etc.): {"answer": str, "confidence": float} o string JSON de eso
+    - Clasificación (violencia, tráfico): {"predicted_category": str, "confidence": float, "description": str}
+    """
     partes = []
+
     for categoria, data in result.items():
+        # Si viene como string, intentar parsear JSON
+        if isinstance(data, str):
+            try:
+                data = json.loads(data)
+            except (json.JSONDecodeError, TypeError):
+                partes.append(f"{categoria}: {data}")
+                continue
+
         if not isinstance(data, dict):
-            continue
-        detected = data.get("detected", False)
-        if not detected:
-            partes.append(f"{categoria}: no detectado")
+            partes.append(f"{categoria}: {data}")
             continue
 
-        detections = data.get("detections", [])
-        if detections:
-            confs = ", ".join(f"{d['confidence']:.2f}" for d in detections)
+        # Formato 1: detección con bounding boxes (fuego, armas)
+        if "detected" in data:
+            detected = data.get("detected", False)
+            if not detected:
+                partes.append(f"{categoria}: no detectado")
+                continue
+            detections = data.get("detections", [])
+            if detections:
+                confs = ", ".join(f"{d['confidence']:.2f}" for d in detections)
+                partes.append(
+                    f"{categoria}: detectado ({len(detections)} detección(es), "
+                    f"confianza: {confs})"
+                )
+            else:
+                partes.append(f"{categoria}: detectado")
+            continue
+
+        # Formato 2: respuesta VLM tipo pregunta/respuesta (news, OCR, etc.)
+        if "answer" in data:
+            confidence = data.get("confidence")
+            conf_text = f" (confianza: {confidence:.2f})" if isinstance(confidence, (int, float)) else ""
+            partes.append(f"{categoria}: {data['answer']}{conf_text}")
+            continue
+
+        # Formato 3: clasificación con categoría predicha (violencia, tráfico)
+        if "predicted_category" in data:
+            confidence = data.get("confidence", 0.0)
+            description = data.get("description", "")
             partes.append(
-                f"{categoria}: detectado ({len(detections)} detección(es), "
-                f"confianza: {confs})"
+                f"{categoria}: {data['predicted_category']} "
+                f"(confianza: {confidence:.2f}) - {description}"
             )
-        else:
-            partes.append(f"{categoria}: detectado")
+            continue
+
+        # Formato 4: múltiples categorías predichas (predicted_categories)
+        if "predicted_categories" in data:
+            top = max(data["predicted_categories"], key=lambda c: c.get("confidence", 0))
+            description = data.get("description", "")
+            partes.append(
+                f"{categoria}: {top['category']} "
+                f"(confianza: {top['confidence']:.2f}) - {description}"
+            )
+            continue
+
+        # Fallback: formato no reconocido, lo mostramos tal cual
+        partes.append(f"{categoria}: {data}")
 
     if not partes:
         return "Sin resultados de los módulos especializados."
 
     return "; ".join(partes)
+
+def resize_image(image_bytes: bytes, max_size: int = 1024) -> bytes:
+    """
+    Redimensiona una imagen manteniendo su relación de aspecto.
+
+    Args:
+        image_bytes: Imagen en formato bytes.
+        max_size: Tamaño máximo permitido para ancho/alto.
+
+    Returns:
+        Imagen redimensionada en formato JPEG como bytes.
+    """
+
+    image = Image.open(io.BytesIO(image_bytes))
+
+    # Convertir a RGB para evitar problemas con PNG/RGBA/etc.
+    if image.mode != "RGB":
+        image = image.convert("RGB")
+
+    width, height = image.size
+
+    # Si ya cumple el tamaño máximo, devolverla igualmente en JPEG
+    if width <= max_size and height <= max_size:
+        output = io.BytesIO()
+        image.save(output, format="JPEG", quality=90)
+        return output.getvalue()
+
+    # Mantener proporción
+    scale = max_size / max(width, height)
+
+    new_width = int(width * scale)
+    new_height = int(height * scale)
+
+    image = image.resize(
+        (new_width, new_height),
+        Image.Resampling.LANCZOS
+    )
+
+    output = io.BytesIO()
+    image.save(output, format="JPEG", quality=90)
+
+    return output.getvalue()
+

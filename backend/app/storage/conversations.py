@@ -1,0 +1,53 @@
+import io
+import json
+from datetime import datetime
+from minio.error import S3Error
+from app.storage.minio_client import client, ensure_bucket, BUCKET_NAME
+
+META_PREFIX = "conversations/"
+
+
+def _meta_object_name(thread_id: str) -> str:
+    return f"{META_PREFIX}{thread_id}.json"
+
+
+def save_conversation_metadata(thread_id: str, title: str, media_type: str) -> dict:
+    """Crea (o sobrescribe) el JSON de metadatos de una conversación en MinIO."""
+    ensure_bucket()
+    metadata = {
+        "thread_id": thread_id,
+        "title": title,
+        "media_type": media_type,  # "photo" | "video" | "text"
+        "created_at": datetime.now().isoformat(),
+    }
+    data = json.dumps(metadata, ensure_ascii=False).encode("utf-8")
+    client.put_object(
+        BUCKET_NAME,
+        _meta_object_name(thread_id),
+        data=io.BytesIO(data),
+        length=len(data),
+        content_type="application/json",
+    )
+    return metadata
+
+
+def list_conversations() -> list[dict]:
+    ensure_bucket()
+    conversations = []
+    for obj in client.list_objects(BUCKET_NAME, prefix=META_PREFIX, recursive=True):
+        response = client.get_object(BUCKET_NAME, obj.object_name)
+        try:
+            conversations.append(json.loads(response.read()))
+        finally:
+            response.close()
+            response.release_conn()
+    conversations.sort(key=lambda c: c["created_at"], reverse=True)
+    return conversations
+
+
+def delete_conversation_metadata(thread_id: str):
+    try:
+        client.remove_object(BUCKET_NAME, _meta_object_name(thread_id))
+    except S3Error as e:
+        if e.code != "NoSuchKey":
+            raise

@@ -58,11 +58,12 @@ ACCIDENT_PROMPT = """
             - "no_crash" if you do NOT see signs of a traffic accident
 
             # OUTPUT FORMAT
-            Respond ONLY with a valid JSON object:
+            Respond ONLY with a valid JSON object and nothing else.
+            Example of a valid response:
             {
-                "predicted_category": "crash or no_crash",
-                "confidence": 0.00,
-                "description": "Short, technical explanation of the physics/event observed."
+                "predicted_category": "crash",
+                "confidence": 0.89,
+                "description": "A vehicle has collided with another object in the road."
             }
 """
 
@@ -114,13 +115,14 @@ async def run_news_module(image):
             You are a OCR specialist. Do not think out loud. Do not use <tool_call> tags. Respond ONLY with the requested JSON.
 
             # OBJECTIVE
-            Extract text from the image and explain the context of the chart or news article.
+            Extract text from the image and explain the context of the chart or news article. If there is a tittle, include it in the answer.
             
             # OUTPUT FORMAT
             Respond ONLY with valid JSON:
             {
                 "answer": "your answer here",
                 "confidence": "a number between 0 and 1",
+                "title": "the title of the news article, if any"
             }
             """,
             "images": [image]

@@ -2,7 +2,7 @@
 from langchain.messages import SystemMessage
 from app.agent.state import MessagesState
 from langchain.messages import ToolMessage
-
+from langchain_core.runnables import RunnableConfig
 from langchain.tools import tool
 from langchain_ollama import ChatOllama
 
@@ -24,8 +24,18 @@ def llm_call(state: MessagesState):
             model_with_tools.invoke(
                 [
                     SystemMessage(
-                        content="Eres un agente que ayuda a moderar contenido buscando información "
-                        "sobre distintos tipos de riesgos (violencia, armas, fuego, accidentes). NO respondas a preguntas que no estén relacionadas con la moderación de contenido."
+                        content="""You are HazardEx, a specialized content moderation assistant. Your only purpose is to 
+                        help analyze and discuss media (images/videos) for hazardous content in these categories: violence, 
+                        weapons, fire, traffic accidents, and disinformation/fake news.
+                        
+                        You have access to tools for analyzing specific images (vlm_tool), searching reference documents (rag_tool), 
+                        and searching the internet for context (internet_tool). Use them when relevant to the user's question.
+
+                        If the user asks about anything unrelated to these hazard categories or to the media being analyzed, politely 
+                        respond that you are a specialized content moderation assistant and cannot help with topics outside violence, weapons, 
+                        fire, traffic accidents, or disinformation detection.
+                        
+                        Answer only in Spanish. If you need to call a tool, use the appropriate tool call format."""
                     )
                 ]
                 + state["messages"]
@@ -34,14 +44,12 @@ def llm_call(state: MessagesState):
         "llm_calls": state.get('llm_calls', 0) + 1
     }
 
-
 # Define tool node
-def tool_node(state: MessagesState):
+def tool_node(state: MessagesState, config: RunnableConfig):
     """Performs the tool call"""
-
     result = []
     for tool_call in state["messages"][-1].tool_calls:
         tool = tools_by_name[tool_call["name"]]
-        observation = tool.invoke(tool_call["args"])
+        observation = tool.invoke(tool_call["args"], config=config)
         result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
     return {"messages": result}

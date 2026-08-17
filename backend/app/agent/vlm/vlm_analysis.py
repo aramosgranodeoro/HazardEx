@@ -159,17 +159,3 @@ def _encode_image(image_path: str) -> str:
     """Codifica una imagen en base64 para enviarla al VLM vía Ollama."""
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode("utf-8")
-
-# if __name__ == "__main__":
-#     # Prueba manual rápida 
-#     test_path = "C:/Users/adaxi/OneDrive/Escritorio/fire-123784_640.jpg"
-#     if Path(test_path).exists():
-#         result = tool_vlm.invoke({
-#             "question": "¿Hay personas cerca?",
-#             "image_b64": _encode_image(test_path),
-#             "media_type": "photo",
-#             "context": '{"predicted_categories": ["fire_smoke"], "confidence": 0.87}',
-#         })
-#         print(json.dumps(result, ensure_ascii=False, indent=2))
-#     else:
-#         print(f"No se encontró {test_path}, omitiendo prueba local.")

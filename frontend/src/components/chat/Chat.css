@@ -45,7 +45,7 @@
   align-items: flex-start;
   gap: 10px;
   max-width: 72%;
-  padding: 14px 18px;
+  padding: 10px 14px;
   border-radius: 14px;
   font-size: 14.5px;
   line-height: 1.55;
@@ -289,6 +289,6 @@ select.hx-select {
 .hx-chat-image {
   max-width: 240px;
   max-height: 240px;
-  border-radius: 8px;
+  border-radius: 5px;
   display: block;
 }

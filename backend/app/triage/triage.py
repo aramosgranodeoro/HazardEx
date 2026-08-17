@@ -1,6 +1,6 @@
 import ollama
 import re
-from .utils import byte_to_base64, extract_frames, frames_a_grid
+from .utils import byte_to_base64, extract_frames, frames_a_grid, resize_image
 from .models.modelsCalls import run_violence_module, run_traffic_module, run_weapons_module, run_fire_smoke_module, run_news_module
 import json
 from .models.model_manager import vlm_manager
@@ -20,7 +20,7 @@ Analyze this image and estimate the probability of each safety category
 """
 
 def classify_image(media, file_name):
-    image = byte_to_base64(media)
+   
     file_extension = file_name.split(".")[-1].lower()
 
     if file_extension in VIDEO_EXTENSIONS:
@@ -28,6 +28,8 @@ def classify_image(media, file_name):
         image = frames_a_grid(aux)
         prompt = PROMT_VIDEO
     else:
+        resized_image = resize_image(media, max_size=1024)
+        image = byte_to_base64(resized_image)
         prompt = PROMT_IMAGE
 
     response = ollama.chat(

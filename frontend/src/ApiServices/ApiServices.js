@@ -1,20 +1,5 @@
 import axios from 'axios';
 
-// http://127.0.0.1:8000
-
-// Subir un documento e indexarlo en la base de datos
-export const uploadDocument = async (file) => {
-  const formData = new FormData();
-  formData.append("file", file);
-  const response = await axios.post(`http://127.0.0.1:8000/upload`, formData);
-  return response.data;
-};
-
-export const deleteDocument = async (fileName) => {
-  const response = await axios.delete(`http://127.0.0.1:8000/delete/${fileName}`);
-  return response.data;
-};
-
 export const analyze = async (file) => {
   try {
     const formData = new FormData();
@@ -38,21 +23,64 @@ export const analyze = async (file) => {
 export const query = async (threadId, question) => {
   try {
     const response = await axios.post(`http://127.0.0.1:8000/query`, {
-      thread_id: threadId,
+      thread_id: threadId || null,
       question: question,
     });
-    return response.data; // { response: "..." }
+    return response.data; // { thread_id: "...", response: "..." }
   } catch (error) {
     console.error("Error querying:", error);
     throw error;
   }
 };
 
+// ---------- Historial ----------
+export const listConversations = async () => {
+  const response = await axios.get(`http://127.0.0.1:8000/conversations`);
+  return response.data.conversations; // [{ thread_id, title, media_type, created_at }]
+};
+
+export const getConversation = async (threadId) => {
+  const response = await axios.get(`http://127.0.0.1:8000/conversation/${threadId}`);
+  return response.data; // { thread_id, messages, has_media, media_type }
+};
+
+export const deleteConversation = async (threadId) => {
+  const response = await axios.delete(`http://127.0.0.1:8000/conversation/${threadId}`);
+  return response.data;
+};
+
+export const getMediaUrl = (threadId) => `${BASE_URL}/media/${threadId}`;
+
+// ---------- RAG ----------
+export const listRagDocuments = async () => {
+  const response = await axios.get(`http://127.0.0.1:8000/rag`);
+  return response.data.documents; // ["archivo.pdf", ...]
+};
+
+export const uploadRagDocument = async (file) => {
+  const formData = new FormData();
+  formData.append("file", file);
+  const response = await axios.post(`http://127.0.0.1:8000/rag`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+  return response.data;
+};
+
+export const deleteRagDocument = async (filename) => {
+  const response = await axios.delete(`http://127.0.0.1:8000/rag`, { params: { filename } });
+  return response.data;
+};
+
 const ApiService = {
-  uploadDocument,
-  deleteDocument,
   analyze,
   query,
+  listConversations,
+  getConversation,
+  deleteConversation,
+  getMediaUrl,
+  listRagDocuments,
+  uploadRagDocument,
+  deleteRagDocument,
 };
 
 export default ApiService;
