@@ -292,3 +292,20 @@ select.hx-select {
   border-radius: 5px;
   display: block;
 }
+
+.hx-markdown p {
+  margin: 0.4rem 0;
+}
+.hx-markdown ul, .hx-markdown ol {
+  padding-left: 1.2rem;
+  margin: 0.4rem 0;
+}
+.hx-markdown a.hx-link {
+  color: var(--hx-accent);
+  text-decoration: underline;
+}
+.hx-markdown code {
+  background: var(--hx-surface-2, rgba(255,255,255,0.08));
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}

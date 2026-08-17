@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import ApiService from "../../ApiServices/ApiServices.js";
 import "./Chat.css";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const VLM_MODELS = [
   { id: "llava7b", label: "llava7b" },
@@ -76,19 +78,30 @@ export default function Chat({ threadId, setThreadId, messages, setMessages }) {
           <div key={msg.id} className={`hx-msg-row ${msg.role}`}>
             <div className="hx-msg-bubble">
               <div className="hx-msg-content">
-                {msg.role === "assistant"}
-
                 {msg.image && (
                   <div className="hx-image-attachment">
-                    <img
-                      src={msg.image}
-                      alt={msg.fileName || "adjunto"}
-                      className="hx-chat-image"
-                    />
+                    <img src={msg.image} alt={msg.fileName || "adjunto"} className="hx-chat-image" />
                   </div>
                 )}
 
-                {msg.text && <span>{msg.text}</span>}
+                {msg.text && (
+                  msg.role === "assistant" ? (
+                    <div className="hx-markdown">
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          a: ({ node, ...props }) => (
+                            <a {...props} target="_blank" rel="noopener noreferrer" className="hx-link" />
+                          ),
+                        }}
+                      >
+                        {msg.text}
+                      </ReactMarkdown>
+                    </div>
+                  ) : (
+                    <span>{msg.text}</span>
+                  )
+                )}
               </div>
             </div>
           </div>
