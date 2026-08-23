@@ -1,5 +1,6 @@
 from http.client import HTTPException
 import io
+from logging import info
 import os
 import shutil
 from typing import Optional
@@ -15,11 +16,14 @@ from pydantic import BaseModel
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver  
 from app.agent.graph import build_agent_graph
 from fastapi.middleware.cors import CORSMiddleware
-from app.storage.state import media_metadata
-from app.storage.conversations import list_conversations, delete_conversation_metadata, save_conversation_metadata
+from app.storage.conversations import list_conversations, delete_conversation_metadata, save_conversation_metadata, get_conversation_metadata
 from app.agent.rag.vectorstore_instance import vectorstore
 from app.agent.rag.embeddings import load_document, delete_document
 from app.storage.minio_client import upload_media, download_media, delete_media
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 """
 AÑADIR CÓDIGOS DE ERROR HTTP PARA LOS ENDPOINTS DE RAG Y ANALYZE, POR EJEMPLO:
@@ -31,7 +35,7 @@ agent = None
 
 EXTENSIONES_PERMITIDAS = {".pdf", ".docx", ".txt"}
 
-DOCUMENTS_FOLDER = "C:/Users/adaxi/OneDrive/Escritorio/TFG - copia/backend/app/agent/rag/documents"
+DOCUMENTS_FOLDER = os.getenv("DOCUMENTS_FOLDER")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -86,11 +90,9 @@ async def analyze(file: UploadFile = File(...)):
 
     content_type = file.content_type or "application/octet-stream"
     upload_media(thread_id, media_bytes, content_type)
-    media_metadata[thread_id] = {
-        "media_type": "video" if content_type.startswith("video") else "photo",
-    }
-
-    save_conversation_metadata(thread_id, file.filename, media_metadata[thread_id]["media_type"])
+    media_type = "video" if content_type.startswith("video") else "photo"
+    upload_media(thread_id, media_bytes, content_type)
+    save_conversation_metadata(thread_id, file.filename, media_type)
 
     prompt = (
         f"""
@@ -151,8 +153,8 @@ async def get_conversation(thread_id: str):
     if not state or not state.values.get("messages"):
         raise HTTPException(status_code=404, detail="Conversación no encontrada")
 
-    info = media_metadata.get(thread_id)
-    has_media = info is not None
+    info = get_conversation_metadata(thread_id)
+    has_media = info is not None and info.get("media_type") in ("photo", "video")
     skip_first_human = has_media  # el primer HumanMessage es el prompt interno de triage
 
     messages = []
@@ -178,7 +180,7 @@ async def get_media(thread_id: str):
     data = download_media(thread_id)
     if data is None:
         raise HTTPException(status_code=404, detail="Media no encontrada")
-    info = media_metadata.get(thread_id, {})
+    info = get_conversation_metadata(thread_id) or {}
     content_type = "video/mp4" if info.get("media_type") == "video" else "image/jpeg"
     return StreamingResponse(io.BytesIO(data), media_type=content_type)
 
@@ -192,7 +194,6 @@ async def delete_conversation(thread_id: str):
 
     delete_conversation_metadata(thread_id)
     delete_media(thread_id)
-    media_metadata.pop(thread_id, None)
 
     return {"message": "Conversación eliminada correctamente", "thread_id": thread_id}
 

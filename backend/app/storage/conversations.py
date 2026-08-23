@@ -30,6 +30,19 @@ def save_conversation_metadata(thread_id: str, title: str, media_type: str) -> d
     )
     return metadata
 
+def get_conversation_metadata(thread_id: str) -> dict | None:
+    """Lee el JSON de metadatos de una conversación desde MinIO. None si no existe."""
+    try:
+        response = client.get_object(BUCKET_NAME, _meta_object_name(thread_id))
+        try:
+            return json.loads(response.read())
+        finally:
+            response.close()
+            response.release_conn()
+    except S3Error as e:
+        if e.code == "NoSuchKey":
+            return None
+        raise
 
 def list_conversations() -> list[dict]:
     ensure_bucket()
@@ -43,7 +56,6 @@ def list_conversations() -> list[dict]:
             response.release_conn()
     conversations.sort(key=lambda c: c["created_at"], reverse=True)
     return conversations
-
 
 def delete_conversation_metadata(thread_id: str):
     try:

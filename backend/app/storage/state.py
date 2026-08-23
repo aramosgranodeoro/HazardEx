@@ -1,1 +1,1 @@
-media_metadata: dict[str, dict] = {}
+# media_metadata: dict[str, dict] = {}

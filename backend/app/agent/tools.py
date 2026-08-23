@@ -6,8 +6,8 @@ from langchain_chroma import Chroma
 import base64
 from app.storage.minio_client import download_media
 from langchain_core.runnables import RunnableConfig
-from app.storage.state import media_metadata
 from app.agent.rag.vectorstore_instance import vectorstore
+from app.storage.conversations import get_conversation_metadata
 
 # INDEX_FOLDER = "./app/agent/rag/chroma_db"
 
@@ -43,7 +43,7 @@ def vlm_tool(question: str, config: RunnableConfig) -> dict:
     if media_bytes is None:
         return {"answer": "No hay imagen o vídeo asociado a esta conversación.", "confidence": "unknown", "raw": ""}
 
-    metadata = media_metadata.get(thread_id, {"media_type": "photo"})
+    metadata = get_conversation_metadata(thread_id) or {"media_type": "photo"}
     image_b64 = base64.b64encode(media_bytes).decode("utf-8")
 
     return analyze_vlm_data(

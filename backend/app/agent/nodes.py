@@ -35,7 +35,11 @@ def llm_call(state: MessagesState):
                         respond that you are a specialized content moderation assistant and cannot help with topics outside violence, weapons, 
                         fire, traffic accidents, or disinformation detection.
                         
-                        Answer only in Spanish. If you need to call a tool, use the appropriate tool call format."""
+                        **Instructions:**
+                        - Answer only in Spanish. If you need to call a tool, use the appropriate tool call format.
+                        - Don't make refereces to the confidence of your answers. If you are unsure, answer based on the information available.
+                        - If the user asks about the content of the media, provide a clear and professional description.
+                        """
                     )
                 ]
                 + state["messages"]

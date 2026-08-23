@@ -1,86 +1,86 @@
 import React, { useState, useEffect, useRef } from "react";
-import ApiService from "../../ApiServices/ApiServices.js";
+import ApiService from "../../ApiServices/ApiServices.js"; /*[cite: 5] */
 import "./Sidebar.css";
-import HazardEx from '../../assets/HazardEx.png'
+import HazardEx from '../../assets/HazardEx.png' /*[cite: 5] */
 
 export default function Sidebar({ onNewChat, onSelectConversation, activeThreadId }) {
-  const [historyOpen, setHistoryOpen] = useState(false);
-  const [ragOpen, setRagOpen] = useState(false);
-  const [conversations, setConversations] = useState([]);
-  const [ragDocs, setRagDocs] = useState([]);
-  const [loadingHistory, setLoadingHistory] = useState(false);
-  const [loadingRag, setLoadingRag] = useState(false);
-  const ragFileInputRef = useRef(null);
+  const [historyOpen, setHistoryOpen] = useState(false); /*[cite: 5] */
+  const [ragOpen, setRagOpen] = useState(false); /*[cite: 5] */
+  const [conversations, setConversations] = useState([]); /*[cite: 5] */
+  const [ragDocs, setRagDocs] = useState([]); /*[cite: 5] */
+  const [loadingHistory, setLoadingHistory] = useState(false); /*[cite: 5] */
+  const [loadingRag, setLoadingRag] = useState(false); /*[cite: 5] */
+  const ragFileInputRef = useRef(null); /*[cite: 5] */
 
   const loadConversations = async () => {
-    setLoadingHistory(true);
+    setLoadingHistory(true); /*[cite: 5] */
     try {
-      setConversations(await ApiService.listConversations());
+      setConversations(await ApiService.listConversations()); /*[cite: 5] */
     } catch (err) {
-      console.error("Error cargando historial:", err);
+      console.error("Error cargando historial:", err); /*[cite: 5] */
     } finally {
-      setLoadingHistory(false);
+      setLoadingHistory(false); /*[cite: 5] */
     }
   };
 
   const loadRagDocs = async () => {
-    setLoadingRag(true);
+    setLoadingRag(true); /*[cite: 5] */
     try {
-      setRagDocs(await ApiService.listRagDocuments());
+      setRagDocs(await ApiService.listRagDocuments()); /*[cite: 5] */
     } catch (err) {
-      console.error("Error cargando documentos RAG:", err);
+      console.error("Error cargando documentos RAG:", err); /*[cite: 5] */
     } finally {
-      setLoadingRag(false);
+      setLoadingRag(false); /*[cite: 5] */
     }
   };
 
   useEffect(() => {
-    loadConversations();
-  }, []);
+    loadConversations(); /*[cite: 5] */
+  }, []); /*[cite: 5] */
 
   const toggleHistory = () => {
-    const next = !historyOpen;
-    setHistoryOpen(next);
-    if (next) loadConversations();
+    const next = !historyOpen; /*[cite: 5] */
+    setHistoryOpen(next); /*[cite: 5] */
+    if (next) loadConversations(); /*[cite: 5] */
   };
 
   const toggleRag = () => {
-    const next = !ragOpen;
-    setRagOpen(next);
-    if (next) loadRagDocs();
+    const next = !ragOpen; /*[cite: 5] */
+    setRagOpen(next); /*[cite: 5] */
+    if (next) loadRagDocs(); /*[cite: 5] */
   };
 
   const handleDeleteConversation = async (e, threadId) => {
-    e.stopPropagation();
-    if (!window.confirm("¿Eliminar esta conversación?")) return;
+    e.stopPropagation(); /*[cite: 5] */
+    if (!window.confirm("¿Eliminar esta conversación?")) return; /*[cite: 5] */
     try {
-      await ApiService.deleteConversation(threadId);
-      setConversations((prev) => prev.filter((c) => c.thread_id !== threadId));
-      if (threadId === activeThreadId) onNewChat?.();
+      await ApiService.deleteConversation(threadId); /*[cite: 5] */
+      setConversations((prev) => prev.filter((c) => c.thread_id !== threadId)); /*[cite: 5] */
+      if (threadId === activeThreadId) onNewChat?.(); /*[cite: 5] */
     } catch (err) {
-      console.error("Error eliminando conversación:", err);
+      console.error("Error eliminando conversación:", err); /*[cite: 5] */
     }
   };
 
   const handleRagFileChange = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    e.target.value = "";
+    const file = e.target.files[0]; /*[cite: 5] */
+    if (!file) return; /*[cite: 5] */
+    e.target.value = ""; /*[cite: 5] */
     try {
-      await ApiService.uploadRagDocument(file);
-      loadRagDocs();
+      await ApiService.uploadRagDocument(file); /*[cite: 5] */
+      loadRagDocs(); /*[cite: 5] */
     } catch (err) {
-      alert(err?.response?.data?.detail || "Error al subir el documento");
+      alert(err?.response?.data?.detail || "Error al subir el documento"); /*[cite: 5] */
     }
   };
 
   const handleDeleteRag = async (filename) => {
-    if (!window.confirm(`¿Eliminar "${filename}" del RAG?`)) return;
+    if (!window.confirm(`¿Eliminar "${filename}" del RAG?`)) return; /*[cite: 5] */
     try {
-      await ApiService.deleteRagDocument(filename);
-      setRagDocs((prev) => prev.filter((f) => f !== filename));
+      await ApiService.deleteRagDocument(filename); /*[cite: 5] */
+      setRagDocs((prev) => prev.filter((f) => f !== filename)); /*[cite: 5] */
     } catch (err) {
-      console.error("Error eliminando documento:", err);
+      console.error("Error eliminando documento:", err); /*[cite: 5] */
     }
   };
 
@@ -91,7 +91,15 @@ export default function Sidebar({ onNewChat, onSelectConversation, activeThreadI
       </div>
 
       <nav className="hx-sidebar-nav">
-        <button type="button" className="hx-nav-item" onClick={() => onNewChat?.()}>
+        {/* AQUÍ ESTÁ EL CAMBIO PRINCIPAL */}
+        <button 
+          type="button" 
+          className="hx-nav-item" 
+          onClick={() => {
+            onNewChat?.();           // 1. Limpia el chat actual en App.jsx
+            loadConversations();     // 2. Vuelve a pedirle el historial actualizado a la API
+          }}
+        >
           <span className="hx-nav-icon"><i className="fa-regular fa-square-plus"></i></span>
           <span className="hx-nav-label">Nuevo chat</span>
         </button>

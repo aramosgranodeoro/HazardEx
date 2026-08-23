@@ -1,37 +1,37 @@
 import React, { useState, useRef, useEffect } from "react";
-import ApiService from "../../ApiServices/ApiServices.js";
+import ApiService from "../../ApiServices/ApiServices.js"; 
 import "./Chat.css";
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown'; 
+import remarkGfm from 'remark-gfm'; 
 
 const VLM_MODELS = [
   { id: "llava7b", label: "llava7b" },
   { id: "qwen3.5", label: "qwen3.5" },
-];
+]; 
 
 export default function Chat({ threadId, setThreadId, messages, setMessages }) {
-  const [input, setInput] = useState("");
-  const [vlmModel, setVlmModel] = useState(VLM_MODELS[0].id);
-  const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef(null);
-  const fileInputRef = useRef(null);
+  const [input, setInput] = useState(""); 
+  const [vlmModel, setVlmModel] = useState(VLM_MODELS[0].id); 
+  const [isLoading, setIsLoading] = useState(false); 
+  const messagesEndRef = useRef(null); 
+  const fileInputRef = useRef(null); 
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, isLoading]);
+  }, [messages, isLoading]); 
 
-  const handleAttachClick = () => fileInputRef.current?.click();
+  const handleAttachClick = () => fileInputRef.current?.click(); 
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
-    e.target.value = "";
+    e.target.value = ""; 
 
     const previewUrl = URL.createObjectURL(file);
     const userMsgId = Date.now();
 
     setMessages((prev) => [...prev, { id: userMsgId, role: "user", image: previewUrl, fileName: file.name }]);
-    setIsLoading(true);
+    setIsLoading(true); 
 
     try {
       const data = await ApiService.analyze(file);
@@ -41,7 +41,7 @@ export default function Chat({ threadId, setThreadId, messages, setMessages }) {
       setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: "Error al analizar el archivo. Inténtalo de nuevo.", isError: true }]);
     } finally {
       setIsLoading(false);
-    }
+    } 
   };
 
   const handleSend = async () => {
@@ -51,7 +51,7 @@ export default function Chat({ threadId, setThreadId, messages, setMessages }) {
     const userMsgId = Date.now();
     setMessages((prev) => [...prev, { id: userMsgId, role: "user", text }]);
     setInput("");
-    setIsLoading(true);
+    setIsLoading(true); 
 
     try {
       const data = await ApiService.query(threadId, text);
@@ -61,7 +61,7 @@ export default function Chat({ threadId, setThreadId, messages, setMessages }) {
       setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: "Error al enviar el mensaje.", isError: true }]);
     } finally {
       setIsLoading(false);
-    }
+    } 
   };
 
   const handleKeyDown = (e) => {
@@ -69,43 +69,58 @@ export default function Chat({ threadId, setThreadId, messages, setMessages }) {
       e.preventDefault();
       handleSend();
     }
+  }; 
+
+  // Función para las sugerencias de la pantalla de bienvenida
+  const handleSuggestionClick = (suggestionText) => {
+    setInput(suggestionText);
   };
 
   return (
     <section className="hx-chat">
       <div className="hx-chat-messages">
-        {messages.map((msg) => (
-          <div key={msg.id} className={`hx-msg-row ${msg.role}`}>
-            <div className="hx-msg-bubble">
-              <div className="hx-msg-content">
-                {msg.image && (
-                  <div className="hx-image-attachment">
-                    <img src={msg.image} alt={msg.fileName || "adjunto"} className="hx-chat-image" />
-                  </div>
-                )}
-
-                {msg.text && (
-                  msg.role === "assistant" ? (
-                    <div className="hx-markdown">
-                      <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{
-                          a: ({ node, ...props }) => (
-                            <a {...props} target="_blank" rel="noopener noreferrer" className="hx-link" />
-                          ),
-                        }}
-                      >
-                        {msg.text}
-                      </ReactMarkdown>
+        
+        {/* LÓGICA DE BIENVENIDA O MENSAJES */}
+        {messages.length === 0 ? (
+          <div className="hx-welcome-container">
+            <h2 className="hx-welcome-title">¿En qué puedo ayudarte hoy?</h2>
+            <p className="hx-welcome-subtitle">Sube una imagen o vídeo para comenzar el análisis de amenazas.</p>
+          </div>
+        ) : (
+          /* Renderizado normal de mensajes si la lista no está vacía */
+          messages.map((msg) => (
+            <div key={msg.id} className={`hx-msg-row ${msg.role}`}>
+              <div className="hx-msg-bubble">
+                <div className="hx-msg-content">
+                  {msg.image && (
+                    <div className="hx-image-attachment">
+                      <img src={msg.image} alt={msg.fileName || "adjunto"} className="hx-chat-image" />
                     </div>
-                  ) : (
-                    <span>{msg.text}</span>
-                  )
-                )}
+                  )}
+
+                  {msg.text && (
+                    msg.role === "assistant" ? (
+                      <div className="hx-markdown">
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            a: ({ node, ...props }) => (
+                              <a {...props} target="_blank" rel="noopener noreferrer" className="hx-link" />
+                            ),
+                          }}
+                        >
+                          {msg.text}
+                        </ReactMarkdown>
+                      </div>
+                    ) : (
+                      <span>{msg.text}</span>
+                    )
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
 
         {isLoading && (
           <div className="hx-msg-row assistant">
@@ -152,26 +167,13 @@ export default function Chat({ threadId, setThreadId, messages, setMessages }) {
             disabled={isLoading}
           />
 
-          {/* <div className="hx-select-group">
-            <select
-              className="hx-select"
-              value={vlmModel}
-              onChange={(e) => setVlmModel(e.target.value)}
-            >
-              {VLM_MODELS.map((m) => (
-                <option key={m.id} value={m.id}>
-                  {m.label}
-                </option>
-              ))}
-            </select>
-          </div> */}
           <button
             type="button"
             className="hx-send-btn"
             onClick={handleSend}
             disabled={isLoading}
           >
-            <i class="fa-regular fa-paper-plane"></i>
+            <i className="fa-regular fa-paper-plane"></i>
           </button>
         </div>
       </footer>
