@@ -1,25 +1,26 @@
 from http.client import HTTPException
-import io
 import os
 import shutil
 from typing import Optional
 import uuid
 from fastapi.concurrency import asynccontextmanager
-from fastapi.responses import StreamingResponse
 from langchain.messages import AIMessage, HumanMessage
-from fastapi import FastAPI, File, Form, UploadFile
+from fastapi import FastAPI, File, Form, Request, Response, UploadFile
 from app.triage.triage import classify_image, run_specialized_modules
-from app.triage.utils import build_analysis_text, generic_media_title, truncate_title
-from app.storage.minio_client import upload_media, download_media, get_media, delete_media
+from app.triage.utils import build_analysis_text, generic_media_title, truncate_title, frame_to_jpeg_bytes, extract_frames, transcode_to_h264
+from app.storage.minio_client import upload_media, get_media, delete_media
 from pydantic import BaseModel
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver  
 from app.agent.graph import build_agent_graph
 from fastapi.middleware.cors import CORSMiddleware
-from app.storage.conversations import list_conversations, delete_conversation_metadata, save_conversation_metadata, get_conversation_metadata
-from app.agent.rag.vectorstore_instance import vectorstore
+from app.storage.conversations import list_conversations, delete_conversation_metadata, save_conversation_metadata
 from app.agent.rag.embeddings import load_document, delete_document
 from dotenv import load_dotenv
 import os
+import re
+
+
+MEDIA_MARKER_RE = re.compile(r"\[Image attached, media_id=([a-f0-9\-]+)\]")
 
 load_dotenv()
 
@@ -31,7 +32,7 @@ AÑADIR CÓDIGOS DE ERROR HTTP PARA LOS ENDPOINTS DE RAG Y ANALYZE, POR EJEMPLO:
 """
 agent = None
 
-EXTENSIONES_PERMITIDAS = {".pdf", ".docx", ".txt"}
+EXTENSIONES_PERMITIDAS = {".pdf", ".docx", ".txt", ".md"}
 
 DOCUMENTS_FOLDER = os.getenv("DOCUMENTS_FOLDER")
 
@@ -45,6 +46,9 @@ async def lifespan(app: FastAPI):
 
  
 class QueryRequest(BaseModel):
+    """
+    Modelo de datos para la solicitud de consulta al agente.
+    """
     thread_id: Optional[str] = None
     question: str
 
@@ -63,6 +67,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["Content-Range", "Accept-Ranges", "Content-Length"],
 )
 
 @app.get("/")
@@ -91,7 +96,17 @@ async def analyze(
 
     media_id = str(uuid.uuid4())
     media_type = "video" if content_type.startswith("video") else "photo"
-    upload_media(thread_id, media_id, media_bytes, content_type)
+    if media_type == "video":
+        # Transcodifica para asegurar reproducción en navegador
+        h264_bytes = transcode_to_h264(media_bytes)
+        upload_media(thread_id, media_id, h264_bytes, "video/mp4")
+
+        # Genera thumbnail a partir del vídeo ORIGINAL (OpenCV suele leer HEVC bien)
+        frames = extract_frames(media_bytes, n=2)
+        thumb_bytes = frame_to_jpeg_bytes(frames[0])
+        upload_media(thread_id, f"{media_id}_thumb", thumb_bytes, "image/jpeg")
+    else:
+        upload_media(thread_id, media_id, media_bytes, content_type)
 
     if is_new_thread:
         save_conversation_metadata(thread_id, file.filename)
@@ -149,11 +164,6 @@ async def query(payload: QueryRequest):
 def get_conversations():
     return {"conversations": list_conversations()}
 
-
-import re
-
-MEDIA_MARKER_RE = re.compile(r"\[Image attached, media_id=([a-f0-9\-]+)\]")
-
 @app.get("/conversation/{thread_id}")
 async def get_conversation(thread_id: str):
     """Devuelve el historial de mensajes para poder reanudar la conversación."""
@@ -187,7 +197,7 @@ async def get_conversation(thread_id: str):
     }
 
 @app.get("/media/{thread_id}/{media_id}")
-async def get_media_endpoint(thread_id: str, media_id: str):
+async def get_media_endpoint(thread_id: str, media_id: str, request: Request):
     data = get_media(thread_id, media_id)
     if data is None:
         raise HTTPException(status_code=404, detail="Media no encontrada")
@@ -196,9 +206,32 @@ async def get_media_endpoint(thread_id: str, media_id: str):
     state = await agent.aget_state(config)
     available_media = state.values.get("available_media", {}) if state else {}
     media_type = available_media.get(media_id)
-
     content_type = "video/mp4" if media_type == "video" else "image/jpeg"
-    return StreamingResponse(io.BytesIO(data), media_type=content_type)
+
+    file_size = len(data)
+    range_header = request.headers.get("range")
+
+    if range_header is None:
+        return Response(
+            content=data,
+            media_type=content_type,
+            headers={"Accept-Ranges": "bytes", "Content-Length": str(file_size)},
+        )
+
+    # Parsear "bytes=start-end"
+    range_value = range_header.replace("bytes=", "").split("-")
+    start = int(range_value[0]) if range_value[0] else 0
+    end = int(range_value[1]) if len(range_value) > 1 and range_value[1] else file_size - 1
+    end = min(end, file_size - 1)
+    chunk = data[start:end + 1]
+
+    headers = {
+        "Content-Range": f"bytes {start}-{end}/{file_size}",
+        "Accept-Ranges": "bytes",
+        "Content-Length": str(len(chunk)),
+    }
+
+    return Response(content=chunk, status_code=206, media_type=content_type, headers=headers)
 
 
 @app.delete("/conversation/{thread_id}")

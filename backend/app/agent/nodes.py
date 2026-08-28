@@ -44,6 +44,7 @@ def llm_call(state: MessagesState):
                           an ambiguous reference, infer which media_id they mean from the conversation context (e.g. the
                           most recently attached one, or one explicitly mentioned earlier). If there is only one media_id
                           in the conversation, use that one. Always pass the correct media_id when calling vlm_tool.
+                        - Don't reponse with the percentage of the category confidence. Instead, provide a clear and professional description of the content and its potential hazards.
                         """
                     )
                 ]

@@ -7,8 +7,49 @@ import cv2
 import tempfile
 import os
 from datetime import datetime
+import json
 
 MESES_ES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+
+import subprocess
+
+def transcode_to_h264(video_bytes: bytes) -> bytes:
+    """Transcodifica un vídeo a H.264/AAC en MP4, compatible con navegadores."""
+    with tempfile.NamedTemporaryFile(suffix=".mp4", delete=False) as tmp_in:
+        tmp_in.write(video_bytes)
+        input_path = tmp_in.name
+
+    output_path = input_path.replace(".mp4", "_h264.mp4")
+
+    try:
+        result = subprocess.run(
+            [
+                "ffmpeg", "-y",
+                "-i", input_path,
+                "-c:v", "libx264",
+                "-preset", "fast",
+                "-c:a", "aac",
+                "-movflags", "+faststart",
+                output_path,
+            ],
+            capture_output=True,
+            timeout=120,
+        )
+        if result.returncode != 0:
+            raise RuntimeError(f"ffmpeg falló: {result.stderr.decode(errors='ignore')}")
+
+        with open(output_path, "rb") as f:
+            return f.read()
+    finally:
+        os.unlink(input_path)
+        if os.path.exists(output_path):
+            os.unlink(output_path)
+
+
+def frame_to_jpeg_bytes(frame: Image.Image) -> bytes:
+    buf = io.BytesIO()
+    frame.convert("RGB").save(buf, format="JPEG", quality=90)
+    return buf.getvalue()
 
 def get_month() -> str:
     now = datetime.now()
@@ -35,6 +76,12 @@ def pil_to_base64(image: Image.Image) -> str:
     buffered = io.BytesIO()
     image.save(buffered, format="PNG")
     return base64.b64encode(buffered.getvalue()).decode('utf-8')
+
+def frame_to_jpeg_bytes(frame: Image.Image) -> bytes:
+    """Convierte un frame PIL en bytes JPEG."""
+    buf = io.BytesIO()
+    frame.convert("RGB").save(buf, format="JPEG", quality=90)
+    return buf.getvalue()
 
 def resize_image(image_bytes: bytes, size=(224, 224)) -> bytes:
     """Redimensionar imagen para que tenga un tamaño máximo de 224x224 píxeles."""
@@ -85,7 +132,7 @@ def extract_frames(video_bytes: bytes, n: int = 9) -> list[Image.Image]:
         return frames
 
     finally:
-        os.unlink(tmp_path)  # limpieza garantizada, incluso si algo falla arriba
+        os.unlink(tmp_path) 
 
 def frames_a_grid(frames, cols=3):
     """
@@ -106,9 +153,6 @@ def frames_a_grid(frames, cols=3):
     grid.show()
     return pil_to_base64(grid)
 
-import json
-
-
 def build_analysis_text(result: dict) -> str:
     """Convierte el dict de módulos especializados en texto legible.
     
@@ -118,6 +162,18 @@ def build_analysis_text(result: dict) -> str:
     - Clasificación (violencia, tráfico): {"predicted_category": str, "confidence": float, "description": str}
     """
     partes = []
+
+    if "general" in result:
+        general = result.pop("general")
+        if isinstance(general, dict):
+            desc = general.get("description", "")
+            top_cats = sorted(
+                general.get("predicted_categories", []),
+                key=lambda c: c.get("confidence", 0),
+                reverse=True
+            )
+            top_text = ", ".join(f"{c['category']} ({c['confidence']:.2f})" for c in top_cats[:3])
+            partes.append(f"Análisis general del contenido: {desc} Categorías más probables: {top_text}.")
 
     for categoria, data in result.items():
         # Si viene como string, intentar parsear JSON

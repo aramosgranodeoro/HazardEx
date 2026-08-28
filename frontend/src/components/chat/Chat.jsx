@@ -4,14 +4,57 @@ import "./Chat.css";
 import ReactMarkdown from 'react-markdown'; 
 import remarkGfm from 'remark-gfm'; 
 
-const VLM_MODELS = [
-  { id: "llava7b", label: "llava7b" },
-  { id: "qwen3.5", label: "qwen3.5" },
-]; 
+function captureVideoThumbnail(file) {
+  return new Promise((resolve, reject) => {
+    const video = document.createElement("video");
+    video.preload = "metadata";
+    video.muted = true;
+    video.playsInline = true;
+    video.style.display = "none";
+    document.body.appendChild(video);
+
+    const cleanup = () => {
+      document.body.removeChild(video);
+      URL.revokeObjectURL(video.src);
+    };
+
+    video.onloadedmetadata = () => {
+      video.currentTime = Math.min(0.1, video.duration / 2);
+    };
+
+    video.onseeked = () => {
+      try {
+        const canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob((blob) => {
+          cleanup();
+          if (!blob) {
+            reject(new Error("No se pudo generar el blob del thumbnail"));
+            return;
+          }
+          resolve(URL.createObjectURL(blob));
+        }, "image/jpeg", 0.9);
+      } catch (err) {
+        cleanup();
+        reject(err);
+      }
+    };
+
+    video.onerror = () => {
+      const err = video.error;
+      cleanup();
+      reject(new Error(`No se pudo cargar el vídeo (code=${err?.code}, message=${err?.message})`));
+    };
+
+    video.src = URL.createObjectURL(file);
+  });
+}
 
 export default function Chat({ threadId, setThreadId, messages, setMessages }) {
   const [input, setInput] = useState(""); 
-  const [vlmModel, setVlmModel] = useState(VLM_MODELS[0].id); 
   const [isLoading, setIsLoading] = useState(false); 
   const messagesEndRef = useRef(null); 
   const fileInputRef = useRef(null); 
@@ -27,15 +70,30 @@ const handleFileChange = async (e) => {
   if (!file) return;
   e.target.value = ""; 
 
-  const previewUrl = URL.createObjectURL(file);
+  const isVideo = file.type.startsWith("video");
   const userMsgId = Date.now();
 
-  setMessages((prev) => [...prev, { id: userMsgId, role: "user", image: previewUrl, fileName: file.name }]);
+  const previewUrl = isVideo ? null : URL.createObjectURL(file);
+  setMessages((prev) => [...prev, { id: userMsgId, role: "user", image: previewUrl, videoUrl: null, fileName: file.name, isVideo, isLoadingMedia: isVideo }]);
   setIsLoading(true); 
 
   try {
     const data = await ApiService.analyze(file, threadId);
     if (!threadId) setThreadId(data.thread_id);
+
+    if (isVideo) {
+      setMessages((prev) => prev.map((m) =>
+        m.id === userMsgId
+          ? {
+              ...m,
+              image: ApiService.getMediaUrl(data.thread_id, `${data.media_id}_thumb`),
+              videoUrl: ApiService.getMediaUrl(data.thread_id, data.media_id),
+              isLoadingMedia: false,
+            }
+          : m
+      ));
+    }
+
     setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: data.analysis }]);
   } catch (err) {
     setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: "Error al analizar el archivo. Inténtalo de nuevo.", isError: true }]);
@@ -94,7 +152,11 @@ const handleFileChange = async (e) => {
                 <div className="hx-msg-content">
                   {msg.image && (
                     <div className="hx-image-attachment">
-                      <img src={msg.image} alt={msg.fileName || "adjunto"} className="hx-chat-image" />
+                      {msg.isVideo ? (
+                        <video src={msg.videoUrl} poster={msg.image} controls className="hx-chat-video" />
+                      ) : (
+                        <img src={msg.image} alt={msg.fileName || "adjunto"} className="hx-chat-image" />
+                      )}
                     </div>
                   )}
 

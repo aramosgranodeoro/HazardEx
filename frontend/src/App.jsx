@@ -6,7 +6,7 @@ import ApiService from "./ApiService/ApiService.js";
 export default function App() {
   const [threadId, setThreadId] = useState(null);
   const [messages, setMessages] = useState([]);
-
+  const [media, setMedia] = useState([]);
   const handleNewChat = () => {
     setThreadId(null);
     setMessages([]);
@@ -19,11 +19,16 @@ const handleSelectConversation = async (selectedThreadId) => {
 
     const loaded = data.items.map((item, i) => {
       if (item.type === "media") {
+        const isVideo = item.media_type === "video";
         return {
           id: `media-${selectedThreadId}-${item.media_id}`,
           role: "user",
-          image: ApiService.getMediaUrl(selectedThreadId, item.media_id),
-          fileName: item.media_type === "video" ? "vídeo" : "imagen",
+          image: isVideo
+            ? ApiService.getMediaUrl(selectedThreadId, `${item.media_id}_thumb`)
+            : ApiService.getMediaUrl(selectedThreadId, item.media_id),
+          videoUrl: isVideo ? ApiService.getMediaUrl(selectedThreadId, item.media_id) : null,
+          isVideo,
+          fileName: isVideo ? "vídeo" : "imagen",
         };
       }
       return {

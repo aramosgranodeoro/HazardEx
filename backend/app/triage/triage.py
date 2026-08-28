@@ -105,9 +105,18 @@ def classify_image(media, file_name):
 
 # Llamar a módulos especializados para análisis de imagen o vídeo según el tipo de medio
 async def run_specialized_modules(catergories, media):
-    results = {} 
-    categories = json.loads(catergories).get("predicted_categories", [])
+    """
+    Ejecuta módulos especializados de análisis de imagen o vídeo según las categorías predichas por el
+    modelo VLM. Devuelve un diccionario con los resultados de cada módulo activado."""
+    results = {}
+    parsed = json.loads(catergories)
+    categories = parsed.get("predicted_categories", [])
     activated_categories = [c["category"] for c in categories if c["confidence"] > 0.5]
+
+    results["general"] = {
+        "description": parsed.get("description", ""),
+        "predicted_categories": categories,
+    }
 
     for category in activated_categories:
         if category == "violence":
@@ -127,11 +136,11 @@ async def run_specialized_modules(catergories, media):
 
         elif category == "normal":
             results[category] = {"message": "No specialized analysis needed for normal content."}
+
     print(f"Specialized module results:\n{results}\n")
     await vlm_manager.release()
     
     if results.keys() == 0:
         results["message"] = "No specialized modules were activated based on the predicted categories."
-        
-    #llamar al merge_results si es necesario para unificar resultados de los módulos
+    
     return results
