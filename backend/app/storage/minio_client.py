@@ -3,6 +3,10 @@ from minio import Minio
 from minio.error import S3Error
 import io
 
+"""
+Funciones para gestionar archivos en MinIO.
+"""
+
 BUCKET_NAME = "hazardex-media"
 
 client = Minio(
@@ -16,19 +20,27 @@ def ensure_bucket():
     if not client.bucket_exists(BUCKET_NAME):
         client.make_bucket(BUCKET_NAME)
 
-
-def upload_media(thread_id: str, media_bytes: bytes, content_type: str = "image/jpeg") -> str:
-    """Sube el archivo asociado a un thread_id y devuelve el object_name."""
-    ensure_bucket()
-    object_name = f"{thread_id}"
+def upload_media(thread_id: str, media_id: str, media_bytes: bytes, content_type: str):
+    object_name = f"{thread_id}/{media_id}"
     client.put_object(
         BUCKET_NAME,
         object_name,
-        data=io.BytesIO(media_bytes),
+        io.BytesIO(media_bytes),
         length=len(media_bytes),
-        content_type=content_type,
+        content_type=content_type
     )
     return object_name
+
+
+def get_media(thread_id: str, media_id: str) -> bytes:
+    """Recupera los bytes del archivo asociado a un thread_id y media_id."""
+    object_name = f"{thread_id}/{media_id}"
+    response = client.get_object(BUCKET_NAME, object_name)
+    try:
+        return response.read()
+    finally:
+        response.close()
+        response.release_conn()
 
 
 def download_media(thread_id: str) -> bytes | None:

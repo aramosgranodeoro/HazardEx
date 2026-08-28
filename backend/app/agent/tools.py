@@ -1,54 +1,59 @@
 from langchain_core.tools import tool
+from app.agent.state import MessagesState
 from app.agent.vlm.vlm_analysis import analyze_vlm_data
 from ddgs import DDGS
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_chroma import Chroma
 import base64
-from app.storage.minio_client import download_media
+from app.storage.minio_client import download_media, get_media
 from langchain_core.runnables import RunnableConfig
 from app.agent.rag.vectorstore_instance import vectorstore
 from app.storage.conversations import get_conversation_metadata
+from typing import Annotated
+from langchain_core.tools import tool
+from langchain_core.runnables import RunnableConfig
+from langgraph.prebuilt import InjectedState
 
-# INDEX_FOLDER = "./app/agent/rag/chroma_db"
-
-# embeddings = HuggingFaceEmbeddings(
-#     model_name="intfloat/multilingual-e5-small",
-#     model_kwargs={"device": "cpu"}
-# )
-
-# vectorstore = Chroma(
-#     persist_directory=INDEX_FOLDER,
-#     embedding_function=embeddings
-# )
 
 @tool
-def vlm_tool(question: str, config: RunnableConfig) -> dict:
+def vlm_tool(
+    media_id: str,
+    question: str,
+    state: Annotated[MessagesState, InjectedState],
+    config: RunnableConfig,
+) -> dict:
     """
-    Analyzes the image or video that was already uploaded and analyzed
-    in this conversation, to answer follow-up questions about its content.
+    Analiza una imagen o vídeo específico que ya haya sido subido en esta conversación para responder a preguntas de seguimiento sobre su contenido.
+    Utiliza esta herramienta cuando el usuario haga una pregunta de seguimiento sobre una imagen o vídeo que ya haya sido analizado.
 
-    Use this tool when the user asks a follow-up question about the
-    image/video already analyzed.
+    Argumentos:
 
-    Args:
-        question: The user's specific question about the image/video.
-            You MUST always include this argument. Never leave it empty.
+    media_id: Identificador de la imagen o vídeo que se desea analizar, tal como aparece en el historial de la conversación 
+              (por ejemplo, [Image attached, media_id=...]). Si solo hay una imagen en la conversación, utiliza esa.
+    question: Pregunta específica del usuario sobre la imagen o vídeo. Siempre debes incluir este argumento. Nunca lo dejes vacío.
 
-    Returns:
-        A dictionary with the VLM analysis response.
+    Devuelve un diccionario con la respuesta del análisis realizado por el VLM.
     """
+    available_media = state.get("available_media", {})
+
+    if media_id not in available_media:
+        return {
+            "answer": f"No image or video found with media_id='{media_id}' in this conversation."
+                      f"Available media_id values: {list(available_media.keys())}",
+            "confidence": "unknown",
+            "raw": "",
+        }
+
     thread_id = config["configurable"]["thread_id"]
+    media_bytes = get_media(thread_id, media_id)
 
-    media_bytes = download_media(thread_id)
     if media_bytes is None:
-        return {"answer": "No hay imagen o vídeo asociado a esta conversación.", "confidence": "unknown", "raw": ""}
+        return {"answer": "No image or video associated with this media_id.", "confidence": "unknown", "raw": ""}
 
-    metadata = get_conversation_metadata(thread_id) or {"media_type": "photo"}
+    media_type = available_media[media_id]
     image_b64 = base64.b64encode(media_bytes).decode("utf-8")
 
     return analyze_vlm_data(
         question=question,
-        media_type=metadata["media_type"],
+        media_type=media_type,
         image_b64=image_b64,
         context="",
     )

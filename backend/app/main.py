@@ -1,6 +1,5 @@
 from http.client import HTTPException
 import io
-from logging import info
 import os
 import shutil
 from typing import Optional
@@ -8,10 +7,10 @@ import uuid
 from fastapi.concurrency import asynccontextmanager
 from fastapi.responses import StreamingResponse
 from langchain.messages import AIMessage, HumanMessage
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, Form, UploadFile
 from app.triage.triage import classify_image, run_specialized_modules
 from app.triage.utils import build_analysis_text, generic_media_title, truncate_title
-from app.storage.minio_client import upload_media, download_media
+from app.storage.minio_client import upload_media, download_media, get_media, delete_media
 from pydantic import BaseModel
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver  
 from app.agent.graph import build_agent_graph
@@ -19,7 +18,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.storage.conversations import list_conversations, delete_conversation_metadata, save_conversation_metadata, get_conversation_metadata
 from app.agent.rag.vectorstore_instance import vectorstore
 from app.agent.rag.embeddings import load_document, delete_document
-from app.storage.minio_client import upload_media, download_media, delete_media
 from dotenv import load_dotenv
 import os
 
@@ -77,32 +75,40 @@ def health():
 
 # Análisis inicial del medio (imagen o vídeo) y generación de contexto para el agente
 @app.post("/analyze")
-async def analyze(file: UploadFile = File(...)):
-    # Generar un thread_id único para la conversación
-    thread_id = str(uuid.uuid4())
+async def analyze(
+    file: UploadFile = File(...),
+    thread_id: Optional[str] = Form(None)
+):
+    is_new_thread = thread_id is None
+    thread_id = thread_id or str(uuid.uuid4())
     config = {"configurable": {"thread_id": thread_id}}
 
-    # Leer el archivo subido y analizarlo => primer análisis
     media_bytes = await file.read()
     categories, image = classify_image(media_bytes, file.filename)
     result = await run_specialized_modules(categories, image)
     analysis_text = build_analysis_text(result)
-
     content_type = file.content_type or "application/octet-stream"
-    upload_media(thread_id, media_bytes, content_type)
+
+    media_id = str(uuid.uuid4())
     media_type = "video" if content_type.startswith("video") else "photo"
-    upload_media(thread_id, media_bytes, content_type)
-    save_conversation_metadata(thread_id, file.filename, media_type)
+    upload_media(thread_id, media_id, media_bytes, content_type)
+
+    if is_new_thread:
+        save_conversation_metadata(thread_id, file.filename)
+
+    await agent.aupdate_state(
+        config,
+        {"available_media": {media_id: media_type}}
+    )
 
     prompt = (
         f"""
+        [Image attached, media_id={media_id}]
         These are the results of the initial automatic analysis of the multimedia content:
         {analysis_text}
-
         Write a clear and professional initial description of the content based solely on these results, 
         without inventing or adding any additional information.
-
-        Anwer only in Spanish.
+        Answer only in Spanish.
         """
     )
 
@@ -110,11 +116,11 @@ async def analyze(file: UploadFile = File(...)):
         {"messages": [HumanMessage(content=prompt)]},
         config
     )
-
     ai_message = response["messages"][-1]
 
     return {
         "thread_id": thread_id,
+        "media_id": media_id,
         "analysis": ai_message.content
     }
 
@@ -144,44 +150,54 @@ def get_conversations():
     return {"conversations": list_conversations()}
 
 
+import re
+
+MEDIA_MARKER_RE = re.compile(r"\[Image attached, media_id=([a-f0-9\-]+)\]")
+
 @app.get("/conversation/{thread_id}")
 async def get_conversation(thread_id: str):
     """Devuelve el historial de mensajes para poder reanudar la conversación."""
     config = {"configurable": {"thread_id": thread_id}}
     state = await agent.aget_state(config)
-
     if not state or not state.values.get("messages"):
         raise HTTPException(status_code=404, detail="Conversación no encontrada")
 
-    info = get_conversation_metadata(thread_id)
-    has_media = info is not None and info.get("media_type") in ("photo", "video")
-    skip_first_human = has_media  # el primer HumanMessage es el prompt interno de triage
+    available_media = state.values.get("available_media", {})
 
-    messages = []
+    items = []
     for msg in state.values["messages"]:
         if isinstance(msg, HumanMessage):
-            if skip_first_human:
-                skip_first_human = False
+            content = msg.content if isinstance(msg.content, str) else ""
+            match = MEDIA_MARKER_RE.search(content)
+            if match:
+                media_id = match.group(1)
+                items.append({
+                    "type": "media",
+                    "media_id": media_id,
+                    "media_type": available_media.get(media_id, "photo"),
+                })
                 continue
-            messages.append({"role": "user", "text": msg.content})
+            items.append({"type": "message", "role": "user", "text": content})
         elif isinstance(msg, AIMessage) and msg.content:
-            messages.append({"role": "assistant", "text": msg.content})
+            items.append({"type": "message", "role": "assistant", "text": msg.content})
 
     return {
         "thread_id": thread_id,
-        "messages": messages,
-        "has_media": has_media,
-        "media_type": info["media_type"] if info else None,
+        "items": items,
     }
 
-
-@app.get("/media/{thread_id}")
-async def get_media(thread_id: str):
-    data = download_media(thread_id)
+@app.get("/media/{thread_id}/{media_id}")
+async def get_media_endpoint(thread_id: str, media_id: str):
+    data = get_media(thread_id, media_id)
     if data is None:
         raise HTTPException(status_code=404, detail="Media no encontrada")
-    info = get_conversation_metadata(thread_id) or {}
-    content_type = "video/mp4" if info.get("media_type") == "video" else "image/jpeg"
+
+    config = {"configurable": {"thread_id": thread_id}}
+    state = await agent.aget_state(config)
+    available_media = state.values.get("available_media", {}) if state else {}
+    media_type = available_media.get(media_id)
+
+    content_type = "video/mp4" if media_type == "video" else "image/jpeg"
     return StreamingResponse(io.BytesIO(data), media_type=content_type)
 
 

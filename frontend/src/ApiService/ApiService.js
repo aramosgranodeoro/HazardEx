@@ -1,10 +1,13 @@
 import axios from 'axios';
 const apiUrl = import.meta.env.VITE_BASE_URL;
 
-export const analyze = async (file) => {
+export const analyze = async (file, threadId) => {
   try {
     const formData = new FormData();
     formData.append("file", file);
+    if (threadId) {
+      formData.append("thread_id", threadId);
+    }
     const response = await axios.post(
       `${apiUrl}/analyze`,
       formData,
@@ -14,7 +17,7 @@ export const analyze = async (file) => {
         },
       }
     );
-    return response.data; // { thread_id, analysis }
+    return response.data; // { thread_id, media_id, analysis, is_new_thread }
   } catch (error) {
     console.error("Error analyzing file:", error);
     throw error;
@@ -48,7 +51,7 @@ export const listConversations = async () => {
 export const getConversation = async (threadId) => {
   try {
     const response = await axios.get(`${apiUrl}/conversation/${threadId}`);
-    return response.data; // { thread_id, messages, has_media, media_type }
+    return response.data; // { thread_id, items: [{ type: "media", media_id, media_type } | { type: "message", role, text }, ...] }
   } catch (error) {
     console.error("Error getting conversation:", error);
     throw error;
@@ -65,7 +68,7 @@ export const deleteConversation = async (threadId) => {
   }
 };
 
-export const getMediaUrl = (threadId) => `${apiUrl}/media/${threadId}`;
+export const getMediaUrl = (threadId, mediaId) => `${apiUrl}/media/${threadId}/${mediaId}`;
 
 // ---------- RAG ----------
 export const listRagDocuments = async () => {

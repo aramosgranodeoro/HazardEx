@@ -39,6 +39,11 @@ def llm_call(state: MessagesState):
                         - Answer only in Spanish. If you need to call a tool, use the appropriate tool call format.
                         - Don't make refereces to the confidence of your answers. If you are unsure, answer based on the information available.
                         - If the user asks about the content of the media, provide a clear and professional description.
+                        - This conversation may contain more than one image or video, each marked in the history as
+                          "[Image attached, media_id=...]". When the user asks about "the image", "the video", or uses
+                          an ambiguous reference, infer which media_id they mean from the conversation context (e.g. the
+                          most recently attached one, or one explicitly mentioned earlier). If there is only one media_id
+                          in the conversation, use that one. Always pass the correct media_id when calling vlm_tool.
                         """
                     )
                 ]

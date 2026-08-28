@@ -4,6 +4,10 @@ from datetime import datetime
 from minio.error import S3Error
 from app.storage.minio_client import client, ensure_bucket, BUCKET_NAME
 
+"""
+Funciones para gestionar los metadatos de las conversaciones en MinIO.
+"""
+
 META_PREFIX = "conversations/"
 
 
@@ -11,13 +15,12 @@ def _meta_object_name(thread_id: str) -> str:
     return f"{META_PREFIX}{thread_id}.json"
 
 
-def save_conversation_metadata(thread_id: str, title: str, media_type: str) -> dict:
-    """Crea (o sobrescribe) el JSON de metadatos de una conversación en MinIO."""
+def save_conversation_metadata(thread_id: str, title: str) -> dict:
+    """Crea el JSON de metadatos de una conversación en MinIO (solo al crearla)."""
     ensure_bucket()
     metadata = {
         "thread_id": thread_id,
         "title": title,
-        "media_type": media_type,  # "photo" | "video" | "text"
         "created_at": datetime.now().isoformat(),
     }
     data = json.dumps(metadata, ensure_ascii=False).encode("utf-8")

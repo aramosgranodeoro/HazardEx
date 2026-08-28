@@ -155,7 +155,4 @@ def analyze_vlm_data(question: str, media_type: str, image_b64: str = "", contex
         "raw": raw_content,
     }
 
-def _encode_image(image_path: str) -> str:
-    """Codifica una imagen en base64 para enviarla al VLM vía Ollama."""
-    with open(image_path, "rb") as f:
-        return base64.b64encode(f.read()).decode("utf-8")
+

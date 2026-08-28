@@ -1,1 +1,0 @@
-# media_metadata: dict[str, dict] = {}

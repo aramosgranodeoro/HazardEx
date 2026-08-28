@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import ApiService from "../../ApiServices/ApiServices.js"; 
+import ApiService from "../../ApiService/ApiService.js"; 
 import "./Chat.css";
 import ReactMarkdown from 'react-markdown'; 
 import remarkGfm from 'remark-gfm'; 
@@ -22,27 +22,27 @@ export default function Chat({ threadId, setThreadId, messages, setMessages }) {
 
   const handleAttachClick = () => fileInputRef.current?.click(); 
 
-  const handleFileChange = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    e.target.value = ""; 
+const handleFileChange = async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  e.target.value = ""; 
 
-    const previewUrl = URL.createObjectURL(file);
-    const userMsgId = Date.now();
+  const previewUrl = URL.createObjectURL(file);
+  const userMsgId = Date.now();
 
-    setMessages((prev) => [...prev, { id: userMsgId, role: "user", image: previewUrl, fileName: file.name }]);
-    setIsLoading(true); 
+  setMessages((prev) => [...prev, { id: userMsgId, role: "user", image: previewUrl, fileName: file.name }]);
+  setIsLoading(true); 
 
-    try {
-      const data = await ApiService.analyze(file);
-      setThreadId(data.thread_id);
-      setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: data.analysis }]);
-    } catch (err) {
-      setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: "Error al analizar el archivo. Inténtalo de nuevo.", isError: true }]);
-    } finally {
-      setIsLoading(false);
-    } 
-  };
+  try {
+    const data = await ApiService.analyze(file, threadId);
+    if (!threadId) setThreadId(data.thread_id);
+    setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: data.analysis }]);
+  } catch (err) {
+    setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: "Error al analizar el archivo. Inténtalo de nuevo.", isError: true }]);
+  } finally {
+    setIsLoading(false);
+  } 
+};
 
   const handleSend = async () => {
     const text = input.trim();

@@ -1,86 +1,86 @@
 import React, { useState, useEffect, useRef } from "react";
-import ApiService from "../../ApiServices/ApiServices.js"; /*[cite: 5] */
+import ApiService from "../../ApiService/ApiService.js";  
 import "./Sidebar.css";
-import HazardEx from '../../assets/HazardEx.png' /*[cite: 5] */
+import HazardEx from '../../assets/HazardEx.png'  
 
 export default function Sidebar({ onNewChat, onSelectConversation, activeThreadId }) {
-  const [historyOpen, setHistoryOpen] = useState(false); /*[cite: 5] */
-  const [ragOpen, setRagOpen] = useState(false); /*[cite: 5] */
-  const [conversations, setConversations] = useState([]); /*[cite: 5] */
-  const [ragDocs, setRagDocs] = useState([]); /*[cite: 5] */
-  const [loadingHistory, setLoadingHistory] = useState(false); /*[cite: 5] */
-  const [loadingRag, setLoadingRag] = useState(false); /*[cite: 5] */
-  const ragFileInputRef = useRef(null); /*[cite: 5] */
+  const [historyOpen, setHistoryOpen] = useState(false);  
+  const [ragOpen, setRagOpen] = useState(false);  
+  const [conversations, setConversations] = useState([]);  
+  const [ragDocs, setRagDocs] = useState([]);  
+  const [loadingHistory, setLoadingHistory] = useState(false);  
+  const [loadingRag, setLoadingRag] = useState(false);  
+  const ragFileInputRef = useRef(null);  
 
   const loadConversations = async () => {
-    setLoadingHistory(true); /*[cite: 5] */
+    setLoadingHistory(true);  
     try {
-      setConversations(await ApiService.listConversations()); /*[cite: 5] */
+      setConversations(await ApiService.listConversations());  
     } catch (err) {
-      console.error("Error cargando historial:", err); /*[cite: 5] */
+      console.error("Error cargando historial:", err);  
     } finally {
-      setLoadingHistory(false); /*[cite: 5] */
+      setLoadingHistory(false);  
     }
   };
 
   const loadRagDocs = async () => {
-    setLoadingRag(true); /*[cite: 5] */
+    setLoadingRag(true);  
     try {
-      setRagDocs(await ApiService.listRagDocuments()); /*[cite: 5] */
+      setRagDocs(await ApiService.listRagDocuments());  
     } catch (err) {
-      console.error("Error cargando documentos RAG:", err); /*[cite: 5] */
+      console.error("Error cargando documentos RAG:", err);  
     } finally {
-      setLoadingRag(false); /*[cite: 5] */
+      setLoadingRag(false);  
     }
   };
 
   useEffect(() => {
-    loadConversations(); /*[cite: 5] */
-  }, []); /*[cite: 5] */
+    loadConversations();  
+  }, []);  
 
   const toggleHistory = () => {
-    const next = !historyOpen; /*[cite: 5] */
-    setHistoryOpen(next); /*[cite: 5] */
-    if (next) loadConversations(); /*[cite: 5] */
+    const next = !historyOpen;  
+    setHistoryOpen(next);  
+    if (next) loadConversations();  
   };
 
   const toggleRag = () => {
-    const next = !ragOpen; /*[cite: 5] */
-    setRagOpen(next); /*[cite: 5] */
-    if (next) loadRagDocs(); /*[cite: 5] */
+    const next = !ragOpen;  
+    setRagOpen(next);  
+    if (next) loadRagDocs();  
   };
 
   const handleDeleteConversation = async (e, threadId) => {
-    e.stopPropagation(); /*[cite: 5] */
-    if (!window.confirm("¿Eliminar esta conversación?")) return; /*[cite: 5] */
+    e.stopPropagation();  
+    if (!window.confirm("¿Eliminar esta conversación?")) return;  
     try {
-      await ApiService.deleteConversation(threadId); /*[cite: 5] */
-      setConversations((prev) => prev.filter((c) => c.thread_id !== threadId)); /*[cite: 5] */
-      if (threadId === activeThreadId) onNewChat?.(); /*[cite: 5] */
+      await ApiService.deleteConversation(threadId);  
+      setConversations((prev) => prev.filter((c) => c.thread_id !== threadId));  
+      if (threadId === activeThreadId) onNewChat?.();  
     } catch (err) {
-      console.error("Error eliminando conversación:", err); /*[cite: 5] */
+      console.error("Error eliminando conversación:", err);  
     }
   };
 
   const handleRagFileChange = async (e) => {
-    const file = e.target.files[0]; /*[cite: 5] */
-    if (!file) return; /*[cite: 5] */
-    e.target.value = ""; /*[cite: 5] */
+    const file = e.target.files[0];  
+    if (!file) return;  
+    e.target.value = "";  
     try {
-      await ApiService.uploadRagDocument(file); /*[cite: 5] */
-      loadRagDocs(); /*[cite: 5] */
+      await ApiService.uploadRagDocument(file);  
+      loadRagDocs();  
     } catch (err) {
-      alert(err?.response?.data?.detail || "Error al subir el documento"); /*[cite: 5] */
+      alert(err?.response?.data?.detail || "Error al subir el documento");  
     }
   };
 
   const handleDeleteRag = async (filename) => {
-    if (!window.confirm(`¿Eliminar "${filename}" del RAG?`)) return; /*[cite: 5] */
+    if (!window.confirm(`¿Eliminar "${filename}" del RAG?`)) return;  
     try {
-      await ApiService.deleteRagDocument(filename); /*[cite: 5] */
-      setRagDocs((prev) => prev.filter((f) => f !== filename)); /*[cite: 5] */
+      await ApiService.deleteRagDocument(filename);  
+      setRagDocs((prev) => prev.filter((f) => f !== filename));  
     } catch (err) {
-      console.error("Error eliminando documento:", err); /*[cite: 5] */
+      console.error("Error eliminando documento:", err);  
     }
   };
 
