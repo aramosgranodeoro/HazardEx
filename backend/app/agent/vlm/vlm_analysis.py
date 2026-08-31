@@ -138,7 +138,7 @@ def analyze_vlm_data(question: str, media_type: str, image_b64: str = "", contex
 
     response = ollama.chat(
         model="llava:7b",
-        options={"temperature": 0.1},
+        options={"temperature": 0.1, "num_predict": 4096, "num_ctx": 16384},
         messages=[{
             "role": "user",
             "content": prompt,

@@ -1,3 +1,4 @@
+import base64
 from http.client import HTTPException
 import os
 import shutil
@@ -7,7 +8,7 @@ from fastapi.concurrency import asynccontextmanager
 from langchain.messages import AIMessage, HumanMessage
 from fastapi import FastAPI, File, Form, Request, Response, UploadFile
 from app.triage.triage import classify_image, run_specialized_modules
-from app.triage.utils import build_analysis_text, generic_media_title, truncate_title, frame_to_jpeg_bytes, extract_frames, transcode_to_h264
+from app.triage.utils import build_analysis_text, generic_media_title, truncate_title, frame_to_jpeg_bytes, extract_frames, transcode_to_h264, frames_a_grid
 from app.storage.minio_client import upload_media, get_media, delete_media
 from pydantic import BaseModel
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver  
@@ -81,12 +82,13 @@ def root():
 def health():
     return {"status": "ok"}
 
-# Análisis inicial del medio (imagen o vídeo) y generación de contexto para el agente
+
 @app.post("/analyze")
-async def analyze(
+async def analyze( 
     file: UploadFile = File(...),
     thread_id: Optional[str] = Form(None)
 ):
+    """Recibe un archivo multimedia (imagen o vídeo), lo analiza automáticamente y genera un resumen inicial para el agente."""
     is_new_thread = thread_id is None
     thread_id = thread_id or str(uuid.uuid4())
     config = {"configurable": {"thread_id": thread_id}}
@@ -104,10 +106,16 @@ async def analyze(
         h264_bytes = transcode_to_h264(media_bytes)
         upload_media(thread_id, media_id, h264_bytes, "video/mp4")
 
-        # Genera thumbnail a partir del vídeo ORIGINAL (OpenCV suele leer HEVC bien)
-        frames = extract_frames(media_bytes, n=2)
+       # Genera thumbnail a partir del vídeo ORIGINAL (OpenCV suele leer HEVC bien)
+        frames = extract_frames(media_bytes)
         thumb_bytes = frame_to_jpeg_bytes(frames[0])
         upload_media(thread_id, f"{media_id}_thumb", thumb_bytes, "image/jpeg")
+
+        # Grid de frames (base64) → decodificar antes de subir a MinIO como bytes
+        grid_b64 = frames_a_grid(frames)
+        grid_bytes = base64.b64decode(grid_b64)
+        upload_media(thread_id, f"{media_id}_grid", grid_bytes, "image/jpeg")
+
     else:
         upload_media(thread_id, media_id, media_bytes, content_type)
 
@@ -144,6 +152,7 @@ async def analyze(
 
 @app.post("/query")
 async def query(payload: QueryRequest):
+    """Recibe una pregunta del usuario y la envía al agente para obtener una respuesta."""
     is_new_conversation = payload.thread_id is None
     thread_id = payload.thread_id or str(uuid.uuid4())
     config = {"configurable": {"thread_id": thread_id}}
@@ -165,6 +174,7 @@ async def query(payload: QueryRequest):
 
 @app.get("/conversations")
 def get_conversations():
+    """Devuelve la lista de conversaciones disponibles."""
     return {"conversations": list_conversations()}
 
 @app.get("/conversation/{thread_id}")
@@ -201,6 +211,7 @@ async def get_conversation(thread_id: str):
 
 @app.get("/media/{thread_id}/{media_id}")
 async def get_media_endpoint(thread_id: str, media_id: str, request: Request):
+    """Devuelve el archivo multimedia (imagen o vídeo) solicitado, soportando rangos para streaming."""
     data = get_media(thread_id, media_id)
     if data is None:
         raise HTTPException(status_code=404, detail="Media no encontrada")
@@ -239,6 +250,7 @@ async def get_media_endpoint(thread_id: str, media_id: str, request: Request):
 
 @app.delete("/conversation/{thread_id}")
 async def delete_conversation(thread_id: str):
+    """Elimina el estado del agente y los archivos multimedia asociados a la conversación."""
     try:
         await agent.checkpointer.adelete_thread(thread_id)
     except Exception as e:
@@ -254,6 +266,7 @@ async def delete_conversation(thread_id: str):
 
 @app.get("/rag")
 def list_rag_documents():
+    """Devuelve la lista de documentos indexados para RAG."""
     if not os.path.isdir(DOCUMENTS_FOLDER):
         return {"documents": []}
     files = [
@@ -262,9 +275,9 @@ def list_rag_documents():
     ]
     return {"documents": files}
 
-
 @app.post("/rag")
 async def rag(file: UploadFile = File(...)):
+    """Indexa un documento para su uso en RAG."""
     extension = os.path.splitext(file.filename)[1].lower()
 
     if extension not in EXTENSIONES_PERMITIDAS:
@@ -296,6 +309,7 @@ async def rag(file: UploadFile = File(...)):
 
 @app.delete("/rag")
 async def delete_rag(filename: str):
+    """Elimina un documento indexado para RAG y sus chunks asociados."""
     ruta_archivo = os.path.join(DOCUMENTS_FOLDER, filename)
     n_borrados = delete_document(filename, vectorstore)
 

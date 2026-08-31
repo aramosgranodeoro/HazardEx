@@ -10,7 +10,7 @@ from app.agent.tools import TOOLS, tools_by_name  # vlm_tool, rag_tool, internet
 
 model = ChatOllama(
     model="qwen2.5:7b",
-    temperature=0
+    temperature=0,
 )
 
 model_with_tools = model.bind_tools(TOOLS)
@@ -60,6 +60,9 @@ def tool_node(state: MessagesState, config: RunnableConfig):
     result = []
     for tool_call in state["messages"][-1].tool_calls:
         tool = tools_by_name[tool_call["name"]]
-        observation = tool.invoke(tool_call["args"], config=config)
+        args = dict(tool_call["args"])
+        if "state" in tool.args_schema.model_fields:
+            args["state"] = state
+        observation = tool.invoke(args, config=config)
         result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
     return {"messages": result}

@@ -86,9 +86,9 @@ export default function Sidebar({ onNewChat, onSelectConversation, activeThreadI
 
   return (
     <aside className="hx-sidebar">
-      <div>
-        <img src={HazardEx} alt="HazardEx Logo" className="hx-logo-image" />
-      </div>
+     <div className="hx-sidebar-logo">
+      <span className="hx-logo-text">Hazard<span className="hx-logo-accent">Ex</span></span>
+    </div>
 
       <nav className="hx-sidebar-nav">
         {/* AQUÍ ESTÁ EL CAMBIO PRINCIPAL */}

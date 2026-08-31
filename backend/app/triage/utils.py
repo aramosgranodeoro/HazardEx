@@ -56,6 +56,7 @@ def get_month() -> str:
     return f"{now.day} {MESES_ES[now.month - 1]}"
 
 def generic_media_title(media_type: str) -> str:
+    """Genera un título genérico para un archivo multimedia."""
     etiqueta = "Vídeo" if media_type == "video" else "Imagen"
     return f"{etiqueta} - {get_month()}"
 
@@ -150,7 +151,7 @@ def frames_a_grid(frames, cols=3):
         row, col = divmod(i, cols)
         grid.paste(frame, (col * w, row * h))
 
-    grid.show()
+    # grid.show()
     return pil_to_base64(grid)
 
 def build_analysis_text(result: dict) -> str:

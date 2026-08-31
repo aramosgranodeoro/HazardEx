@@ -1,4 +1,5 @@
 from langchain.messages import AnyMessage
+from langchain_protocol import NotRequired
 from typing_extensions import TypedDict, Annotated
 import operator
 
@@ -14,5 +15,5 @@ def merge_dicts(left: dict, right: dict) -> dict:
 class MessagesState(TypedDict):
     messages: Annotated[list[AnyMessage], operator.add]
     llm_calls: int
-    thread_id: str
+    thread_id: NotRequired[str]
     available_media: Annotated[dict[str, str], merge_dicts]

@@ -13,9 +13,11 @@ MODELO_EMBEDDINGS = "intfloat/multilingual-e5-small"
 
 
 class EmbeddingsE5(HuggingFaceEmbeddings):
-    """Wrapper que añade los prefijos requeridos por los modelos e5.
-    IMPORTANTE: hay que usar esta misma clase tanto para indexar como para
-    consultar, o los embeddings de query y documento quedan en espacios distintos."""
+    """
+    Wrapper que añade los prefijos requeridos por los modelos e5.
+    Los modelos e5 requieren que los textos de los documentos tengan el prefijo "passage: ".
+    Si no se añade este prefijo, los embeddings no serán compatibles con la consulta.
+    """
 
     def embed_documents(self, texts):
         textos_con_prefijo = [f"passage: {t}" for t in texts]
@@ -94,6 +96,10 @@ def load_documents():
 
 
 def build_index():
+    """
+    Construye el índice vectorial a partir de los documentos en la carpeta documents/.
+    Si el índice ya existe, lo sobrescribe.
+    """
     documentos = load_documents()
 
     splitter = RecursiveCharacterTextSplitter(
@@ -110,7 +116,6 @@ def build_index():
         persist_directory=INDEX_FOLDER
     )
 
-    print(f"Índice construido y guardado en {INDEX_FOLDER}")
     return vectorstore
 
 

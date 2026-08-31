@@ -43,12 +43,13 @@ def vlm_tool(
         }
 
     thread_id = config["configurable"]["thread_id"]
-    media_bytes = get_media(thread_id, media_id)
+    media_type = available_media[media_id]
+    
+    storage_key = f"{media_id}_grid" if media_type == "video" else media_id
+    media_bytes = get_media(thread_id, storage_key)
 
     if media_bytes is None:
         return {"answer": "No image or video associated with this media_id.", "confidence": "unknown", "raw": ""}
-
-    media_type = available_media[media_id]
     image_b64 = base64.b64encode(media_bytes).decode("utf-8")
 
     return analyze_vlm_data(
