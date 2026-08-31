@@ -1,0 +1,7 @@
+model,language,csv_file,n_samples,n_invalid,pct_invalid,n_classes,classes,accuracy,accuracy_penalizada,precision,recall,f1,mcc,auc_roc,mean_total_ms,mean_prompt_ms,mean_eval_ms,mean_prompt_tokens,mean_generated_tokens,mean_tokens_per_sec
+resultados_weapons_qwen3.5_latest,en,resultados_weapons_qwen3.5_latest.csv,808,2,0.25,2,arma|no_arma,0.9827,0.9802,0.982,0.982,0.982,0.964,0.6365,6997.85,650.05,5291.33,1513.35,356.12,67.33
+resultados_weapons_internlm_interns1_mini-q8_0,en,resultados_weapons_internlm_interns1_mini-q8_0.csv,810,0,0.0,2,arma|no_arma,0.7198,0.7198,0.7833,0.7616,0.7184,0.5445,0.5,1016.76,94.71,694.74,403.0,38.5,55.44
+resultados_weapons_salamandra_es,es,resultados_weapons_salamandra_es.csv,703,153,17.87,2,arma|no_arma,0.7198,0.5911,0.7914,0.7362,0.7099,0.5247,0.5184,4656.33,0.0,4656.33,3122.0,51.07,10.97
+resultados_weapons_internlm_interns1_mini-q8_0_es,es,resultados_weapons_internlm_interns1_mini-q8_0_es.csv,806,4,0.49,2,arma|no_arma,0.8797,0.8753,0.5879,0.597,0.5865,0.7753,0.4807,6725.75,789.76,5338.89,2659.53,266.62,49.98
+resultados_weapons_llava_7b,en,resultados_weapons_llava_7b.csv,810,0,0.0,2,arma|no_arma,0.421,0.421,0.7054,0.5145,0.3194,0.1091,0.5,811.88,162.96,508.55,755.0,55.72,111.54
+resultados_weapons_llava_7b_es,es,resultados_weapons_llava_7b_es.csv,810,0,0.0,2,arma|no_arma,0.4037,0.4037,0.2019,0.5,0.2876,0.0,0.5,1067.75,186.87,733.84,853.0,73.4,100.11

@@ -1,0 +1,8 @@
+model,language,csv_file,n_samples,n_correct,n_empty,pct_empty,accuracy,accuracy_penalizada,mean_total_ms,mean_prompt_ms,mean_eval_ms,mean_prompt_tokens,mean_generated_tokens,mean_tokens_per_sec
+resultados_chartsQA_internlm_interns1_mini-q8_0,en,resultados_chartsQA_internlm_interns1_mini-q8_0.csv,2500,1904,0,0.0,0.7616,0.7616,21646.26,423.9,20821.54,1422.78,1052.36,51.13
+resultados_chartsQA_internlm_interns1_mini-q8_0_es,es,resultados_chartsQA_internlm_interns1_mini-q8_0_es.csv,2500,1903,0,0.0,0.7612,0.7612,21481.42,426.23,20693.35,1455.78,1042.2,50.91
+resultados_chartsQA_qwen3.5_latest,en,resultados_chartsQA_qwen3.5_latest.csv,2500,1772,447,17.88,0.7088,0.7088,16183.27,308.4,15435.96,579.07,1139.84,74.21
+resultados_chartsQA_qwen3.5_latest_es,es,resultados_chartsQA_qwen3.5_latest_es.csv,2500,1710,452,18.08,0.684,0.684,17157.59,313.17,16406.41,600.06,1211.57,74.21
+resultados_chartqa_salamandra_es,es,resultados_chartqa_salamandra_es.csv,2500,1415,0,0.0,0.566,0.566,29414.73,0.0,29414.73,3142.18,60.58,3.86
+resultados_chartsQA_llava_7b,en,resultados_chartsQA_llava_7b.csv,2500,502,0,0.0,0.2008,0.2008,1057.19,121.8,854.59,736.37,86.03,100.76
+resultados_chartsQA_llava_7b_es,es,resultados_chartsQA_llava_7b_es.csv,2500,458,0,0.0,0.1832,0.1832,1746.55,129.83,1543.75,786.37,153.52,99.75

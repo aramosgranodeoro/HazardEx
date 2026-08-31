@@ -1,0 +1,17 @@
+Modelo  : resultados_fuego_llava_7b_es
+Idioma  : ES
+Archivo : resultados_fuego_llava_7b_es.csv
+Columnas: real='etiqueta' pred='categoria_predicha' conf='confianza'
+Muestras válidas: 3099 / 3099
+Predicciones inválidas (ERROR/unknown): 0 (0.0%)
+
+              precision    recall  f1-score   support
+
+       ambos       0.00      0.00      0.00       471
+       fuego       0.05      0.26      0.08       148
+        humo       0.00      0.00      0.00       425
+        none       0.72      0.81      0.77      2055
+
+    accuracy                           0.55      3099
+   macro avg       0.19      0.27      0.21      3099
+weighted avg       0.48      0.55      0.51      3099

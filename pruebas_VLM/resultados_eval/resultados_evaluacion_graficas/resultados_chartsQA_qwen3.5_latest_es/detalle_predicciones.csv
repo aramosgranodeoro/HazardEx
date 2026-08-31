@@ -1,0 +1,2575 @@
+indice,label,respuesta_modelo,es_correcto,metodo_match
+1,14,14,True,like
+2,0.57,0.57,True,like
+3,3,3,True,like
+4,No,No,True,like
+5,23,,False,vacio
+6,6,6%,True,like
+7,62,62,True,like
+8,Yes,Yes,True,like
+9,Inspired,,False,vacio
+10,0.03,3%,True,numerico
+11,1,1,True,like
+12,0.08,0.08,True,like
+13,17,17,True,like
+14,21.6,21.7,True,numerico
+15,2,2%,True,like
+16,2,2%,True,like
+17,2014,En 2014,True,like
+18,2011,Entre 2010 y 2011,True,like
+19,1,1,True,like
+20,No,No,True,like
+21,green line,,False,vacio
+22,2008,,False,vacio
+23,29,29,True,like
+24,1.216666667,2.42,False,sin_match
+25,Yes,,False,vacio
+26,Yes,Yes,True,like
+27,80,80%,True,like
+28,77,77%,True,like
+29,0.6,,False,vacio
+30,61,,False,vacio
+31,13,13,True,like
+32,5,,False,vacio
+33,24,,False,vacio
+34,No,,False,vacio
+35,Italy,Italy,True,like
+36,Mexico,Mexico,True,like
+37,33,14,False,sin_match
+38,Over 30 mins,over 30 minutes,False,sin_match
+39,4,4,True,like
+40,22,La diferencia es de 22 puntos porcentuales (63% para asiáticos menos 41% para blancos).,True,like
+41,92,92,True,like
+42,96,,False,vacio
+43,21,,False,vacio
+44,12,12,True,like
+45,2009,,False,vacio
+46,28.6,,False,vacio
+47,68,68%,True,like
+48,2019,2019,True,like
+49,83,83%,True,like
+50,2.13,The ratio is approximately 62:29 (or roughly 2.14 : 1),True,numerico
+51,Simulation,Simulation,True,like
+52,4,4,True,like
+53,Yes,,False,vacio
+54,No,,False,vacio
+55,Yes,Sí,False,sin_match
+56,0.33333333,1:3,False,sin_match
+57,Democrat (scores 60 to 100),Democrat,True,like_reverse
+58,0.01,,False,vacio
+59,Libya,Libya,True,like
+60,0.23,0.23,True,like
+61,28,28,True,like
+62,87.5,,False,vacio
+63,UK,UK,True,like
+64,50.25,,False,vacio
+65,72,72,True,like
+66,0.633333333,,False,vacio
+67,4.1,4.1,True,like
+68,14.5,,False,vacio
+69,175,175,True,like
+70,No,No,True,like
+71,93.45,93.45%,True,like
+72,51.04,,False,vacio
+73,Yes,Sí,False,sin_match
+74,21.5,,False,vacio
+75,3.0238,302.38%,True,numerico
+76,0.1922,19.24%,True,numerico
+77,52,52,True,like
+78,Yes,Sí,False,sin_match
+79,U.S.,,False,vacio
+80,UK,,False,vacio
+81,67,67%,True,like
+82,1.051388889,"La relación es de aproximadamente 1,75 a 1 (o 7:4), basada en los valores del gráfico para conservadores que apoyan requisitos más estrictos de votación (63%) frente a aquellos que apoyan facilitar el voto (36%).",True,numerico
+83,55,55,True,like
+84,Poll workers in your community,,False,vacio
+85,Rep/Lean Rep,Rep/Lean Rep,True,like
+86,0.484375,"The ratio is approximately 0.48 (or about half), calculated from 31% Good responses versus 64% Bad responses.",True,numerico
+87,77,,False,vacio
+88,141,141,True,like
+89,41,41%,True,like
+90,1.684722222,20:13,False,sin_match
+91,Nicaragua,Nicaragua,True,like
+92,No,no,True,like
+93,3,8,False,sin_match
+94,99,99,True,like
+95,Solomon Islands,Solomon Islands,True,like
+96,Jamaica,Jamaica,True,like
+97,50,50,True,like
+98,35,35,True,like
+99,977633,"977,633 t",False,sin_match
+100,1.6,1.60 million t,True,numerico
+101,4,4,True,like
+102,No,,False,vacio
+103,0.08,,False,vacio
+104,65,,False,vacio
+105,25,,False,vacio
+106,2,,False,vacio
+107,28,28%,True,like
+108,1.179861111,approximately 1.47,False,sin_match
+109,4,,False,vacio
+110,37,,False,vacio
+111,Gray,,False,vacio
+112,8,8%,True,like
+113,1.4,,False,vacio
+114,No,,False,vacio
+115,2.42,2.42,True,like
+116,0.77,0.77 t,True,like
+117,12,12,True,like
+118,Yes,Sí,False,sin_match
+119,3,3,True,like
+120,21,79%,False,sin_match
+121,0.3,30,True,numerico
+122,0.07,,False,vacio
+123,PP,PP,True,like
+124,3,three,True,numerico
+125,71,717,False,sin_match
+126,No,Yes,False,sin_match
+127,30,30%,True,like
+128,No,no,True,like
+129,Saudi Arabia,Saudi Arabia,True,like
+130,1,,False,vacio
+131,30,30%,True,like
+132,gray,,False,vacio
+133,83,83,True,like
+134,0.32,0.32,True,like
+135,57,57,True,like
+136,1.058333333,1.04,True,numerico
+137,61,61%,True,like
+138,No,No,True,like
+139,Yes,,False,vacio
+140,2.125694444,,False,vacio
+141,2013,2013,True,like
+142,1,1,True,like
+143,No,,False,vacio
+144,2577420,,False,vacio
+145,Red,red,True,like
+146,3,3,True,like
+147,92,92%,True,like
+148,62.43,,False,vacio
+149,Favorable,Favorable,True,like
+150,0.9375,0.9375,True,like
+151,54,,False,vacio
+152,No,,False,vacio
+153,2014,,False,vacio
+154,1969,En 1969,True,like
+155,orange,Naranja,False,sin_match
+156,57,71,False,sin_match
+157,29,29,True,like
+158,2010,,False,vacio
+159,Yes,Sí,False,sin_match
+160,3,,False,vacio
+161,March 2011,2011,True,like_reverse
+162,Favor,,False,vacio
+163,Yes,,False,vacio
+164,2210,,False,vacio
+165,1,,False,vacio
+166,47,,False,vacio
+167,Yes,Sí,False,sin_match
+168,13,13,True,like
+169,Blue,azul,False,sin_match
+170,No,No,True,like
+171,Don't Know,El segmento 'Don't know',True,like
+172,No,"No, la suma de los dos segmentos más pequeños (6% + 39%) es igual al 45%, lo cual no es mayor que el segmento más grande del gráfico (55%).",True,like
+173,10,,False,vacio
+174,69,69%,True,like
+175,41,,False,vacio
+176,Yes,Sí,False,sin_match
+177,67,67%,True,like
+178,No,No,True,like
+179,Bad,,False,vacio
+180,53,53%,True,like
+181,Better off,Better off,True,like
+182,Better off,Better off,True,like
+183,"Important, but lower priority","Important, but lower priority",True,like
+184,75,,False,vacio
+185,Dissatisfied,Dissatisfied,True,like
+186,3.9,3.9,True,like
+187,76,76%,True,like
+188,No,No,True,like
+189,Yes,Sí,False,sin_match
+190,30,30,True,like
+191,16,,False,vacio
+192,65+,65+,True,like
+193,11,11,True,like
+194,60,60,True,like
+195,No role,No role,True,like
+196,15,15,True,like
+197,Japan,Japan,True,like
+198,36,36,True,like
+199,5.32,Libia,False,sin_match
+200,5.95,16.55%,False,sin_match
+201,Finland,,False,vacio
+202,No,No,True,like
+203,Pink,Pink,True,like
+204,No,,False,vacio
+205,Heart disease,Heart disease,True,like
+206,Yes,Yes,True,like
+207,North America,North America,True,like
+208,Yes,Sí,False,sin_match
+209,Obesity,Obesity,True,like
+210,203,,False,vacio
+211,2,2,True,like
+212,51.33,51.33%,True,like
+213,2,,False,vacio
+214,Yes,Yes,True,like
+215,0.1,0.1%,True,like
+216,5,5,True,like
+217,1931,1.93,False,sin_match
+218,2.88,Approximately 2.88 times,True,like
+219,Low bone mineral density,Low bone mineral density,True,like
+220,No,No,True,like
+221,27.5,27.5%,True,like
+222,10.2,10.2%,True,like
+223,16,16,True,like
+224,No,No,True,like
+225,2,2,True,like
+226,3.24,3.24%,True,like
+227,Burkina Faso,Burkina Faso,True,like
+228,5,,False,vacio
+229,Lithuania,Lithuania,True,like
+230,28.3,28.3,True,like
+231,0.6,0.6 t,True,like
+232,0.475,,False,vacio
+233,0.01,0.01%,True,like
+234,0.02,,False,vacio
+235,1.6,1.6,True,like
+236,3.2,3.2,True,like
+237,20.98,"Hay dos valores listados para Mutton & Goat Meat: 20,98 m² para producción no orgánica y 4,64 m² para producción orgánica.",True,numerico
+238,0.2,,False,vacio
+239,41,41%,True,like
+240,5.4,5.4%,True,like
+241,Nepal,Nepal,True,like
+242,Yes,Yes,True,like
+243,5.25,5.25 trillion,True,like
+244,252.65,"5,497.4 mil millones (o aproximadamente 5.5 billones)",False,sin_match
+245,1,1,True,like
+246,1.6,,False,vacio
+247,96.4,96.4%,True,like
+248,Yes,Sí,False,sin_match
+249,Teal Blue,Verde azulado,False,sin_match
+250,38,,False,vacio
+251,Mexico,Mexico,True,like
+252,1.346,Aproximadamente 1.35 toneladas por hectárea,True,numerico
+253,40.7,40.7%,True,like
+254,6.2,6.2%,True,like
+255,2,2,True,like
+256,41.935,41.94%,True,numerico
+257,Belarus,Belarus,True,like
+258,0.08,0.08,True,like
+259,Mongolia,Mongolia,True,like
+260,Yes,,False,vacio
+261,9.29,9.29%,True,like
+262,No,,False,vacio
+263,5,5,True,like
+264,2,2,True,like
+265,6.85,6.85%,True,like
+266,Yes,Yes,True,like
+267,4,4,True,like
+268,47.6,,False,vacio
+269,1,1,True,like
+270,No,No,True,like
+271,Greece,,False,vacio
+272,Yes,Yes,True,like
+273,gray,dark grey-blue,False,sin_match
+274,Yes,Sí,False,sin_match
+275,Human capital,Human capital,True,like
+276,742.07,$742.07 trillion (Human capital),True,like
+277,2015,2015,True,like
+278,143,143 million tonnes,True,like
+279,48.01,48.01,True,like
+280,32.115,32.115,True,like
+281,0.04,0.04,True,like
+282,0.11,0.11,True,like
+283,56.6,0.566,True,numerico
+284,13.5,"The difference in the share of children recorded as working between boys and girls was approximately 13.5 percentage points (Boys: 56.6%, Girls: 43.1%).",True,like
+285,0.69,0.69,True,like
+286,0.235,0.235,True,like
+287,24,24%,True,like
+288,6.2,6.2%,True,like
+289,Switzerland,Switzerland,True,like
+290,1541.08,"The difference is approximately 1,541 m³",False,sin_match
+291,Alcohol,El color azul claro representa las muertes por el uso de alcohol.,True,like
+292,60,60,True,like
+293,Philippines,Philippines,True,like
+294,No,,False,vacio
+295,Brazil,Brazil,True,like
+296,3.4,3.4%,True,like
+297,United States,United States,True,like
+298,4.19,4.19 millones de toneladas,True,like
+299,95,95%,True,like
+300,No,No,True,like
+301,Deaths from HIV/AIDS,Deaths from HIV/Aids,True,like
+302,Yes,,False,vacio
+303,Samoa,Samoa,True,like
+304,"[Gambia, Niger]",Gambia y Niger,False,sin_match
+305,24688.3,"$24,688.3",False,sin_match
+306,82.2,$82.2,True,like
+307,13,There are 13 death by risk factors shown in the bar graph.,True,like
+308,Yes,Yes,True,like
+309,11,,False,vacio
+310,No,,False,vacio
+311,Medium car (petrol),Medium car (petrol),True,like
+312,Yes,,False,vacio
+313,Malawi,Malawi,True,like
+314,1.905805459,Aproximadamente 1.91,True,numerico
+315,"[Italy , 22]",Italy represents the green bar with a value of 22%,False,sin_match
+316,2.54,Norway es aproximadamente 2.5 veces mayor que Italia,True,numerico
+317,27.22,"27,22%",True,numerico
+318,389.82,389.82,True,like
+319,navy blue,azul,False,sin_match
+320,0.08,0.08%,True,like
+321,8.5,8.5,True,like
+322,10.2,10.2,True,like
+323,3.88,3.88,True,like
+324,3,3,True,like
+325,9545.35,"$9,546.35",False,sin_match
+326,14153.35,"$14,153.35",False,sin_match
+327,No,No,True,like
+328,47.68,,False,vacio
+329,28,28,True,like
+330,No,No,True,like
+331,Argentina,Argentina,True,like
+332,No,No,True,like
+333,Chemistry,Chemistry,True,like
+334,Yes,Sí,False,sin_match
+335,Venezuela,Venezuela,True,like
+336,0.02,0.02%,True,like
+337,brown,Naranja,False,sin_match
+338,1.015645372,The ratio of the Grey bar (Denmark) to the Orange bar (Ireland) is approximately 1.02:1.,True,numerico
+339,Pink,magenta,False,sin_match
+340,No,No,True,like
+341,53.9,53.9 horas,True,like
+342,Yes,Yes,True,like
+343,8.87,8.87%,True,like
+344,32.43,32.43%,True,like
+345,7.54,7.54%,True,like
+346,1.88,Germany is approximately 1.88 times bigger than Greece.,True,like
+347,Myanmar,Myanmar,True,like
+348,Zambia,Zambia,True,like
+349,"[2014, 2016]",,False,vacio
+350,2015,,False,vacio
+351,Georgia,Georgia,True,like
+352,Spain,,False,vacio
+353,Belize,Belize,True,like
+354,Papua New Guinea,Papua New Guinea,True,like
+355,Benin,Benin,True,like
+356,Sudan,Sudan,True,like
+357,Mongolia,Mongolia,True,like
+358,6,,False,vacio
+359,North America,North America,True,like
+360,2014,2014,True,like
+361,1,1,True,like
+362,No,The line neither increases nor decreases; it remains flat and constant.,False,sin_match
+363,Hong Kong,Hong Kong y Serbia,True,like
+364,"[2003, 2004]",,False,vacio
+365,Cameroon,,False,vacio
+366,Pink,pink,True,like
+367,Estonia,Estonia,True,like
+368,No,No,True,like
+369,1960,,False,vacio
+370,2,,False,vacio
+371,4,4,True,like
+372,1990,,False,vacio
+373,2,2,True,like
+374,Yes,Yes,True,like
+375,Purple,Purple,True,like
+376,6,,False,vacio
+377,"[2013, 2016]",Desde 2013 hasta 2016,False,sin_match
+378,"[Germany, Bolivia, Dominican Republic]","Germany, Bolivia and Dominican Republic",False,sin_match
+379,2,2,True,like
+380,3,,False,vacio
+381,1992,,False,vacio
+382,3,Approximately 3 percentage points,True,like
+383,4,,False,vacio
+384,1,,False,vacio
+385,2014,2014,True,like
+386,6,"{
+    ""respuesta"": ""6"",
+    ""confianza"": 0.9,
+    ""razonamiento"": ""El eje horizontal del gráfico muestra etiquetas explícitas para los años: 2005, 2006, 2008, 2010, 2",True,like
+387,4,3,False,sin_match
+388,2,2,True,like
+389,Burundi,La línea roja (o marrón rojizo) representa a la población de Burundi.,True,like
+390,1.4,,False,vacio
+391,2004,2004,True,like
+392,"[United Kingdom, Cape Verde]",United Kingdom y Cape Verde,False,sin_match
+393,Gabon,Gabon,True,like
+394,18,18,True,like
+395,orange,red,False,sin_match
+396,2005,entre 2004 y 2005,True,like
+397,orange,,False,vacio
+398,1992,,False,vacio
+399,Belize,Belize,True,like
+400,2,,False,vacio
+401,Asia,Asia,True,like
+402,"[1965, 1970]",,False,vacio
+403,2014,2014,True,like
+404,Fiji,Fiji,True,like
+405,1975,1975,True,like
+406,75,,False,vacio
+407,Yes,Sí,False,sin_match
+408,Yes,Yes,True,like
+409,Eritrea,Eritrea,True,like
+410,South Sudan,South Sudan,True,like
+411,50-69 years old,La línea rosa representa la tasa de mortalidad por suicidio en el grupo etario de '50-69 years old' (personas entre 50 y 69 años).,True,like
+412,16,,False,vacio
+413,Botswana,,False,vacio
+414,Chile,Chile,True,like
+415,Cape Verde,,False,vacio
+416,2014,En el año 2014,True,like
+417,Portugal,Portugal,True,like
+418,2,2,True,like
+419,Child (before age 5),Child (before age 5),True,like
+420,1990,,False,vacio
+421,1970,,False,vacio
+422,1978,,False,vacio
+423,Ireland,Ireland,True,like
+424,Ireland,Ireland,True,like
+425,Togo,Togo,True,like
+426,3,3,True,like
+427,Mali,Mali,True,like
+428,2005,2005,True,like
+429,3,3,True,like
+430,Taiwan,,False,vacio
+431,2016,,False,vacio
+432,Primary school,Primary school,True,like
+433,Switzerland,Suiza,False,sin_match
+434,2004,,False,vacio
+435,Belgium,Belgium,True,like
+436,1,,False,vacio
+437,Yes,Yes,True,like
+438,No,,False,vacio
+439,4,4,True,like
+440,25,,False,vacio
+441,Tend to favor one side,% de adultos estadounidenses que dicen que las organizaciones de noticias tienden a favorecer un lado,False,sin_match
+442,Rep/Lean Rep,Republicans,False,sin_match
+443,Blue,Azul,False,sin_match
+444,98,98,True,like
+445,U.S.,"{
+""respuesta"": ""U.S."",
+""confianza"": 0.95,
+""razonamiento"": ""En el gráfico de barras horizontal, la fila etiquetada como 'U.S.' muestra",True,like
+446,U.S.,U.S.,True,like
+447,Yes,Sí,False,sin_match
+448,1,,False,vacio
+449,62,62,True,like
+450,49,49,True,like
+451,Too little,"{
+    ""respuesta"": ""too little"",
+    ""confianza"": 1.0,
+    ""razonamiento"": En cada categoría mostrada (protección del agua, aire, cambio climático, animales y tierras abiertas), el segmento azul oscuro que representa la opción 'Too little' tiene un porcentaje mayoritario en comparación con las otras opciones.""
+}",True,like
+452,62.6,62.6%,True,like
+453,15,48,False,sin_match
+454,No,,False,vacio
+455,29,29,True,like
+456,No,no,True,like
+457,68,68,True,like
+458,2,"{
+""respuesta"": ""4"",
+""confianza"": 1.0,
+""raz",False,sin_match
+459,71,71,True,like
+460,24,24,True,like
+461,20,,False,vacio
+462,44,20% para los de 18-29 años y 24% para los de 30-49 años,False,sin_match
+463,Generally produces accurate conclusions,Generally produces accurate conclusions,True,like
+464,0.414285714,"The ratio of responses in the 'Dem/lean Dem' bar is approximately 1:2.4 (specifically 29 to 70), representing those who say it can produce any conclusion versus accurate conclusions.",False,sin_match
+465,46,,False,vacio
+466,No,No,True,like
+467,Ages 18-29,Ages 18-29,True,like
+468,Yes,,False,vacio
+469,Dark blue,Azul oscuro,False,sin_match
+470,56,56,True,like
+471,37,37%,True,like
+472,3,3%,True,like
+473,18,18,True,like
+474,Yes,Sí,False,sin_match
+475,45,,False,vacio
+476,1,,False,vacio
+477,52,52%,True,like
+478,50.6,,False,vacio
+479,3,3,True,like
+480,99,,False,vacio
+481,51,51%,True,like
+482,3.6,3.6,True,like
+483,71,71%,True,like
+484,58,,False,vacio
+485,42,42,True,like
+486,No,,False,vacio
+487,4,4,True,like
+488,60,60,True,like
+489,Democrats & Republicans,Democrats & Republicans,True,like
+490,No,No,True,like
+491,10,10%,True,like
+492,0.431818182,"The ratio is approximately 0.43 to 1, based on values of 19% for 'Very well' and 44% for 'Fairly well'.",True,numerico
+493,21,21%,True,like
+494,No,No,True,like
+495,39,39%,True,like
+496,Yes,,False,vacio
+497,27,27,True,like
+498,1.111111111,1.11,True,numerico
+499,"[Should not, Should]","""Should"" y ""Should not""",False,sin_match
+500,0.75,,False,vacio
+501,46,64%,False,sin_match
+502,72,64%,False,sin_match
+503,47,67,False,sin_match
+504,Yes,,False,vacio
+505,Same,,False,vacio
+506,16,,False,vacio
+507,62,62,True,like
+508,7,7,True,like
+509,65+,,False,vacio
+510,6,,False,vacio
+511,37,,False,vacio
+512,39.5,39.5%,True,like
+513,47,47.0,True,like
+514,35,35,True,like
+515,213,213k,True,numerico
+516,151,151k,True,numerico
+517,Bulgaria,Bulgaria,True,like
+518,Ireland,Ireland,True,like
+519,Montenegro,Montenegro,True,like
+520,98,98,True,like
+521,5,5,True,like
+522,1,1,True,like
+523,Portugal,Portugal,True,like
+524,7.1,7.1,True,like
+525,2,two,True,numerico
+526,Yes,Sí,False,sin_match
+527,Blue,Blue,True,like
+528,Yes,,False,vacio
+529,Japan,Japan,True,like
+530,0.5,0.5,True,like
+531,Blue,blue,True,like
+532,17.05,17.05,True,like
+533,4.2,4.2,True,like
+534,9.6,9.6,True,like
+535,98,98,True,like
+536,Yes,Yes,True,like
+537,United Kingdom,United Kingdom,True,like
+538,0.034,0.034,True,like
+539,Red,red,True,like
+540,105.3,105.3,True,like
+541,Yes,Yes,True,like
+542,Yes,Sí,False,sin_match
+543,Netherlands,Netherlands,True,like
+544,No,no,True,like
+545,5,5,True,like
+546,Yes,"{
+    ""respuesta"": ""Yes"",
+    ""confianza"": 0.95,
+    ""razonamiento"": ""The sum of Switzerland (4.8), Austria (5.5) and Italy (8.8) is 19.1. The second highest value in the chart belongs to Latvia at 16.8%. Since 19.1 > 16.8, the answer is",True,like
+547,2,2,True,like
+548,33.8,33.8,True,like
+549,Cuba,Cuba con un porcentaje de parlamentarias del 50%,True,like
+550,25,25,True,like
+551,89,89,True,like
+552,64,64%,True,like
+553,36,36,True,like
+554,4,4,True,like
+555,Right decision,Wrong decision,False,sin_match
+556,64,The difference between maximum and minimum for 'Right decision' is 33 (76 - 43) and for 'Wrong decision' is 37 (49 - 12).,False,sin_match
+557,42,42%,True,like
+558,Independent,,False,vacio
+559,6,6,True,like
+560,Yes,,False,vacio
+561,Indonesia,Indonesia,True,like
+562,1.06,1.06%,True,like
+563,Pink,pink,True,like
+564,0.11,0.11 kWh,True,like
+565,53,53%,True,like
+566,21,21,True,like
+567,Yes,Sí,False,sin_match
+568,Poland,Poland,True,like
+569,Sri Lanka,Sri Lanka,True,like
+570,22.675,22.68%,True,numerico
+571,East Asia and Pacific,East Asia and Pacific,True,like
+572,9.1,9.1%,True,like
+573,Benin,Benin,True,like
+574,0.99124,The ratio of Austria to Venezuela is approximately 0.99 (24.89 divided by 25.11),True,numerico
+575,43,43%,True,like
+576,33.25,33.25%,True,like
+577,Spain,Spain,True,like
+578,Yes,Sí,False,sin_match
+579,5,,False,vacio
+580,2018,,False,vacio
+581,Australia,Australia,True,like
+582,"[Australia, Italy]",,False,vacio
+583,"[Slovenia, Turkey]",Slovenia y Turquía,False,sin_match
+584,2008,2008,True,like
+585,United States,La línea azul se refiere a los Estados Unidos.,False,sin_match
+586,1,,False,vacio
+587,2010,2010,True,like
+588,3,3,True,like
+589,"[Austria, Chile]",Austria y Chile,False,sin_match
+590,2,2,True,like
+591,"[Lithuania, Saudi Arabia]",Lithuania y Saudi Arabia,False,sin_match
+592,Saudi Arabia,,False,vacio
+593,Belgium,Bélgica,False,sin_match
+594,New Zealand,New Zealand,True,like
+595,Korea,,False,vacio
+596,1,0,False,sin_match
+597,Ethiopia,Ethiopia,True,like
+598,2,,False,vacio
+599,1994,,False,vacio
+600,1987,,False,vacio
+601,Chinese Taipei,Chinese Taipei,True,like
+602,3,,False,vacio
+603,2016,2016,True,like
+604,Brazil,Brazil,True,like
+605,Facebook Messenger*,Facebook Messenger,True,like_reverse
+606,3300,3300,True,like
+607,Bridgestone (Japan),Bridgestone,True,like_reverse
+608,14.33,14.33,True,like
+609,American Airlines,American Airlines,True,like
+610,12.4,12.4%,True,like
+611,969.26,969.26,True,like
+612,39.31,39.31,True,like
+613,"[1.34, 1.37]",Los modos son 1.37 y 1.34,False,sin_match
+614,5.11,5.11,True,like
+615,Increased,Increased 35%,True,like
+616,32.5,32.5%,True,like
+617,4.3,,False,vacio
+618,1,1%,True,like
+619,2015,2015,True,like
+620,-1.6,-1.6%,True,like
+621,2015,2015,True,like
+622,7,7,True,like
+623,10,10%,True,like
+624,0.549,The ratio is approximately 28 to 51 (or roughly 0.55).,True,numerico
+625,October,Octubre,False,sin_match
+626,3,3,True,like
+627,20,20%,True,like
+628,73,,False,vacio
+629,537689,537 689,False,sin_match
+630,2,2,True,like
+631,2014,2014,True,like
+632,59.8,59.8%,True,like
+633,"Not documented, fate unknown*","Not documented, fate unknown",True,like_reverse
+634,0.25,1:4,False,sin_match
+635,4,4,True,like
+636,31,31%,True,like
+637,3996,3 996,False,sin_match
+638,828,,False,vacio
+639,84,84,True,like
+640,2015,2015,True,like
+641,49976,49 976,False,sin_match
+642,Yes,Yes,True,like
+643,increasing,Aumenta,False,sin_match
+644,5,,False,vacio
+645,Pulmonary arterial hypertension,Pulmonary arterial hypertension,True,like
+646,4,,False,vacio
+647,Passenger cars,Passenger cars,True,like
+648,3.7,3.7%,True,like
+649,Russian Federation,Russian Federation,True,like
+650,41,41%,True,like
+651,2009,En el año 2009,True,like
+652,6,6,True,like
+653,6.6,6.6,True,like
+654,Yes,Sí,False,sin_match
+655,123.3,123.3,True,like
+656,2,2,True,like
+657,3,,False,vacio
+658,70.4,,False,vacio
+659,Canada,Canada,True,like
+660,3,3%,True,like
+661,1,1%,True,like
+662,52,52%,True,like
+663,3,3%,True,like
+664,13,13%,True,like
+665,2019,2019,True,like
+666,5,5,True,like
+667,Based on how much we can afford as a family,Based on how much we can afford as a family,True,like
+668,19,19%,True,like
+669,2014,2021,True,numerico
+670,33.33,33.3%,True,numerico
+671,CIC Lyonnaise de Banque,CIC Lyonnaise de Banque,True,like
+672,44519,,False,vacio
+673,Periscope,Periscope,True,like
+674,2,,False,vacio
+675,17,17%,True,like
+676,64,64%,True,like
+677,2011,,False,vacio
+678,7.76,7.76 billion U.S. dollars,True,like
+679,1,1,True,like
+680,44.6,44.6,True,like
+681,Kit (Nike),Nike,True,like_reverse
+682,17.3,17.3,True,like
+683,41856,,False,vacio
+684,39146,"$39,146",False,sin_match
+685,4,4,True,like
+686,40,40%,True,like
+687,2,2,True,like
+688,1.25,5:4,False,sin_match
+689,69,69%,True,like
+690,2.2258,The ratio is approximately 2.2:1 (69% to 31%),True,numerico
+691,LAAP*,,False,vacio
+692,71.08,"71,08%",True,numerico
+693,3,,False,vacio
+694,10878,10878,True,like
+695,41.5,41.5%,True,like
+696,3,3%,True,like
+697,Michael Kors,Michael Kors,True,like
+698,25.19,25.19%,True,like
+699,Netherlands,Netherlands,True,like
+700,18.6,18.67%,True,numerico
+701,6,6%,True,like
+702,1.54,1.54,True,like
+703,18.2,18.2%,True,like
+704,22,22%,True,like
+705,I do not know,Very poorly 4%,False,sin_match
+706,2,2:1,True,like
+707,6.6,,False,vacio
+708,17.8,17.8,True,like
+709,19.7,19.7%,True,like
+710,19.7,19.7%,True,like
+711,Definitely yes,Definitely yes,True,like
+712,18.3,,False,vacio
+713,2004,,False,vacio
+714,10.53,,False,vacio
+715,1408,1 408,False,sin_match
+716,5910,5910,True,like
+717,2019,2019,True,like
+718,2009,,False,vacio
+719,Staying alert and taking precautions,- Staying alert and taking precautions,True,like
+720,6,,False,vacio
+721,25-34,25-34,True,like
+722,25,25%,True,like
+723,Corn,Corn,True,like
+724,1104.17,1104.17,True,like
+725,91817,91 817,False,sin_match
+726,67465,67 465,False,sin_match
+727,83.29,83.29%,True,like
+728,2.87,2.87%,True,like
+729,NFL (2016),NFL,True,like_reverse
+730,43.44,The average ticket price was 31 U.S. dollars for MLB and 55.88 U.S. dollars for NBA.,False,sin_match
+731,2008,,False,vacio
+732,0.19,,False,vacio
+733,1-5 mins,1-5 mins,True,like
+734,33,33%,True,like
+735,2021,2021,True,like
+736,590,590,True,like
+737,Black or African American alone,Black or African American alone,True,like
+738,542533,542.533,False,sin_match
+739,"[2003,2009]",,False,vacio
+740,0,"La diferencia fue de 0%, ya que la tasa de desempleo era del 3.6% en ambos años.",True,like
+741,Texas,Texas,True,like
+742,22738,"Texas had 22,738 more specialist physicians than Ohio.",False,sin_match
+743,15017,15 017,False,sin_match
+744,6411,6411,True,like
+745,2012,2012,True,like
+746,23.025,,False,vacio
+747,53,53,True,like
+748,44,44%,True,like
+749,10.2,,False,vacio
+750,59.9,,False,vacio
+751,1.45,1.45,True,like
+752,0.2,0.2,True,like
+753,2007,,False,vacio
+754,31.3,24%,False,sin_match
+755,8.6,8.6%,True,like
+756,31,31%,True,like
+757,446.13,446.13 million U.S. dollars,True,like
+758,756.36,1120.36,False,sin_match
+759,2019,2019,True,like
+760,100375.8,"The difference between maximum and minimum GDP is approximately 100,375.8 million euros.",False,sin_match
+761,May '21,Mayo de 2021,False,sin_match
+762,2.93,,False,vacio
+763,Canada,Canada,True,like
+764,31,31%,True,like
+765,2009,2009,True,like
+766,45.28,45.28,True,like
+767,50.4,50.4%,True,like
+768,87,87%,True,like
+769,2,"Hay dos grupos de regiones con porcentajes iguales: Asia y Norteamérica (24%) cada una; América del Sur, África y Oceanía tienen 6%.",True,numerico
+770,12,12%,True,like
+771,7,7,True,like
+772,Mining,Mining,True,like
+773,Moderna,Moderna,True,like
+774,Folksam,Folksam,True,like
+775,Yes,Sí,False,sin_match
+776,2016,2016,True,like
+777,May '21,Mayo de 2021,False,sin_match
+778,7.23,7.23,True,like
+779,6750,6 750,False,sin_match
+780,"[Germany,United States]",,False,vacio
+781,22,22%,True,like
+782,0,No hay diferencia,False,sin_match
+783,Grocery,Grocery,True,like
+784,11.4,11.4%,True,like
+785,Robku TV,Robku TV,True,like
+786,14,14%,True,like
+787,2007,2007,True,like
+788,410,,False,vacio
+789,28.49,28.49,True,like
+790,60.31,60.31,True,like
+791,2.06,2.06,True,like
+792,12,1.15,False,sin_match
+793,Philosophy,Philosophy,True,like
+794,131253.5,131253.5,True,like
+795,Online authorized dealers,Online authorized dealers,True,like
+796,42.25,42.25%,True,like
+797,20,20,True,like
+798,3,3,True,like
+799,3,3,True,like
+800,93,93,True,like
+801,Canada,Canada,True,like
+802,1.43,1.43,True,like
+803,13942,13 942,False,sin_match
+804,25397,25397,True,like
+805,10,10,True,like
+806,"[Thailand, South Korea]",,False,vacio
+807,8,8,True,like
+808,61.2,61.2,True,like
+809,48,48%,True,like
+810,33.6,"33,6%",True,numerico
+811,6.23,"6,23",True,numerico
+812,200,200%,True,like
+813,8,,False,vacio
+814,39.27,"39,27%",True,numerico
+815,5,5,True,like
+816,0.5,"The ratio of Diversified to Apparel & Accessories is 1:2 (or 0.5), based on values of 5% and 10% respectively.",True,like
+817,Estimated revenue in billion U.S. dollars,The blue line data represent the estimated revenue in billion U.S. dollars over time.,True,like
+818,2009,2009,True,like
+819,16.7,16.7,True,like
+820,3.38,3.38,True,like
+821,2018,2018,True,like
+822,2408.125,Aproximadamente 2.408 millones de euros,False,sin_match
+823,red,,False,vacio
+824,2.33,2.33%,True,like
+825,24,24,True,like
+826,59,"{
+    ""respuesta"": ""59%"",
+    ""confianza"": 0.98,
+    ""razonamiento"": ""Se suman los porcentajes de las dos categorías que indican posesión de vinilos ('Yes. lots of them' con el 24% y 'Yes. I have a few' con el 35%)."",
+}",True,like
+827,8,8,True,like
+828,36.1,36.1%,True,like
+829,32.4,32.4%,True,like
+830,67.6,,False,vacio
+831,7,"There are 7 categories or sources shown (Internet, Social media, Television, Friends & family, Newspapers, Other, and 'I don't keep myself updated').",True,like
+832,9,9%,True,like
+833,2014,2014,True,like
+834,7,,False,vacio
+835,Analytics,Analytics,True,like
+836,70,70%,True,like
+837,25,25%,True,like
+838,23,"El gráfico muestra dos categorías específicas para pasar tiempo en casa: el 26% prefiere un periodo extendido de tiempo libre (una semana o más) pasado en casa, y el 23% prefiere una jornada ocasional pasada en casa.",True,like
+839,15.75,15.75%,True,like
+840,2019,2019,True,like
+841,55.01,55.01%,True,like
+842,16.59,16.59%,True,like
+843,856.36,,False,vacio
+844,2010,2010,True,like
+845,Just the right number,Just the right number,True,like
+846,63,,False,vacio
+847,5,5%,True,like
+848,37,"Aproximadamente el 37% (calculado sumando los porcentajes de hispanos o latinos, afroamericanos/asianos y otros grupos no blancos)",True,like
+849,WhatsApp,WhatsApp,True,like
+850,78,,False,vacio
+851,"[2017, 2023]",2017 y 2023,False,sin_match
+852,Digestive health,"Las categorías con la mayor cuota de mercado en 2023 son 'Digestive health' con un 62,8% y 'Immune health' con el 25%.",True,like
+853,108,"Fracture of ribs, sternum and thoracic spine",False,sin_match
+854,70,,False,vacio
+855,91,91%,True,like
+856,No,no,True,like
+857,2010,2010,True,like
+858,92.02,,False,vacio
+859,2007-2008,2007-2008,True,like
+860,112249,"Los valores totales de hospitalizaciones por periodo son: 23,807 (1999-2000), 28,155 (2005-2006), 30,754 (2007-2008) y 29,533 (2008-2009).",False,sin_match
+861,1125,1125,True,like
+862,239.4,239.4,True,like
+863,Facebook,Facebook,True,like
+864,5.76,5.76,True,like
+865,2019,,False,vacio
+866,7.53,,False,vacio
+867,58,58%,True,like
+868,No,No,True,like
+869,5,,False,vacio
+870,Data not reported,26-50% of retail price is tax,False,sin_match
+871,100 - 500 euros,100 - 500 euros,True,like
+872,2.44,,False,vacio
+873,"Insured all year, not underinsured",,False,vacio
+874,2005,2005,True,like
+875,4,4%,True,like
+876,53,,False,vacio
+877,2019,2019,True,like
+878,3.4,La diferencia es de 3.4 puntos porcentuales,True,like
+879,2016,,False,vacio
+880,2014,,False,vacio
+881,20,20%,True,like
+882,38,El gráfico muestra dos barras para la categoría 'Immediately': el 20% en Estados Unidos y el 18% como promedio global.,False,sin_match
+883,65,65%,True,like
+884,89,89%,True,like
+885,105.4,105.4,True,like
+886,197.3,197.3,True,like
+887,Poor,"En Brasil, la categoría con el porcentaje más alto es 'Poor' (Pobre) con un 57%.",True,like
+888,40,There is a 40 percentage point difference between Argentina and Brazil for the 'Good' category.,True,like
+889,64.6,"64,6",True,numerico
+890,832.5,$832.5 millones de dólares,True,like
+891,black,Black,True,like
+892,153,153%,True,like
+893,1592,1592,True,like
+894,505,505,True,like
+895,2020,2020,True,like
+896,2020,2020,True,like
+897,40,40%,True,like
+898,56,56%,True,like
+899,2017,2017,True,like
+900,5,5%,True,like
+901,2015,2015,True,like
+902,3594,3594,True,like
+903,2010/11,2010/11,True,like
+904,28568,28658,True,numerico
+905,Pirates of the Caribbean: Dead Man's Chest,Pirates of the Caribbean: Dead Man's Chest,True,like
+906,Pirates of the Caribbean: The Curse of the Black Pearl,,False,vacio
+907,16-19 years,,False,vacio
+908,55,,False,vacio
+909,"Cooking (e.g., MasterChef, Chopped, etc.)","Cooking (e.g., MasterChef, Chopped, etc.)",True,like
+910,39,,False,vacio
+911,No,No,True,like
+912,2020,,False,vacio
+913,599,599,True,like
+914,479.5,479.5,True,like
+915,55,55%,True,like
+916,52,52%,True,like
+917,165,165,True,like
+918,15,,False,vacio
+919,8.5,8.5%,True,like
+920,27.5,27.5%,True,like
+921,Jimmy Fallon,,False,vacio
+922,19,,False,vacio
+923,99750,99 750,False,sin_match
+924,18019,18019,True,like
+925,85,85%,True,like
+926,60,60%,True,like
+927,6.2,,False,vacio
+928,5.45,5.45%,True,like
+929,69,69%,True,like
+930,85,85%,True,like
+931,11,11%,True,like
+932,91.1,"91,1%",True,numerico
+933,19.81,19.81%,True,like
+934,45.83,"45,83%",True,numerico
+935,30,30,True,like
+936,66,66,True,like
+937,28.3,28.3,True,like
+938,10,,False,vacio
+939,63,63,True,like
+940,28,28,True,like
+941,62,62%,True,like
+942,72,72%,True,like
+943,"[2011, 2012]","2011, 2012 y 2013",False,sin_match
+944,35,35,True,like
+945,2018,2018,True,like
+946,47,47%,True,like
+947,3.7,3.7 millones de dólares estadounidenses,True,like
+948,2010,,False,vacio
+949,Female,Female,True,like
+950,14,14%,True,like
+951,3.72,3.72,True,like
+952,0.46,0.46 billion U.S. dollars,True,like
+953,Cinematography,Cinematography,True,like
+954,50,,False,vacio
+955,80,Joe Biden,False,sin_match
+956,38,38%,True,like
+957,3.9,3.9,True,like
+958,6.7,6.7,True,like
+959,1461.3,1 461.3,False,sin_match
+960,2372.1,2372.1,True,like
+961,Male,Male,True,like
+962,1,1%,True,like
+963,7.65,"7,65%",True,numerico
+964,5.66,5.66%,True,like
+965,54.93,,False,vacio
+966,11.99,11.99,True,like
+967,Men,Men,True,like
+968,19.4,19.4,True,like
+969,49,49,True,like
+970,Less,Less,True,like
+971,16,16%,True,like
+972,28,28%,True,like
+973,20 to 29 years,20 to 29 years,True,like
+974,9 years and younger,9 years and younger,True,like
+975,73.3,73.3,True,like
+976,53.8,53.8,True,like
+977,Media workers,Media workers,True,like
+978,72,,False,vacio
+979,12.99,12.99,True,like
+980,18.27,18.27,True,like
+981,No,La opción 'No',True,like
+982,1,1,True,like
+983,gray,Gray,True,like
+984,2.72,,False,vacio
+985,43.9,43.9,True,like
+986,38,38,True,like
+987,5,5,True,like
+988,5,5%,True,like
+989,1,The difference in exhibition space available in Europe between 2006 and 2011 was 1 million square meters.,True,like
+990,Africa,Africa,True,like
+991,18/19,,False,vacio
+992,991,991,True,like
+993,80.7,80.7,True,like
+994,2,2,True,like
+995,5,5%,True,like
+996,28,28%,True,like
+997,47,,False,vacio
+998,Snapchat,Snapchat,True,like
+999,light blue,light blue,True,like
+1000,Cash,,False,vacio
+1001,66.8,66.8%,True,like
+1002,124.4,124.4%,True,like
+1003,317,,False,vacio
+1004,54,54,True,like
+1005,0.27,$0.27,True,like
+1006,0.89,0.89,True,like
+1007,41,41%,True,like
+1008,32.66,32.67%,True,numerico
+1009,11.8,11.8%,True,like
+1010,50-64 years,50-64 years,True,like
+1011,80,80%,True,like
+1012,53,,False,vacio
+1013,3280,3 280,False,sin_match
+1014,2015,2015,True,like
+1015,Beauty and cosmetics,,False,vacio
+1016,2,,False,vacio
+1017,Binge,Binge,True,like
+1018,9.9,9.9%,True,like
+1019,Women,Mujeres,False,sin_match
+1020,"I don't discriminate against them, nor do I fear them.","""I don't discriminate against them, nor do I fear them""",False,sin_match
+1021,49,49%,True,like
+1022,Not worried at all,Not worried at all,True,like
+1023,light blue,blue,True,like_reverse
+1024,Bulimia Nervosa,Bulimia Nervosa,True,like
+1025,Preterm birth complications,,False,vacio
+1026,12,,False,vacio
+1027,2019,2019,True,like
+1028,74,74%,True,like
+1029,75.6,75.6%,True,like
+1030,1.6,Red 2 was higher by 1.6 percentage points (75.6% vs 74%).,True,like
+1031,4.4,,False,vacio
+1032,4.2,,False,vacio
+1033,Hungary,Hungary,True,like
+1034,1.19,,False,vacio
+1035,Married,Married,True,like
+1036,306,306,True,like
+1037,7000,7 000,False,sin_match
+1038,7760,"7,760",False,sin_match
+1039,Female,Females,False,sin_match
+1040,0.63,0.63,True,like
+1041,100,100%,True,like
+1042,Tech,Tech,True,like
+1043,light blue,Azul,False,sin_match
+1044,"Natural resources, construction, and maintenance",,False,vacio
+1045,Year,"The x-axis represents the academic year, ranging from 2004/05 to 2019/20.",True,like
+1046,7,,False,vacio
+1047,-3,"```json
+{
+    ""respuesta"": ""-3%"",
+    ""confianza"": 1.0,
+    ""razonamiento"": ""La barra gris en la categoría 'Baby' muestra un valor de -3%, que es el número más bajo entre todos los porcentajes presentados (34%, 18%, 13%, 10% y 13%)."",
+}",True,like
+1048,44,,False,vacio
+1049,0.1,0.1%,True,like
+1050,0.05,,False,vacio
+1051,France,France,True,like
+1052,France,,False,vacio
+1053,No,no,True,like
+1054,They are downplaying the situation,"""They are downplaying the situation""",True,like
+1055,Navy blue,Dark blue,False,sin_match
+1056,110,,False,vacio
+1057,November 2007,November 2007,True,like
+1058,11,11%,True,like
+1059,Dark blue,the black/dark navy bar representing 'Favor' with 68%,False,sin_match
+1060,Total Millennials (ages 18-33),Total Millennials,True,like_reverse
+1061,11,11,True,like
+1062,24.75,24.75%,True,like
+1063,Yes,No,False,sin_match
+1064,35.2,"{
+""respuesta"": ""35.2%"",
+""confianza"": 0.9,
+""razonamiento"": ""Para calcular el promedio en la categoría 'Live event', se suman los porcentajes de las cinco barras correspondientes (Total: 35%, 18-34 años: 53%, 35-44 años: 38%, 45-54 años: 30% y 55+ años: 20%) lo que da un total de 176%. Dividiendo este sumatorio entre el número de barras (5), se obtiene un promedio del 35.2%.""",True,like
+1065,Very confident,Very confident,True,like
+1066,98,"Para el gobierno federal, las respuestas son: No confiado en absoluto (28%), no demasiado confiado (21%), algo confiado (37%) y muy confiado (12%).",False,sin_match
+1067,Girls grade 10,Grade 10,True,like_reverse
+1068,30.33,30.3%,True,numerico
+1069,9,9%,True,like
+1070,4,,False,vacio
+1071,Private nonprofit institution,El promedio de costos y tarifas de matrícula en instituciones privadas sin fines de lucro (35 659),False,sin_match
+1072,Public institutions,,False,vacio
+1073,2019,2019,True,like
+1074,80,80%,True,like
+1075,No,No,True,like
+1076,75,No hay un modo único ya que todos los valores son únicos,False,sin_match
+1077,More likely,More likely,True,like
+1078,46,46%,True,like
+1079,113,113,True,like
+1080,4,4,True,like
+1081,gray,Gray,True,like
+1082,100,,False,vacio
+1083,Service,Service,True,like
+1084,5.546,The ratio of Product sales to Service in 2020 is approximately 0.18 (or roughly 475.9 : 2639.59).,False,sin_match
+1085,No,No hay una diferencia significativa visible entre los valores de hombres y mujeres; las líneas se superponen casi perfectamente a lo largo del tiempo.,True,like
+1086,1,Aproximadamente 1:1 (igual),True,like
+1087,131,131,True,like
+1088,273,273,True,like
+1089,2112,,False,vacio
+1090,5564,Aproximadamente 5.564 mil toneladas métricas,False,sin_match
+1091,2021,2021,True,like
+1092,216,,False,vacio
+1093,Yes,Sí,False,sin_match
+1094,7,,False,vacio
+1095,41,41%,True,like
+1096,Africa,Africa,True,like
+1097,Eastern Europe,Eastern Europe,True,like
+1098,Eastern Europe,Eastern Europe,True,like
+1099,No,No,True,like
+1100,Services,Services,True,like
+1101,30,30%,True,like
+1102,67,67%,True,like
+1103,59.66,59.66,True,like
+1104,53.23,53.23,True,like
+1105,49,49%,True,like
+1106,25,25%,True,like
+1107,Netflix,Netflix,True,like
+1108,9.2,9.2%,True,like
+1109,Female,Female,True,like
+1110,7,La diferencia entre los dos géneros es del 7%.,True,like
+1111,2018,2018,True,like
+1112,1.98,,False,vacio
+1113,"[2015, 2016]",,False,vacio
+1114,39.9,,False,vacio
+1115,Rabbit**,Rabbit,True,like_reverse
+1116,250,250 thousand GBP,True,like
+1117,1065731,1 065 731,False,sin_match
+1118,985468,985 468,False,sin_match
+1119,Licensing and other,Licensing and other,True,like
+1120,25,25%,True,like
+1121,Overall quality of life,Overall quality of life,True,like
+1122,Opportunity to get ahead through hard work,Opportunity to get ahead through hard work,True,like
+1123,Russia,,False,vacio
+1124,0.55,"The share of ordinary people respondents is 11% in Ukraine, 20% in Lithuania and 26% in Russia.",False,sin_match
+1125,7,7%,True,like
+1126,2019,2019,True,like
+1127,Metro / small bus*,Metro / small bus,True,like_reverse
+1128,72,72%,True,like
+1129,42.1,42.1,True,like
+1130,3,3,True,like
+1131,37,37%,True,like
+1132,1.702702703,Approximately 1.7 to 1 (or roughly 60:40),True,numerico
+1133,2020,2020,True,like
+1134,3,3,True,like
+1135,Rest of the Gulf Cooperation Council,Rest of the Gulf Cooperation Council,True,like
+1136,51.1,,False,vacio
+1137,35 to 44,35 to 44,True,like
+1138,14,14%,True,like
+1139,Yes,Yes,True,like
+1140,"No, but I plan to soon","No, but I plan to soon",True,like
+1141,No,No,True,like
+1142,70.8,70.8,True,like
+1143,1.577,Aproximadamente 1.58,True,numerico
+1144,61.2,61.2%,True,like
+1145,2001,,False,vacio
+1146,585,$585,True,like
+1147,Navy blue,"Dark blue (representing 'Yes, some are corrupt')",False,sin_match
+1148,"Yes, almost all of them are corrupt",,False,vacio
+1149,Professional conferences,Professional conferences,True,like
+1150,42,,False,vacio
+1151,10,10%,True,like
+1152,18,18%,True,like
+1153,4,4,True,like
+1154,33,33%,True,like
+1155,2,"{
+                ""respuesta"": ""Commercial y Non-commercial"",
+                ""confianza"": 1.0,",False,sin_match
+1156,2.625,approximately 2.63 : 1,True,numerico
+1157,No,No,True,like
+1158,74.6,,False,vacio
+1159,7,7%,True,like
+1160,68,68%,True,like
+1161,685,685,True,like
+1162,2017,2017,True,like
+1163,2015,2015,True,like
+1164,34.98,Approximately 35 million,True,numerico
+1165,3,3,True,like
+1166,3,"United Kingdom, Italy y Alemania",False,sin_match
+1167,California,California,True,like
+1168,187863.67,,False,vacio
+1169,green,green,True,like
+1170,Fox,Fox,True,like
+1171,-30.03,,False,vacio
+1172,36.28,"En el año 2012, con un valor del 36.28%",True,like
+1173,1343.75,1343.75,True,like
+1174,2000,,False,vacio
+1175,Barclays,Barclays,True,like
+1176,35,35,True,like
+1177,63,63%,True,like
+1178,Tablets,Tablets,True,like
+1179,43.4,43.4%,True,like
+1180,"[Casual consumers**, Non-consumers]",Casual consumers,True,like_reverse
+1181,13,13%,True,like
+1182,10.57,,False,vacio
+1183,31.01,31.01%,True,like
+1184,9.66,9.66%,True,like
+1185,Yes,- Yes,True,like
+1186,23,23%,True,like
+1187,56,56%,True,like
+1188,6,6%,True,like
+1189,12,12%,True,like
+1190,54,54%,True,like
+1191,Leave,leave,True,like
+1192,56,44%,False,sin_match
+1193,Facebook users,No se puede determinar qué tiendas minoristas tienen la mayor presencia social basándose únicamente en este gráfico.,False,sin_match
+1194,Online shoppers,La información no está disponible en el gráfico,False,sin_match
+1195,2014,,False,vacio
+1196,4.9,,False,vacio
+1197,Asians,Asians,True,like
+1198,104,,False,vacio
+1199,PDF,PDF,True,like
+1200,85.55,"85,55%",True,numerico
+1201,23,23%,True,like
+1202,20,20%,True,like
+1203,48.25,48.25%,True,like
+1204,"[42.47, 54.91]","En 2019, la estructura de edad para el grupo de 0-14 años era del 42.47% y para el grupo de 15-64 años era del 54.91%. Además, hubo un pequeño porcentaje (aproximadamente 2.6%) correspondiente a personas mayores de 65 años.",False,sin_match
+1205,32.03,32.03%,True,like
+1206,35.94,The difference between retail and wholesale is approximately 35.94%,True,like
+1207,2,2,True,like
+1208,47,47%,True,like
+1209,10901,10 901,False,sin_match
+1210,5864,"5,864",False,sin_match
+1211,6.6 - 10.5 years,6.6 – 10.5 años,False,sin_match
+1212,399075,"399,075",False,sin_match
+1213,Other medical device,Other medical device,True,like
+1214,62,62%,True,like
+1215,blue,Blue,True,like
+1216,2.7,2.7,True,like
+1217,Helps me identify trending products,Helps me identify trending products,True,like
+1218,29.33,,False,vacio
+1219,Same,Same,True,like
+1220,46,46%,True,like
+1221,11.8,11.8%,True,like
+1222,5.2,,False,vacio
+1223,Europe,Europe,True,like
+1224,Yes,Yes,True,like
+1225,61 years and older,Representa a las personas de 61 años y más,False,sin_match
+1226,32,32%,True,like
+1227,40-59 years,40-59 years,True,like
+1228,0.6,0.6%,True,like
+1229,5,5,True,like
+1230,46,,False,vacio
+1231,Chinese,Chinese,True,like
+1232,12.03,,False,vacio
+1233,Mobile,Mobile,True,like
+1234,2.315,The ratio between cash (44%) and account (19%) in 'how consumers can pay' category is approximately 2.3:1.,True,numerico
+1235,Very concerned,Compatibility,False,sin_match
+1236,101,101%,True,like
+1237,20,20%,True,like
+1238,4,The ratio of domestic visitors to foreign visitors in 2017 was 4:1 (or 80% to 20%).,True,like
+1239,Rx eyeglasses,Rx eyeglasses,True,like
+1240,17.6,17.6%,True,like
+1241,Female,Female,True,like
+1242,47,La diferencia entre los dos géneros es del 47%,True,like
+1243,Philippines,Filipinas,False,sin_match
+1244,51.14,"La diferencia entre los casos más altos y bajos es de aproximadamente 51,140",True,numerico
+1245,68,68,True,like
+1246,74.6,74.6,True,like
+1247,2-10 times a day,2-10 times a day,True,like
+1248,25,25%,True,like
+1249,2013,2013,True,like
+1250,56,56%,True,like
+1251,47,47,True,like
+1252,2013,2013,True,like
+1253,6.8,"6,8%",True,numerico
+1254,11,The share of online sales increased from 6.8% in 2013 to a predicted 11% in 2018,True,like
+1255,36,En el mercado doméstico había 30 empresas y en el total del mercado 36,True,like
+1256,23,En 2019 había un total de 28 compañías en el mercado (Total market) y 23 del mercado doméstico.,True,like
+1257,63,63,True,like
+1258,2011,2020,True,numerico
+1259,80.2,80.2%,True,like
+1260,72.3,72.3%,True,like
+1261,Ted Baker,Ted Baker,True,like
+1262,74,74,True,like
+1263,32,,False,vacio
+1264,2019,,False,vacio
+1265,5G,5G,True,like
+1266,555,555,True,like
+1267,524,524,True,like
+1268,633,633,True,like
+1269,120,120 mujeres y 77 hombres,True,like
+1270,2.5,2.5,True,like
+1271,317,317,True,like
+1272,Jimmy Fallon,Jimmy Fallon,True,like
+1273,315,"2,616",False,sin_match
+1274,361,,False,vacio
+1275,Germany,Germany,True,like
+1276,ASML,ASML,True,like
+1277,144,144,True,like
+1278,WhatsApp,WhatsApp,True,like
+1279,2000,2019,True,numerico
+1280,Crafts,Crafts,True,like
+1281,1921,,False,vacio
+1282,9.3,9.3%,True,like
+1283,6.6,6.6%,True,like
+1284,2000,,False,vacio
+1285,Alaska,Alaska,True,like
+1286,151.25,151.25,True,like
+1287,Tizen,Tizen,True,like
+1288,270,270,True,like
+1289,Moschino,Moschino,True,like
+1290,38,38,True,like
+1291,827,827,True,like
+1292,1.86,1.86,True,like
+1293,LinkedIn,LinkedIn,True,like
+1294,36.9,36.9 millones,True,like
+1295,27.7,27.7 millones,True,like
+1296,1.38,1.38,True,like
+1297,Mercadona,Mercadona,True,like
+1298,Carrefour,Carrefour,True,like
+1299,Lidl,Lidl,True,like
+1300,France,"United States, Australia y Francia",False,sin_match
+1301,1.33,1.33,True,like
+1302,1.18,1.18,True,like
+1303,2008,2008,True,like
+1304,0.5,0.5%,True,like
+1305,72,72,True,like
+1306,70,70,True,like
+1307,Brazil,Brazil,True,like
+1308,5.99,5.99,True,like
+1309,2017,2017,True,like
+1310,16,16%,True,like
+1311,55.88,$55.88,True,like
+1312,29,,False,vacio
+1313,31846,31 846 millones de euros,False,sin_match
+1314,74.4,74.4 millones,True,like
+1315,26,$26 million,True,like
+1316,5230,"5,230 millones de toneladas métricas",False,sin_match
+1317,14766,"14,766 millones de toneladas métricas",False,sin_match
+1318,44.5,"44,5%",True,numerico
+1319,74.82,74.82%,True,like
+1320,26,26%,True,like
+1321,15.7,15.7%,True,like
+1322,27.23,$27.23 mil millones de dólares,True,like
+1323,451176.9,451 176.9 millones de euros,False,sin_match
+1324,375967.8,375 967.8 millones de euros,False,sin_match
+1325,9.38,9.38%,True,like
+1326,126.38,126.38 millones,True,like
+1327,57.05,57.05%,True,like
+1328,87.25,,False,vacio
+1329,40.13,"Aproximadamente el 40,1%",True,numerico
+1330,25.9,25.9%,True,like
+1331,56.3,56.3%,True,like
+1332,54,54,True,like
+1333,987.75,987.75,True,like
+1334,11.4,,False,vacio
+1335,1.92,,False,vacio
+1336,1625942,1 625 942,False,sin_match
+1337,48,48%,True,like
+1338,40,,False,vacio
+1339,15017,15 017,False,sin_match
+1340,51.9,,False,vacio
+1341,3922,,False,vacio
+1342,3613,3 613 millones de euros,False,sin_match
+1343,16,16%,True,like
+1344,428.08,428.08 millones de dólares estadounidenses,True,like
+1345,6750,6 750 millones de toneladas métricas,False,sin_match
+1346,37,37,True,like
+1347,4.1,4.1%,True,like
+1348,52.3,52.3%,True,like
+1349,30,30%,True,like
+1350,28,28%,True,like
+1351,12.17,12.17,True,like
+1352,509473,509 473,False,sin_match
+1353,519462,519 462,False,sin_match
+1354,604.4,$604.4 millones de dólares estadounidenses,True,like
+1355,55937,55 937,False,sin_match
+1356,37392,37 392 rublos rusos por metro cuadrado,True,numerico
+1357,6.9,6.9%,True,like
+1358,3.5,3.5%,True,like
+1359,21.43,,False,vacio
+1360,21.43,,False,vacio
+1361,25,,False,vacio
+1362,17.2,17.2,True,like
+1363,83,83%,True,like
+1364,24,24 millones,True,like
+1365,37,,False,vacio
+1366,12721,"12,721 millones de dólares",False,sin_match
+1367,108.91,,False,vacio
+1368,883,883,True,like
+1369,22,22%,True,like
+1370,23,"El gráfico muestra que el porcentaje de hombres fumadores varía según la edad: es del 23% (16-24 años), 28% (25-34 años), 21% (35-44 años), 20% (45-54 años), 15% (55-64 años), 9% (65-74 años) y 6% (75 años o más).",True,like
+1371,0.1,0.1%,True,like
+1372,1.3,1.3 millones de metros cuadrados,True,like
+1373,35283,35 283,False,sin_match
+1374,5.8,5.8 millones,True,like
+1375,5.9,5.9,True,like
+1376,24,24%,True,like
+1377,47,47%,True,like
+1378,4.5,4.5%,True,like
+1379,4.7,4.7%,True,like
+1380,1.2,1.2,True,like
+1381,105.4,105.4,True,like
+1382,113702,113702,True,like
+1383,8.4,8.4%,True,like
+1384,1.18,,False,vacio
+1385,257455,257 455,False,sin_match
+1386,3.49,3.49,True,like
+1387,19,19 million,True,like
+1388,7.68,$7.68 billion,True,like
+1389,1.14,1.14%,True,like
+1390,114.7,,False,vacio
+1391,Newport,Marlboro,False,sin_match
+1392,8.8,,False,vacio
+1393,5.4,5.4%,True,like
+1394,15.61,,False,vacio
+1395,0.98,0.98%,True,like
+1396,646.43,646.43 millones,True,like
+1397,6.4,6.4 billion,True,like
+1398,6.4,6.4 billion,True,like
+1399,3.6,3.6 billion,True,like
+1400,Colombia,Colombia,True,like
+1401,6607,6 607 millones de dólares estadounidenses,False,sin_match
+1402,25101,"Brazil spent 25,101 million U.S. dollars on military.",False,sin_match
+1403,17.3,17.3%,True,like
+1404,39.2,39.2 millones de dólares,True,like
+1405,85.1,85.1,True,like
+1406,52.45,52.45 millones,True,like
+1407,11277,"The consumer expenditure started at 6,037 million GBP in 2005 and generally increased over time, reaching a peak of 11,277 million GBP in 2020.",False,sin_match
+1408,716883,716.883,False,sin_match
+1409,582,582,True,like
+1410,478,478 million EUR,True,like
+1411,47438,"{
+    ""respuesta"": """,False,sin_match
+1412,Facebook,Facebook,True,like
+1413,35,35,True,like
+1414,11,11,True,like
+1415,1.73,1.73,True,like
+1416,6.92,6.92 billion,True,like
+1417,22920,22 920 mil millones de dólares,False,sin_match
+1418,31731,,False,vacio
+1419,29,29,True,like
+1420,30.27,,False,vacio
+1421,6.13,6.13 millones de GBP,True,like
+1422,6.99,£6.99 millones,True,like
+1423,Germany,Germany,True,like
+1424,51,51,True,like
+1425,30.22,30.22%,True,like
+1426,17715,17 715,False,sin_match
+1427,41.1,41.1 millones de metros cuadrados,True,like
+1428,1980,1980,True,like
+1429,850,,False,vacio
+1430,20616,20616,True,like
+1431,320.66,,False,vacio
+1432,320.66,,False,vacio
+1433,11.97,11.97 millones,True,like
+1434,28,28,True,like
+1435,24,24,True,like
+1436,UniCredit,UniCredit,True,like
+1437,35075.9,"35,075.9 millones de euros",False,sin_match
+1438,220,220,True,like
+1439,Brazil,Brazil,True,like
+1440,17.6,17.6,True,like
+1441,2.2,,False,vacio
+1442,Netherlands,Netherlands,True,like
+1443,25,25,True,like
+1444,9.96,"9,96 millones",True,numerico
+1445,4.9,,False,vacio
+1446,Eagle Ford,Eagle Ford,True,like
+1447,232,232,True,like
+1448,2994.52,,False,vacio
+1449,3.4,,False,vacio
+1450,14.84,$14.84,True,like
+1451,100.6,,False,vacio
+1452,6.7,6.7%,True,like
+1453,7.3,7.3%,True,like
+1454,36.11,36.11%,True,like
+1455,2601,,False,vacio
+1456,3.2,,False,vacio
+1457,8.3,8.3%,True,like
+1458,6.3,6.3%,True,like
+1459,8.3,8.3%,True,like
+1460,33.7,33.7%,True,like
+1461,924,$924,True,like
+1462,Oklahoma,Oklahoma,True,like
+1463,26.26,26.26 billion U.S. dollars,True,like
+1464,Paraguay,Uruguay y Argentina,False,sin_match
+1465,1407401,1 433 934,False,sin_match
+1466,Fulham,,False,vacio
+1467,54,$54 millones,True,like
+1468,23.8,23.8%,True,like
+1469,0.3,0.3%,True,like
+1470,26.22,,False,vacio
+1471,4.8,4.8%,True,like
+1472,42.5,,False,vacio
+1473,2.5,,False,vacio
+1474,Emily Dickinson,Emily Dickinson,True,like
+1475,67,67%,True,like
+1476,30,30%,True,like
+1477,57,57%,True,like
+1478,169.1,169.1 mil millones de dólares,True,like
+1479,2020,,False,vacio
+1480,7870,"$7,870 million",False,sin_match
+1481,Hokkaido,Hokkaido,True,like
+1482,375,375,True,like
+1483,3376.81,"$3,376.81 millones de dólares",False,sin_match
+1484,New York,New York,True,like
+1485,3.4,$3.4 billion,True,like
+1486,5,,False,vacio
+1487,396.19,,False,vacio
+1488,4.9,4.9,True,like
+1489,0.28,,False,vacio
+1490,47.86,47.86%,True,like
+1491,37133,"{
+    ""respuesta"": ""$37,133 millones de dólares"",
+    ""confianza"": 1.0,
+    ""razonamiento"": ""El gráfico muestra una barra para el año 2020 con el valor numérico '37 133' encima, y el eje Y indica que la unidad es 'millones de dólares estadounidenses'."",
+}",False,sin_match
+1492,13.52,,False,vacio
+1493,13.52,,False,vacio
+1494,14.25,14.25 millones,True,like
+1495,296.7,"296,7 millones de libras esterlinas",True,numerico
+1496,1251.8,1 251.8 millones de libras esterlinas,False,sin_match
+1497,2437,"2,437 millones",False,sin_match
+1498,694,$694 mil millones,True,like
+1499,YouTube,YouTube,True,like
+1500,0.59,0.59%,True,like
+1501,54.62,54.62,True,like
+1502,3.4,3.4%,True,like
+1503,1055,1 055 millones de dólares,False,sin_match
+1504,0.05,0.05 trillones de dólares,True,like
+1505,10.94,10.94 trillion U.S. dollars,True,like
+1506,Oceania,Oceania,True,like
+1507,1.6,1.6%,True,like
+1508,140858,140 858 millones de dólares canadienses,False,sin_match
+1509,4.55,,False,vacio
+1510,377043.2,,False,vacio
+1511,13.31,13.31,True,like
+1512,32,32,True,like
+1513,49.83,49.83 billion U.S. dollars,True,like
+1514,50.02,$50.02,True,like
+1515,Computer Science,Computer Science,True,like
+1516,Engineering,Engineering,True,like
+1517,7290,7 290 millones de dólares,False,sin_match
+1518,4522,"$4,522 millones de dólares",False,sin_match
+1519,2016,2017,True,numerico
+1520,40.03,49.18%,False,sin_match
+1521,930,930,True,like
+1522,8.12,,False,vacio
+1523,17001,17 001,False,sin_match
+1524,14.1,14.1 millones,True,like
+1525,239,$239 million,True,like
+1526,82936017,,False,vacio
+1527,2014,2014,True,like
+1528,509,509 mil millones de dólares,True,like
+1529,5.03,5.03%,True,like
+1530,37.24,37.24%,True,like
+1531,2.62,2.62 billion Canadian dollars,True,like
+1532,2287881,2.287.881,False,sin_match
+1533,82.21,"Entre 2000 y 2019, las suscripciones por cada 100 habitantes fueron de 0.33 en el año 2000, subiendo progresivamente hasta alcanzar un máximo de 82.21 en 2019. Los valores intermedios anuales son: 0.8 (2001), 1.72 (2002), 3.57 (2003), 5.2 (2004), 7.71 (2005), 14.18 (2006), 20.28 (2007), 31.08 (2008), 40.56 (2009), 47.32 (2010), 56.2 (2011), 57.85 (2012), 56.6 (2013), 63.78 (2014), 77.05 (2015), 75.48 (2016) y 73.09 (2017).",True,like
+1534,Kyiv,,False,vacio
+1535,49405,49 405,False,sin_match
+1536,Alibaba.com,Alibaba.com,True,like
+1537,17.82,17.61%,True,numerico
+1538,2117.4,2 117.4 million U.S. dollars,False,sin_match
+1539,30.5,30.5,True,like
+1540,54.5,54.5 mil millones de rupías indias,True,like
+1541,96,$96 millones,True,like
+1542,42.3,42.3,True,like
+1543,20,20 millones,True,like
+1544,1.84,1.84 mil millones de dólares,True,like
+1545,13.12,$13.12 mil millones de dólares,True,like
+1546,34.07,"{
+    ""respuesta"": ""34.07 millones"",
+    ""confianza"": 1.0,
+    ""razonamiento"": ""El gráfico muestra una barra para el año 2017 con el valor numérico '34.07' escrito encima de ella, y el eje Y indica que la unidad es 'Number of households in millions'."",
+}",True,like
+1547,13.5,13.5 billion Russian rubles,True,like
+1548,41,41%,True,like
+1549,10.38,10.33 millones,True,numerico
+1550,25,,False,vacio
+1551,Harry Kane,Harry Kane,True,like
+1552,150,"{
+    ""respuesta"": ""150 millones de euros"",
+    ""confianza"": 1.0,
+    ""razonamiento"": ""En el gráfico de barras horizontal, la entrada superior corresponde a 'Harry Kane' y su barra azul tiene un valor etiquetado explícitamente como 150 en el eje X que indica 'Market value in million euros'."",
+}",True,like
+1553,285,285,True,like
+1554,883.42,,False,vacio
+1555,576.65,,False,vacio
+1556,12.3,,False,vacio
+1557,43.2,"{
+""respuesta"": ""Aproximadamente el 43%"",
+""confianza"": 0.85,
+""razonamiento"": ""Observando el gráfico para la fecha '2019/20' en el eje horizontal y trazando una línea vertical hacia arriba hasta el punto de datos correspondiente, este se encuentra por encima del 40% pero por debajo del",True,numerico
+1558,706,706 millones de dólares,True,like
+1559,397,$397 million,True,like
+1560,3.6,3.6,True,like
+1561,3.3,3.3,True,like
+1562,3.3,,False,vacio
+1563,6.8,,False,vacio
+1564,628,628,True,like
+1565,25111,"25,111 toneladas",False,sin_match
+1566,165.82,165.82 mil millones,True,like
+1567,9905.6,9 905.6 billion yuan,False,sin_match
+1568,34.33,$34.33 millones de dólares,True,like
+1569,4709852,4 709 852,False,sin_match
+1570,94,94,True,like
+1571,2015,2015,True,like
+1572,2017,2017,True,like
+1573,30.15,,False,vacio
+1574,965,,False,vacio
+1575,510,,False,vacio
+1576,377.72,,False,vacio
+1577,22,22%,True,like
+1578,34.6,34.6%,True,like
+1579,23800.7,"23,800.7",False,sin_match
+1580,YouTube,YouTube,True,like
+1581,1.71,1.71 millones,True,like
+1582,65+,65+,True,like
+1583,9464482,,False,vacio
+1584,13.99,13.99 mil millones de dólares,True,like
+1585,Vitebsk Oblast,Vitebsk Oblast,True,like
+1586,3.56,$3.56,True,like
+1587,3.92,3.92 millones,True,like
+1588,Honshu,,False,vacio
+1589,377975,377.975 kilómetros cuadrados,False,sin_match
+1590,85,85 mil millones de dólares,True,like
+1591,1200,1 200,False,sin_match
+1592,Cancer,Cancer,True,like
+1593,Heart disease,Heart disease,True,like
+1594,3.13,3.13,True,like
+1595,5.04,5.04,True,like
+1596,68,68,True,like
+1597,2.5,,False,vacio
+1598,14.5,,False,vacio
+1599,264,264,True,like
+1600,28.1,,False,vacio
+1601,12.23,12.23 millones de dólares,True,like
+1602,2014,,False,vacio
+1603,61,El coeficiente de cobertura era del 61%,True,like
+1604,61,61%,True,like
+1605,29.3,29.3%,True,like
+1606,24.9,24.9 millones,True,like
+1607,44.3,,False,vacio
+1608,20.81,20.81 billion GBP,True,like
+1609,Asia,Asia,True,like
+1610,28.44,$28.44,True,like
+1611,50,50,True,like
+1612,963000,"963,000",False,sin_match
+1613,121,$121 million,True,like
+1614,14.3,"14,3",True,numerico
+1615,2018,"Las ventas declinaron en dos periodos principales: primero desde 2010 hasta 2013 (con un mínimo en 2013), y luego nuevamente después del pico de 2017, cayendo en los años 2018 y 2019.",True,like
+1616,5.44,5.44 millones,True,like
+1617,384,£384,True,like
+1618,DuckDuckGo,DuckDuckGo,True,like
+1619,25.7,25.7 millones,True,like
+1620,1.65,1.65,True,like
+1621,1.82,$1.82,True,like
+1622,83.5,$83.5 millones de dólares,True,like
+1623,676.4,676.4 million U.S. dollars,True,like
+1624,Volkswagen,Volkswagen,True,like
+1625,46.93,,False,vacio
+1626,146.29,Aproximadamente 146 mil millones de galones,True,numerico
+1627,31,"{
+    ""respuesta"": ""31%"",
+    ""confianza"": 0.98,
+    ""razonamiento"": ""La categoría 'Introduce guests to the hotel (e.g. its location and facilities)' en el gráfico muestra una barra azul que termina con la etiqueta de valor '31%'."",
+}",True,like
+1628,11,11%,True,like
+1629,54,40%,False,sin_match
+1630,Melilla,Melilla,True,like
+1631,Catalonia,Melilla,False,sin_match
+1632,23.16,23.16,True,like
+1633,33.94,,False,vacio
+1634,64.9,"By 2025, it is projected that 64.9% of Nigeria's population will access the internet.",True,like
+1635,250,250 millones,True,like
+1636,5.8,5.8%,True,like
+1637,4.37,4.37 mil millones de libras esterlinas,True,like
+1638,10.3,,False,vacio
+1639,fab.de,fab.de,True,like
+1640,78,78,True,like
+1641,106.89,106.89 millones de kilogramos,True,like
+1642,7.1,7.1%,True,like
+1643,28661,28 661,False,sin_match
+1644,20354,"20,354",False,sin_match
+1645,46337,,False,vacio
+1646,46.5,"46,5 millones de euros",True,numerico
+1647,327,327,True,like
+1648,55.85,,False,vacio
+1649,133370,"133,370",False,sin_match
+1650,54132.4,"$54,132.4 million",False,sin_match
+1651,52,52,True,like
+1652,2294,"$2,294 millones",False,sin_match
+1653,115.31,,False,vacio
+1654,5.7,5.7%,True,like
+1655,73,73,True,like
+1656,51.11,"{
+    ""respuesta"": ""51.11 millones"",
+    ""confianza"": 0.99,
+    ""razonamiento"": ""La barra correspondiente a Spongebob Squarepants en el gráfico tiene la etiqueta numérica '51.11' al final de la barra y el eje X indica que las unidades son 'Number of Facebook fans in millions'."",
+}",True,like
+1657,62,62 millones,True,like
+1658,Free State,Free State,True,like
+1659,Western Cape,Western Cape,True,like
+1660,40.1,40.1%,True,like
+1661,55.66,55.66 mil millones de rupías indias,True,like
+1662,4863,4 863,False,sin_match
+1663,4863,4 863,False,sin_match
+1664,809,There were 809 homicides offences in 2019/20,True,like
+1665,30,30 mil millones de yenes,True,like
+1666,2020,2020,True,like
+1667,124.77,125.76 millones,True,numerico
+1668,293.6,$293.6 millones de dólares,True,like
+1669,337.8,337.8 millones de dólares,True,like
+1670,6192.5,,False,vacio
+1671,445,445,True,like
+1672,May 2020,May 2019,False,sin_match
+1673,116,116,True,like
+1674,118401,118 401 mil kilogramos,False,sin_match
+1675,Syria,Syria,True,like
+1676,Afghanistan,Afganistan,False,sin_match
+1677,Bielefeld-Detmold,Bielefeld-Detmold,True,like
+1678,189.6,189.6 million ounces,True,like
+1679,192.62,$192.62 millones de dólares,True,like
+1680,1793.79,1 793.79 millones de coronas suecas,False,sin_match
+1681,2006,From roughly 2010 to 2020,True,numerico
+1682,252,252 millones,True,like
+1683,17,,False,vacio
+1684,Monini,,False,vacio
+1685,84.94,"84,37 millones de toneladas métricas",True,numerico
+1686,35.29,$35.29,True,like
+1687,2015/16,"El precio promedio del boleto cambió en las siguientes temporadas: 2007/08 (de $35.29 a $38.46), 2008/09 (de $38.46 a $40.3), 2010/11 (de $40.3 a $43), 2011/12 (de $43 a $43.65), 2012/13 (de $43.65 a $41.18) y 2013/14 (de $41.18 a $39.4).",False,sin_match
+1688,2914.18,,False,vacio
+1689,19871,"19,871",False,sin_match
+1690,286.1,286.1,True,like
+1691,1.03,1.03 billion U.S. dollars,True,like
+1692,2019,2019,True,like
+1693,2017/2018,2017/2018,True,like
+1694,333.54,$333.54 millones,True,like
+1695,910987,"910,987",False,sin_match
+1696,2378,"£2,378 millones",False,sin_match
+1697,43.75,43.75%,True,like
+1698,Germany,,False,vacio
+1699,37190,The provided chart does not contain population projections for the year 2030; it only displays historical or current figures (likely around 2018-2020 based on typical census data).,False,sin_match
+1700,489,489,True,like
+1701,23,23%,True,like
+1702,444428,,False,vacio
+1703,444428,444.428,False,sin_match
+1704,72,72,True,like
+1705,1041.6,"$1,041.6 millones",False,sin_match
+1706,2013,En 2013,True,like
+1707,108.8,108.8 millones de libras esterlinas,True,like
+1708,106100,106 100,False,sin_match
+1709,140300,"140,300",False,sin_match
+1710,1.1,1.1%,True,like
+1711,26276,26 276,False,sin_match
+1712,143,$143 billion,True,like
+1713,774.71,,False,vacio
+1714,76,,False,vacio
+1715,8,,False,vacio
+1716,35.7,35.7,True,like
+1717,34.3,34.3,True,like
+1718,2035,En el año 2035,True,like
+1719,20444,20 444,False,sin_match
+1720,57.04,57.04,True,like
+1721,3979,"3,979 mil personas",False,sin_match
+1722,95,97%,True,numerico
+1723,2017,2017,True,like
+1724,95,,False,vacio
+1725,237.9,237.9 mil millones de dólares,True,like
+1726,336.73,237.9 billion,False,sin_match
+1727,212536,,False,vacio
+1728,13779.1,"13,779.1 millones de litros",False,sin_match
+1729,2017,2017,True,like
+1730,82.5,82.5 mil millones de dólares,True,like
+1731,Coca-Cola,Coca-Cola,True,like
+1732,40.78,40.78,True,like
+1733,22,,False,vacio
+1734,8092208,,False,vacio
+1735,8092208,,False,vacio
+1736,Amazon,Netflix,False,sin_match
+1737,Songs PK,Songs PK,True,like
+1738,2017,2017,True,like
+1739,18278,18.278,False,sin_match
+1740,15299,"15,299",False,sin_match
+1741,14600,"Aproximadamente 14,635 millones de pasajeros-quilómetros",False,sin_match
+1742,22600,,False,vacio
+1743,2020,2020 and 2027,True,like
+1744,70,It will reach 71%,True,numerico
+1745,70,70%,True,like
+1746,18762.59,18 762.59 millones de dólares,False,sin_match
+1747,23555.3,"$23,555.3 millones de dólares",False,sin_match
+1748,League of Legends,League of Legends,True,like
+1749,7982,7 982 millones de euros,False,sin_match
+1750,6174,"Vodafone's revenue in Italy was 5,828 million euros in 2015, remained at 5,828 million euros in 2016, increased to 6,071 million euros in 2017, and reached its peak for this period at 6,174 million euros in 2018.",False,sin_match
+1751,5857,5 014 millones de euros,False,sin_match
+1752,5857,6.174 millones de euros,False,sin_match
+1753,2.1,2.1 mil millones de dólares,True,like
+1754,71.65,,False,vacio
+1755,362038,362038,True,like
+1756,2.4,,False,vacio
+1757,11,11%,True,like
+1758,17.89,17.89 mil millones de dólares,True,like
+1759,57,57,True,like
+1760,Eden Hazard,Romelu Lukaku,False,sin_match
+1761,10085207,10 085 207,False,sin_match
+1762,14005615,14 195 100,False,sin_match
+1763,105,105,True,like
+1764,Liguria,Liguria,True,like
+1765,767.16,$767.16 million,True,like
+1766,35294.6,"35 294,6 miles",False,sin_match
+1767,168,$168,True,like
+1768,143,143,True,like
+1769,14,14,True,like
+1770,3.5,3.5 billion,True,like
+1771,130.57,130.57,True,like
+1772,Telia Company AB,Telia Company AB,True,like
+1773,Telia Company AB,Telia Company AB,True,like
+1774,Telia Company AB,Telia Company AB,True,like
+1775,Telia Company AB,Telia Company AB,True,like
+1776,Telia Company AB,Telia Company AB,True,like
+1777,United Arab Emirates,United Arab Emirates,True,like
+1778,5.12,5.12 billion U.S. dollars,True,like
+1779,95.6,95.6 million U.S. dollars,True,like
+1780,23.01,23.01%,True,like
+1781,25.25,$25.25 mil millones,True,like
+1782,16166,"16,166 mil millones de VND",False,sin_match
+1783,16166,"16,166 mil millones de VND",False,sin_match
+1784,34236,34 236,False,sin_match
+1785,48.8,,False,vacio
+1786,48.8,La información no está disponible en el gráfico,False,sin_match
+1787,40.3,40.3 billion GBP,True,like
+1788,491.46,"491,46 millones de euros",True,numerico
+1789,10408,10 408 millones de libras esterlinas,False,sin_match
+1790,2.76,2.76,True,like
+1791,77658792,,False,vacio
+1792,4.51,4.51,True,like
+1793,Trina Solar,Trina Solar,True,like
+1794,582,582,True,like
+1795,2018,"2000, 2005, 2010, 2015, 2016, 2017 y 2018",True,like
+1796,Europe,Europe,True,like
+1797,28.6,,False,vacio
+1798,9.9,,False,vacio
+1799,Berkshire Hathaway Inc,Berkshire Hathaway Inc,True,like
+1800,185,$185 million,True,like
+1801,Indonesia,Indonesia,True,like
+1802,2013,2013,True,like
+1803,28.52,"28,52%",True,numerico
+1804,1990,1990,True,like
+1805,5.6,5.6,True,like
+1806,9.4,9.4,True,like
+1807,3444,"$3,444 millones de dólares",False,sin_match
+1808,9,9,True,like
+1809,15.31,15.31 millones de toneladas métricas,True,like
+1810,16.5,16.5 million,True,like
+1811,131.45,$131.45,True,like
+1812,0.45,$0.45 billion,True,like
+1813,Randy Smith,Randy Smith,True,like
+1814,179.9,"179,9 mil kilogramos",True,numerico
+1815,273.21,273.21 thousand kilograms,True,like
+1816,2019/20,,False,vacio
+1817,3069,3 039,False,sin_match
+1818,109,"En el gráfico se muestran los siguientes precios promedio ponderados para la mina Diavik (representada por las barras oscuras): $109 USD por quilate en 2012, $118 USD por quilate en 2013 y $142 USD por quilate en 2014.",True,like
+1819,Apple,Apple,True,like
+1820,2017,2017,True,like
+1821,2014,"Los años en los que disminuyeron las muertes relacionadas con drogas fueron 2007, 2010, 2014 y 2018.",True,like
+1822,347.82,"Sotheby's generó 347,82 millones de euros.",True,numerico
+1823,39.8,39.8,True,like
+1824,195.5,195.5,True,like
+1825,3.9,3.9%,True,like
+1826,Generation Z,"Generation Z, Millennials, Generation X y Boomers and Silents",True,like
+1827,54,54%,True,like
+1828,19,19,True,like
+1829,3352.74,3 352.74 millones de euros,False,sin_match
+1830,2829.38,"2 829,38 millones de euros",False,sin_match
+1831,110.06,110.06 millones de euros,True,like
+1832,46.1,"46,1%",True,numerico
+1833,43.92,43.92,True,like
+1834,235,235 millones de dólares estadounidenses,True,like
+1835,669.2,673 millones,True,numerico
+1836,1842.1,"1,842.4 million euros",False,sin_match
+1837,2345.3,"2,345.3",False,sin_match
+1838,BlackRock Investment Management (UK) Limited,BlackRock Investment Management (UK) Limited,True,like
+1839,76.6,76.6 mil millones de libras esterlinas,True,like
+1840,30.74,,False,vacio
+1841,Hank Aaron,Hank Aaron,True,like
+1842,31.1,"31.1 deaths per 1,000 live births",True,like
+1843,2411,,False,vacio
+1844,7.3,7.3 millones de euros,True,like
+1845,S7 Airlines,S7 Airlines,True,like
+1846,Aeroflot,Aeroflot,True,like
+1847,14.6,14.6 millones,True,like
+1848,4.91,$4.91 billion,True,like
+1849,11.94,$11.94 mil millones de dólares,True,like
+1850,Kevin De Bruyne,Kevin De Bruyne,True,like
+1851,150,150 millones de euros,True,like
+1852,57139,57.139 millones de euros,False,sin_match
+1853,57139,57.139 millones de euros,False,sin_match
+1854,GQ,GQ,True,like
+1855,348.8,348.8 millones de dólares,True,like
+1856,803.9,803.9 millones de dólares,True,like
+1857,45823.94,"$45,823.94 millones de dólares canadienses",False,sin_match
+1858,5326.38,"5,326.38 millones de dólares canadienses",False,sin_match
+1859,2.46,2.46 millones,True,like
+1860,27.05,27.05 millones,True,like
+1861,2337,2 337,False,sin_match
+1862,40.58,$40.58 mil millones,True,like
+1863,150187,"150,187",False,sin_match
+1864,1413.68,"$1,413.68",False,sin_match
+1865,113,,False,vacio
+1866,China,China,True,like
+1867,1999,,False,vacio
+1868,Walter Davis,Walter Davis,True,like
+1869,18,18,True,like
+1870,196,,False,vacio
+1871,Scotland,,False,vacio
+1872,China,China,True,like
+1873,462,462 millones,True,like
+1874,12.1,,False,vacio
+1875,678,678,True,like
+1876,3.38,3.38 millones,True,like
+1877,212,212,True,like
+1878,Franco Harris,Franco Harris,True,like
+1879,July 2014,July 2012,False,sin_match
+1880,2007,2007,True,like
+1881,1.53,1.53,True,like
+1882,9.32,,False,vacio
+1883,102650,"According to the chart, which displays Turnover in thousand SEK, Investor AB had a value of 102,650.",False,sin_match
+1884,46832,,False,vacio
+1885,19.3,19.3,True,like
+1886,133,133,True,like
+1887,2015,2020,True,numerico
+1888,6.78,6.78,True,like
+1889,3.56,3.56 millones,True,like
+1890,Leigh Griffiths,Leigh Griffiths,True,like
+1891,32.92,"32,92%",True,numerico
+1892,44.4,44.4,True,like
+1893,120,$120 millones de dólares,True,like
+1894,China,China,True,like
+1895,60,60 billion,True,like
+1896,Rice,Rice y wheat,True,like
+1897,117.94,,False,vacio
+1898,45,$45 millones de dólares,True,like
+1899,March,March,True,like
+1900,2.77,2.77,True,like
+1901,2714,2 714 millones de dólares,False,sin_match
+1902,481.55,,False,vacio
+1903,2016,2019,True,numerico
+1904,5,5.05%,True,like
+1905,6313,"$6,313 millones de dólares",False,sin_match
+1906,39,39,True,like
+1907,3521,3 521 millones de libras esterlinas,False,sin_match
+1908,Slovakia,Slovakia,True,like
+1909,France,Montenegro,False,sin_match
+1910,14,-14%,True,like
+1911,0.4,"0.4 deaths per 10,000 live births",True,like
+1912,51258,51 258 millones de dólares estadounidenses,False,sin_match
+1913,6.5,6.37%,True,numerico
+1914,207.1,,False,vacio
+1915,2011,2016,True,numerico
+1916,19.4,19.4%,True,like
+1917,44.7,44.7,True,like
+1918,11.51,"El 11,51%",True,numerico
+1919,6.97,6.97 millones de dólares estadounidenses,True,like
+1920,307,307,True,like
+1921,72,,False,vacio
+1922,971,,False,vacio
+1923,43.03,$43.03 billion,True,like
+1924,3718.4,Aproximadamente 3.750 mil millones de rupías indias,False,sin_match
+1925,2012,En 2018,True,numerico
+1926,68.4,68.4%,True,like
+1927,35.49,35.49,True,like
+1928,2019,,False,vacio
+1929,6.26,6.26%,True,like
+1930,11.9,11.9,True,like
+1931,31,31%,True,like
+1932,3582,3 582 millones de euros,False,sin_match
+1933,28,28%,True,like
+1934,United States,United States,True,like
+1935,53,53%,True,like
+1936,0.87,0.87,True,like
+1937,March 2021,,False,vacio
+1938,7.69,7.69 millones,True,like
+1939,September 2012,,False,vacio
+1940,18.3,"18.3 deaths per 1,000 live births",True,like
+1941,Telstra,Telstra,True,like
+1942,46.3,46.3%,True,like
+1943,6.3,$106.3 million,False,sin_match
+1944,100,100 millones de dólares,True,like
+1945,50,50 millones de visitantes,True,like
+1946,29,,False,vacio
+1947,51,51 millones,True,like
+1948,59.17,59.17 trillones,True,like
+1949,8.73,"The average player salary varied significantly across clubs, ranging from $8.73 million for Manchester City down to $0.91 million for Sheffield United.",True,like
+1950,36.33,$36.33 millones,True,like
+1951,53.62,53.62 millones de dólares,True,like
+1952,11.7,,False,vacio
+1953,90.04,90.04 millones,True,like
+1954,Credit cards,Credit cards,True,like
+1955,23.7,23.6 millones,True,numerico
+1956,2.6,2.6,True,like
+1957,1.82,1.82 millones,True,like
+1958,52,52 billion,True,like
+1959,140.9,$140.9 billion,True,like
+1960,13100.2,13 100.2 millones de euros,False,sin_match
+1961,42755,Aproximadamente 43.000 millones de pasajero-kilómetros,False,sin_match
+1962,32702,Aproximadamente 32.764 millones de pasajero-kilómetros,False,sin_match
+1963,0.86,0.86 millones,True,like
+1964,13,8%,False,sin_match
+1965,13,13%,True,like
+1966,23,23%,True,like
+1967,2.5,2.5%,True,like
+1968,2021,1.7%,False,sin_match
+1969,2582603,,False,vacio
+1970,113114,113 114,False,sin_match
+1971,101.88,"101,88 millones de dólares estadounidenses",True,numerico
+1972,263.44,263.44 mil millones de dólares,True,like
+1973,18.09,18.09 millones,True,like
+1974,18.38,18.38,True,like
+1975,18.4,18.4,True,like
+1976,14.8,14.8,True,like
+1977,Deuce McAllister,Deuce McAllister,True,like
+1978,2717,2 717 millones de coronas danesas,False,sin_match
+1979,Copa Airlines,Copa Airlines,True,like
+1980,92.01,92.01%,True,like
+1981,35.3,35.3%,True,like
+1982,28.18,,False,vacio
+1983,63086,63.086,False,sin_match
+1984,676411,,False,vacio
+1985,509175,,False,vacio
+1986,2.82,2.82,True,like
+1987,0.1,0.2%,False,sin_match
+1988,2022,2020 y 2021,True,numerico
+1989,6.04,6.04 millones,True,like
+1990,346.1,$346.1 million,True,like
+1991,189.2,$189.2 million,True,like
+1992,10.6,,False,vacio
+1993,776,,False,vacio
+1994,60668,"60,668",False,sin_match
+1995,113454,113 454,False,sin_match
+1996,12.8,12.8,True,like
+1997,583,583,True,like
+1998,235,235,True,like
+1999,9.1,9.1%,True,like
+2000,3710,"3,760",False,sin_match
+2001,21,21%,True,like
+2002,Conservative,Conservative,True,like
+2003,362.05,"{
+    ""respuesta"": ""362.05 millones de toneladas métricas"",
+    ""confianza"": 1.0,
+    ""razonamiento"": ""La barra correspondiente a 'Soybeans' en el gráfico muestra un valor numérico de 362.05 sobre ella misma, y el eje Y indica que la unidad es 'Production in million metric tons'."",
+}",True,like
+2004,4.53,4.53 mil millones de dólares,True,like
+2005,2.7,2.7 millones,True,like
+2006,Ontario,Ontario,True,like
+2007,468,468,True,like
+2008,36,36,True,like
+2009,11,11%,True,like
+2010,31780,31 780,False,sin_match
+2011,16230,"$16,230",False,sin_match
+2012,12.47,$12.47,True,like
+2013,19.14,$19.14,True,like
+2014,23.31,,False,vacio
+2015,1986,1986,True,like
+2016,419.35,,False,vacio
+2017,2.6,2.6%,True,like
+2018,17.19,17.19 millones,True,like
+2019,19.27,"19,27 millones",True,numerico
+2020,31,264,False,sin_match
+2021,0-14,0-14,True,like
+2022,Tony Gonzalez,Tony Gonzalez,True,like
+2023,55.5,55.5%,True,like
+2024,Hal Greer,Hal Greer,True,like
+2025,317,317,True,like
+2026,George Brett,George Brett,True,like
+2027,249.5,"Ernst & Young generó 249,5 millones de dólares en ingresos.",True,numerico
+2028,7.9,7.9%,True,like
+2029,20.4,20.4%,True,like
+2030,238,$238 millones,True,like
+2031,372532,"372,532",False,sin_match
+2032,132.7,,False,vacio
+2033,10.1,10.1%,True,like
+2034,189,$189,True,like
+2035,687,687 millones,True,like
+2036,China,China,True,like
+2037,114.7,,False,vacio
+2038,4285.7,,False,vacio
+2039,3.3,3.3%,True,like
+2040,211,$211 billion,True,like
+2041,74,74%,True,like
+2042,238.4,238.4 mil millones de dólares,True,like
+2043,916.58,916.58 millones de dólares,True,like
+2044,258.4,,False,vacio
+2045,2013,2013,True,like
+2046,1297.51,"1,297.51",False,sin_match
+2047,37.08,37.08,True,like
+2048,1923.63,,False,vacio
+2049,636,636 million euros,True,like
+2050,1502,"1,502 millones de libras esterlinas",False,sin_match
+2051,531.6,$531.6 million,True,like
+2052,Greggs,Greggs,True,like
+2053,199,199%,True,like
+2054,233851,,False,vacio
+2055,80.1,80.1%,True,like
+2056,43.13,$43.13,True,like
+2057,Saudi Arabia,,False,vacio
+2058,19407.2,,False,vacio
+2059,16.47,16.47 billion U.S. dollars,True,like
+2060,142.5,,False,vacio
+2061,106.4,106.4 billion NOK,True,like
+2062,138.9,138.9,True,like
+2063,Lisbon,Lisbon,True,like
+2064,9527,9 527,False,sin_match
+2065,3.2,3.2 billion U.S. dollars,True,like
+2066,1.1,,False,vacio
+2067,67.31,,False,vacio
+2068,Nash Grier,Nash Grier,True,like
+2069,57.16,57.16%,True,like
+2070,470862,470 862,False,sin_match
+2071,322817,ERROR,False,sin_match
+2072,2.76,2.76,True,like
+2073,47.47,47.47%,True,like
+2074,2015,2015,True,like
+2075,64.9,64.9 mil millones de dólares,True,like
+2076,2011,2011,True,like
+2077,0.18,0.18%,True,like
+2078,39.9,39.9%,True,like
+2079,194.7,194.7,True,like
+2080,1986,1986,True,like
+2081,25.06,25.06,True,like
+2082,37.1,37.1,True,like
+2083,9.07,9.07 millones de dólares canadienses,True,like
+2084,43,43,True,like
+2085,4762,,False,vacio
+2086,5.9,5.9%,True,like
+2087,8.1,8.1%,True,like
+2088,11767,"$11,767 million",False,sin_match
+2089,Paris-Charles-de-Gaulle,Paris-Charles-de-Gaulle,True,like
+2090,26.37,26.37 millones,True,like
+2091,1342,1 342 millones de dólares estadounidenses,False,sin_match
+2092,HTML,HTML,True,like
+2093,21.1,21.1%,True,like
+2094,1.6,,False,vacio
+2095,41.11,,False,vacio
+2096,581,581,True,like
+2097,26.81,26.81 millones,True,like
+2098,Indonesia,Indonesia,True,like
+2099,2.4,2.4 billion,True,like
+2100,3.6,3.6 billion,True,like
+2101,47.9,47.9%,True,like
+2102,41.8,41.8%,True,like
+2103,1.41,1.41,True,like
+2104,410849,410 849 million euros,False,sin_match
+2105,20.9,20.9%,True,like
+2106,104.73,$104.73,True,like
+2107,53.41,53.41,True,like
+2108,24.6,24.6%,True,like
+2109,67.9,"67,9%",True,numerico
+2110,32.5,32.5 millones,True,like
+2111,9.6,9.6 millones,True,like
+2112,28.23,$28.23,True,like
+2113,12,$12 millones de dólares,True,like
+2114,439.37,Aproximadamente 440 millones de dólares canadienses,True,numerico
+2115,517,,False,vacio
+2116,18.1,18.1 millones,True,like
+2117,4592,4 592 millones de dólares,False,sin_match
+2118,Thailand,Thailand,True,like
+2119,1413640,"1,413,640",False,sin_match
+2120,na-kd.com,na-kd.com,True,like
+2121,1115.7,,False,vacio
+2122,29.44,$29.44,True,like
+2123,China,China,True,like
+2124,New Jersey,New Jersey,True,like
+2125,Codelco,Codelco,True,like
+2126,Glencore,Glencore,True,like
+2127,91,,False,vacio
+2128,456.4,456.4 mil millones de dólares,True,like
+2129,10519,10 519,False,sin_match
+2130,4362.5,4 362.5 millones de dólares,False,sin_match
+2131,68.08,68.08 millones,True,like
+2132,1.45,1.45 mil millones de dólares estadounidenses,True,like
+2133,1.14,$1.14 mil millones,True,like
+2134,13746,"13,746",False,sin_match
+2135,30.45,30.45,True,like
+2136,645,645,True,like
+2137,791,791,True,like
+2138,37.91,$37.91,True,like
+2139,120,,False,vacio
+2140,18,18,True,like
+2141,11,11%,True,like
+2142,16.1,16.1,True,like
+2143,16.1,16.1,True,like
+2144,31.7,Aproximadamente 32 muertes por cada 1.000 nacimientos vivos,True,numerico
+2145,34.01,$34.01,True,like
+2146,3781,"3,781 millones de libras esterlinas",False,sin_match
+2147,2020,2026,True,numerico
+2148,3.39,3.39 mil millones,True,like
+2149,2020,2026,True,numerico
+2150,36,36,True,like
+2151,39.8,39.8%,True,like
+2152,634,634,True,like
+2153,22.9,22.9%,True,like
+2154,Todd Helton,Todd Helton,True,like
+2155,72,,False,vacio
+2156,75.54,,False,vacio
+2157,85,85,True,like
+2158,18,18,True,like
+2159,306.23,$306.23 million,True,like
+2160,151.85,151.85 millones de dólares,True,like
+2161,Hungary,Hungary,True,like
+2162,336.6,,False,vacio
+2163,356.4,356.4,True,like
+2164,84,84%,True,like
+2165,1985,1985,True,like
+2166,3.86,3.86 mil millones de dólares estadounidenses,True,like
+2167,124.65,,False,vacio
+2168,1.88,1.88%,True,like
+2169,442,$442,True,like
+2170,329,$329,True,like
+2171,352.21,$352.21 mil millones de dólares,True,like
+2172,30,,False,vacio
+2173,471,471 millones,True,like
+2174,373,373 millones,True,like
+2175,223,$223 million,True,like
+2176,1125,,False,vacio
+2177,883,883,True,like
+2178,China,China,True,like
+2179,194.3,,False,vacio
+2180,112.6,112.6,True,like
+2181,11.87,$11.87 billion U.S. dollars,True,like
+2182,2.92,2.92,True,like
+2183,2.66,2.66 mil millones de dólares,True,like
+2184,2819.63,2 819.63 mil millones de dólares,False,sin_match
+2185,2020,,False,vacio
+2186,8544,"The French concessions and construction company generated revenues of 38,884 million euros from Contracting, 8,544 million euros from Concessions, and 1,320 million euros from Vinci Immobilier.",False,sin_match
+2187,7.3,7.3%,True,like
+2188,733,733,True,like
+2189,Hank Aaron,Hank Aaron,True,like
+2190,2018,2018,True,like
+2191,28.31,$28.31,True,like
+2192,3.89,aproximadamente 4 millones de dólares,True,numerico
+2193,56.6,Puma spent 56.6 million euros in R&D expenditure in 2020.,True,like
+2194,51.1,51.1 millones,True,like
+2195,71,,False,vacio
+2196,100,,False,vacio
+2197,15702,"15,702",False,sin_match
+2198,47158,"47,158",False,sin_match
+2199,2020/2021,2020/2021,True,like
+2200,4.44,4.44,True,like
+2201,5.33,,False,vacio
+2202,77,,False,vacio
+2203,36282,36 282,False,sin_match
+2204,2281,2 281,False,sin_match
+2205,32665,32 665,False,sin_match
+2206,5,5%,True,like
+2207,244,244,True,like
+2208,37,37,True,like
+2209,2.27,$2.27 mil millones,True,like
+2210,19098,,False,vacio
+2211,20656,,False,vacio
+2212,55382.5,55 382.5 millones de euros,False,sin_match
+2213,45804,"45,804 millones de dólares",False,sin_match
+2214,6536,6 536 mil kilogramos,False,sin_match
+2215,9562,9 562,False,sin_match
+2216,1273.27,"$1,273.27 million U.S. dollars",False,sin_match
+2217,17858,17 858 unidades en 2010,False,sin_match
+2218,9181,,False,vacio
+2219,18.8,18.8%,True,like
+2220,16.9,,False,vacio
+2221,WhatsApp,WhatsApp,True,like
+2222,8.39,$8.39,True,like
+2223,1,1%,True,like
+2224,7,,False,vacio
+2225,65.38,65.38%,True,like
+2226,667.61,"667,5 millones de dólares",True,numerico
+2227,MTV,MTV,True,like
+2228,2006/07,,False,vacio
+2229,6085.7,"$6,085.7 millones de dólares",False,sin_match
+2230,19921,19 921,False,sin_match
+2231,171.8,171.8 mil millones de coronas suecas,True,like
+2232,319,319,True,like
+2233,126,126,True,like
+2234,British Columbia,British Columbia,True,like
+2235,108.9,108.9,True,like
+2236,20526,"{
+    ""respuesta"": ""20 526 millones de toneladas-quilómetro"",
+    ""confianza"": 1.0,
+    ""razonamiento"": ""El gráfico muestra una barra para el año 2019 con el valor '20 526' escrito encima, y el eje Y indica que la unidad es 'million tonne-kilometers'."",
+}",False,sin_match
+2237,Sudan,Sudán,True,like
+2238,907,907,True,like
+2239,Franco Harris,Franco Harris,True,like
+2240,100,100,True,like
+2241,557,557,True,like
+2242,41,41,True,like
+2243,Hermes,,False,vacio
+2244,143.4,$143.4 millones,True,like
+2245,1615.6,1.615.6 millones de euros,False,sin_match
+2246,2017,2017,True,like
+2247,32.3,32.5%,True,numerico
+2248,Western Digital,Western Digital,True,like
+2249,11,11%,True,like
+2250,257,257,True,like
+2251,Schitt's Creek,Schitt's Creek,True,like
+2252,2.29,,False,vacio
+2253,2020,2020,True,like
+2254,4.28,4.28 millones,True,like
+2255,180.3,180.3,True,like
+2256,41.78,41.78%,True,like
+2257,7.7,7.7,True,like
+2258,Radio Times,Radio Times,True,like
+2259,176.19,"176,19 millones",True,numerico
+2260,5.23,5.23 mil millones de euros,True,like
+2261,316,$316 billion,True,like
+2262,267579,,False,vacio
+2263,1.48,1.48 millones,True,like
+2264,53,53,True,like
+2265,Michael Jordan,Michael Jordan,True,like
+2266,42.4,"42,4%",True,numerico
+2267,30.1,30.1%,True,like
+2268,627.31,,False,vacio
+2269,100185,100185,True,like
+2270,8.6,8.6,True,like
+2271,1.8,1.8 millones,True,like
+2272,5.1,"5,1%",True,numerico
+2273,3.42,3.42%,True,like
+2274,0.35,0.35,True,like
+2275,Bridal Guide,,False,vacio
+2276,69.88,69.88,True,like
+2277,10.25,$10.25 billion,True,like
+2278,7.3,7.3 millones,True,like
+2279,37.5,37.5 millones,True,like
+2280,810,,False,vacio
+2281,656,,False,vacio
+2282,180.77,,False,vacio
+2283,2017,2017,True,like
+2284,32.18,32.18,True,like
+2285,282,282,True,like
+2286,21.6,21.6%,True,like
+2287,51.1,"51,1%",True,numerico
+2288,23.8,23.8,True,like
+2289,1.75,1.75,True,like
+2290,5.8,5.8,True,like
+2291,1.6,2.4,False,sin_match
+2292,98.7,,False,vacio
+2293,696,696,True,like
+2294,London,London,True,like
+2295,212.92,212.92 mil millones de yuanes,True,like
+2296,448.8,"448,8 millones de euros",True,numerico
+2297,Land Rover,Land Rover,True,like
+2298,6521,"$6,521 millones de dólares",False,sin_match
+2299,23.8,23.8 mil millones de euros,True,like
+2300,147.7,147.7 billion,True,like
+2301,51,51,True,like
+2302,Android,Android,True,like
+2303,1189,,False,vacio
+2304,460.72,460.72,True,like
+2305,83.6,83.6%,True,like
+2306,12.15,12.15 billion U.S. dollars,True,like
+2307,14.36,,False,vacio
+2308,25,25%,True,like
+2309,653.98,,False,vacio
+2310,EssilorLuxottica,EssilorLuxottica,True,like
+2311,Medicaid,Medicaid,True,like
+2312,India,India,True,like
+2313,2818,"£2,818 millones",False,sin_match
+2314,11209,11 209,False,sin_match
+2315,23.68,$23.68 million,True,like
+2316,126,$126 millones de dólares,True,like
+2317,9.48,"{
+    ""respuesta"": ""9.48%"",
+    ""confianza"": 1.0,
+    ""razonamiento"": ""En el gráfico proporcionado, al observar el año 2020 en el eje horizontal (a la derecha), se puede ver que la línea de datos sube bruscamente a un punto etiquetado explícitamente con '9.48%'."",
+}",True,like
+2318,30,30%,True,like
+2319,3.31,3.31 millones,True,like
+2320,46.6,46.6,True,like
+2321,429,429,True,like
+2322,870.03,870.03 millones de dólares estadounidenses,True,like
+2323,891.59,$891.59 millones de dólares,True,like
+2324,2057.6,2 057.6 billion,False,sin_match
+2325,1812,,False,vacio
+2326,12546,12 546,False,sin_match
+2327,6404,6 404,False,sin_match
+2328,2111,,False,vacio
+2329,568.58,568.58 billion Mexican pesos,True,like
+2330,534.3,534.3 millones de toneladas métricas,True,like
+2331,Tampere,Tampere,True,like
+2332,656920,656 920,False,sin_match
+2333,48082,"$48,082 millones de dólares",False,sin_match
+2334,39625,"$39,625 millones",False,sin_match
+2335,197,197,True,like
+2336,Stanley Black & Decker,,False,vacio
+2337,8.41,$8.41 mil millones,True,like
+2338,1130.2,,False,vacio
+2339,27935,37 827,False,sin_match
+2340,90.77,90.77 millones de dólares estadounidenses,True,like
+2341,362,362,True,like
+2342,285,285,True,like
+2343,Real Madrid CF,Real Madrid CF,True,like
+2344,451,451,True,like
+2345,1385.95,1 385.95 millones de dólares,False,sin_match
+2346,1198.22,"$1,198.22 millones de dólares",False,sin_match
+2347,80000,80 000,False,sin_match
+2348,12.74,12.74 billion U.S. dollars,True,like
+2349,10.3,,False,vacio
+2350,9.8,,False,vacio
+2351,10.7,10.7,True,like
+2352,2007,,False,vacio
+2353,36.5,36.5,True,like
+2354,944,,False,vacio
+2355,450.7,450.7 millones de libras esterlinas,True,like
+2356,247441,,False,vacio
+2357,77517,,False,vacio
+2358,77517,,False,vacio
+2359,144.8,,False,vacio
+2360,620.2,620.2,True,like
+2361,7.1,6.9,True,numerico
+2362,0.7,0.7,True,like
+2363,2021,2021,True,like
+2364,14.79,14.79 millones,True,like
+2365,80.1,80.1%,True,like
+2366,7,7%,True,like
+2367,5.11,,False,vacio
+2368,2015,,False,vacio
+2369,7.71,,False,vacio
+2370,10.87,,False,vacio
+2371,69,69%,True,like
+2372,111.55,,False,vacio
+2373,102.44,,False,vacio
+2374,2.6,2.6 billion U.S. dollars,True,like
+2375,0.43,0.43,True,like
+2376,849.87,,False,vacio
+2377,718.69,Aproximadamente 750 mil millones de dólares,True,numerico
+2378,13,13,True,like
+2379,1675,"1,675 millones de dólares",False,sin_match
+2380,846,"Aproximadamente 933 tiendas en total (846 en EE.UU., 25 en Canadá, 0 en Reino Unido/Irlanda y 26 en China), más un segmento separado de 'Victoria's Secret Beauty and Accessories' con 36 ubicaciones.",True,like
+2381,9.47,$9.47,True,like
+2382,Hindus,Hindus,True,like
+2383,53.03,53.03 millones,True,like
+2384,87.2,"87,2 millones",True,numerico
+2385,2018,,False,vacio
+2386,304,$304,True,like
+2387,581,,False,vacio
+2388,162,,False,vacio
+2389,China,China,True,like
+2390,35804.6,"$35,804.6 millones de dólares",False,sin_match
+2391,120,120,True,like
+2392,YouTube,"{
+    ""respuesta"": ""YouTube"",
+    ""confianza"": 1.0,
+    ""razonamiento"": ""La barra superior del gráfico muestra el servicio 'YouTube' con una etiqueta de porcentaje que dice exactamente '27%'."",
+}",True,like
+2393,58,58,True,like
+2394,2012,2012,True,like
+2395,10.84,$10.84 billion,True,like
+2396,Facebook,Facebook,True,like
+2397,404,404,True,like
+2398,431,431,True,like
+2399,400.4,400.4,True,like
+2400,57.7,57.7,True,like
+2401,8.51,8.51%,True,like
+2402,Asia,Asia,True,like
+2403,Female,Females,False,sin_match
+2404,Ontario,Ontario,True,like
+2405,TV,TV,True,like
+2406,4431.94,"{
+    ""respuesta"": ""4 431.94 millones de coronas suecas"",
+    ""confianza"": 0.98,
+    ""razonamiento"": ""La barra correspondiente a la categoría 'TV' muestra un valor explícito de 4 431.94 en el eje X, que está etiquetado como 'Advertising spendings in million SEK'."",
+}",False,sin_match
+2407,12379.83,12 379.83 millones de coronas suecas (SEK),False,sin_match
+2408,1.99,1.99%,True,like
+2409,2021,2021,True,like
+2410,2.7,2.7 mil millones de euros,True,like
+2411,7.9,7.9 billion euros,True,like
+2412,6.89,6.89,True,like
+2413,1.4,1.4 billion U.S. dollars,True,like
+2414,21.27,21.27 billion euros,True,like
+2415,87.89,,False,vacio
+2416,14.05,14.05 millones,True,like
+2417,305,,False,vacio
+2418,186,186,True,like
+2419,42,42,True,like
+2420,406.6,406.6,True,like
+2421,25,25,True,like
+2422,31.7,31.7,True,like
+2423,Boko Haram,Boko Haram,True,like
+2424,38,38%,True,like
+2425,55,55,True,like
+2426,152,152,True,like
+2427,468.08,468.08 mil millones de dólares,True,like
+2428,25.4,25.4 millones,True,like
+2429,467,467 millones de dólares,True,like
+2430,46.22,46.22 mil millones de libras,True,like
+2431,7.2,7.2%,True,like
+2432,20,20%,True,like
+2433,50,50%,True,like
+2434,40.3,La información no está disponible en el gráfico,False,sin_match
+2435,Gabriel,Gabriel,True,like
+2436,573.1,573.1 billion Saudi Riyal,True,like
+2437,44.94,44.94 million,True,like
+2438,590598,590.598 millones de euros,False,sin_match
+2439,659,659,True,like
+2440,Mexico,Mexico,True,like
+2441,753,753,True,like
+2442,6.88,6.88 billion U.S. dollars,True,like
+2443,263878,,False,vacio
+2444,55759,55 759,False,sin_match
+2445,11.7,"11,7",True,numerico
+2446,25.29,25.29 millones de dólares estadounidenses,True,like
+2447,28.1,28.1,True,like
+2448,6.4,"6,4%",True,numerico
+2449,Mercadona,Mercadona,True,like
+2450,Carrefour,Carrefour,True,like
+2451,5.9,5.9%,True,like
+2452,48,,False,vacio
+2453,43,43,True,like
+2454,79,79,True,like
+2455,Niger,Niger,True,like
+2456,15.5,15.5,True,like
+2457,67.07,67.07 millones,True,like
+2458,39.01,,False,vacio
+2459,14,14 millones,True,like
+2460,4412,"4,412 millones de dólares estadounidenses",False,sin_match
+2461,42.83,$42.83,True,like
+2462,Vale,Vale,True,like
+2463,29.4,29.4%,True,like
+2464,Germany,Germany,True,like
+2465,18.4,18.4%,True,like
+2466,28.7,28.7%,True,like
+2467,5515.82,"5 517,84 millones de yuanes",False,sin_match
+2468,209,209,True,like
+2469,3.9,3.9 millones de unidades,True,like
+2470,0.41,0.41 millones de unidades,True,like
+2471,98.96,98.96 millones de yuan,True,like
+2472,Belgium,,False,vacio
+2473,2021,"2017, 2018 y 2021",True,like
+2474,15.9,15.9,True,like
+2475,165,165 billion DKK,True,like
+2476,168.1,168.1 billion DKK,True,like
+2477,209.75,,False,vacio
+2478,75.19,,False,vacio
+2479,27573,$27 573 millones de dólares,False,sin_match
+2480,9.3,,False,vacio
+2481,3.2,,False,vacio
+2482,0.85,0.85 millones,True,like
+2483,Sofia Vergara,Sofia Vergara,True,like
+2484,42.5,$42.5 millones de dólares,True,like
+2485,106,$106 millones de dólares,True,like
+2486,493.61,,False,vacio
+2487,1.81,1.81 millones,True,like
+2488,March 2021,"September 2019, September 2020 y March 2021",True,like
+2489,100,100%,True,like
+2490,178,178,True,like
+2491,5.5,5.5,True,like
+2492,98,98%,True,like
+2493,99,99%,True,like
+2494,1038000,"1,038,000",False,sin_match
+2495,197.1,197.1,True,like
+2496,167,167,True,like
+2497,0.75,0.75%,True,like
+2498,4.89,4.89%,True,like
+2499,Autonomous Province of Bolzano,Lombardia,False,sin_match
+2500,841961,,False,vacio

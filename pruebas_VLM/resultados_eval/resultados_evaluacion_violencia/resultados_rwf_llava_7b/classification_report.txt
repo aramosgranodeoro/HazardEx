@@ -1,0 +1,14 @@
+Modelo  : resultados_rwf_llava_7b
+Idioma  : EN
+Archivo : resultados_rwf_llava_7b.csv
+Muestras válidas: 1600 / 1600
+Predicciones inválidas ('ERROR'): 0 (0.0%)
+
+              precision    recall  f1-score   support
+
+no_violencia       0.51      0.99      0.67       800
+   violencia       0.80      0.03      0.06       800
+
+    accuracy                           0.51      1600
+   macro avg       0.65      0.51      0.36      1600
+weighted avg       0.65      0.51      0.36      1600

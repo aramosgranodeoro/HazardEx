@@ -1,0 +1,15 @@
+Modelo  : resultados_weapons_internlm_interns1_mini-q8_0_es
+Idioma  : ES
+Archivo : resultados_weapons_internlm_interns1_mini-q8_0_es.csv
+Muestras válidas: 806 / 810
+Predicciones inválidas ('ERROR'): 4 (0.49%)
+
+                precision    recall  f1-score   support
+
+          arma       0.98      0.82      0.89       483
+arma | no_arma       0.00      0.00      0.00         0
+       no_arma       0.78      0.98      0.87       323
+
+      accuracy                           0.88       806
+     macro avg       0.59      0.60      0.59       806
+  weighted avg       0.90      0.88      0.88       806

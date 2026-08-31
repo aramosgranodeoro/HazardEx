@@ -1,0 +1,14 @@
+Modelo  : resultados_rwf_salamandra_v2
+Idioma  : ES
+Archivo : resultados_rwf_salamandra_v2.csv
+Muestras válidas: 1598 / 1600
+Predicciones inválidas ('ERROR'): 2 (0.12%)
+
+              precision    recall  f1-score   support
+
+no_violencia       0.76      0.20      0.32       800
+   violencia       0.54      0.94      0.68       798
+
+    accuracy                           0.57      1598
+   macro avg       0.65      0.57      0.50      1598
+weighted avg       0.65      0.57      0.50      1598

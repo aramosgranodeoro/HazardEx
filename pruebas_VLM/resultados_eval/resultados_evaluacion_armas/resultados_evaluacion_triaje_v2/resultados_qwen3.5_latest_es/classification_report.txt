@@ -1,0 +1,18 @@
+Modelo  : resultados_qwen3.5_latest_es
+Idioma  : ES
+Archivo : resultados_qwen3.5_latest_es.csv
+Muestras válidas: 1422 / 1500
+Predicciones inválidas ('ERROR'): 78 (5.2%)
+
+              precision    recall  f1-score   support
+
+   accidente       0.93      0.34      0.50       218
+       armas       0.98      0.97      0.98       235
+       fuego       0.99      1.00      1.00       244
+     grafico       0.99      1.00      1.00       249
+      normal       0.52      0.97      0.68       247
+   violencia       0.96      0.63      0.76       229
+
+    accuracy                           0.83      1422
+   macro avg       0.90      0.82      0.82      1422
+weighted avg       0.89      0.83      0.82      1422

@@ -1,0 +1,811 @@
+indice,archivo,label_real,prediccion,confianza,descripcion,correcto,total_ms,prompt_ms,eval_ms,prompt_tokens,generated_tokens,tokens_per_sec
+1,ABbframe00145.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1141.9,207.7,724.8,853,69,95.2
+2,ABbframe00289.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,888.8,38.5,716.0,853,69,96.4
+3,ABbframe00322.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,900.0,39.2,713.7,853,69,96.7
+4,ABbframe00325.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,916.1,39.6,715.9,853,69,96.4
+5,ABbframe00331.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,887.9,39.0,714.1,853,69,96.6
+6,ABmframe00154.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,895.7,38.8,721.4,853,69,95.7
+7,ABmframe00262.jpg,arma,no_arma,1.0,No se observan armas en la imagen. El hombre está leyendo un documento y parece estar en una oficina o sala de reuniones.,0,1071.9,38.8,890.4,853,86,96.6
+8,ABmframe00280.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,892.3,38.7,716.8,853,69,96.3
+9,ABmframe00334.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,902.1,38.8,723.9,853,69,95.3
+10,ABmframe00346.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,903.6,39.0,720.6,853,69,95.7
+11,ABsframe00010.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,908.4,39.2,720.6,853,69,95.8
+12,ABsframe00121.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,889.3,39.7,722.1,853,69,95.5
+13,ABsframe00157.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,902.5,39.2,719.4,853,69,95.9
+14,ABsframe00193.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,897.9,37.6,724.4,853,69,95.3
+15,ABsframe00196.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,885.6,38.8,721.6,853,69,95.6
+16,ABsframe00208.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,883.9,38.5,703.6,853,69,98.1
+17,DSC_00021.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1023.8,38.0,701.9,853,69,98.3
+18,DSC_0010.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1003.4,37.8,699.2,853,69,98.7
+19,DSC_00131.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1034.7,38.2,702.6,853,69,98.2
+20,DSC_00321.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.2,38.1,700.6,853,69,98.5
+21,DSC_00361.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.1,38.1,700.1,853,69,98.6
+22,DSC_00591.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,973.4,37.8,700.0,853,69,98.6
+23,DSC_0069.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,986.6,38.0,698.3,853,69,98.8
+24,DefenseAndSurvive14.jpg,arma,no_arma,1.0,Un entrenador de boxeo y un atleta discutiendo en el gimnasio.,0,890.1,37.7,731.9,853,72,98.4
+25,DefenseKnifeAttack0103.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. Uno está con las manos en el pecho del otro, mientras que ambos tienen atuendo deportivo y parecen estar discutiendo o preparando para un combate.",0,1274.9,38.1,1090.9,853,107,98.1
+26,DefenseKnifeAttack0155.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento de lucha libre. El hombre en la izquierda está con los brazos cruzados y el otro está con un movimiento de defensa. Ambos están usando camisetas de entrenamiento y pantalones de lucha libre.,0,1387.8,38.3,1217.7,853,120,98.5
+27,DefenseKnifeAttack0163.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de jiu-jitsu. El hombre en la izquierda está con un cinturón y parece estar hablando o explicando algo al otro hombre, quien está con una camiseta de jiu-jitsu y tiene su brazo sobre el hombre que está hablando.",0,1474.5,38.3,1300.3,853,128,98.4
+28,DefenseKnifeAttack0168.jpg,arma,no_arma,1.0,"Dos hombres en un dojo de jiu-jitsu. El hombre en la izquierda está apuntando con su mano hacia el otro, quien parece estar hablando o explicando algo. Ambos están vestidos con camisetas de jiu-jitsu y pantalones de combate. No se observan armas peligrosas en la imagen.",0,1553.2,37.7,1404.9,853,138,98.2
+29,DefenseKnifeAttack0169.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento de lucha libre. Uno de ellos tiene un cinturón blanco con texto y el otro está con una mano hacia su pecho mientras se enfrentan.,0,1169.0,37.9,1014.7,853,100,98.6
+30,DefenseKnifeAttack0172.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. El hombre en la izquierda está con un cinturón y parece estar hablando o discutiendo algo con el otro hombre, quien tiene su mano levantada como si estuviera haciéndole un gesto o una señal. Ambos tienen camisetas de lucha libre y parecen estar en una sesión de entrenamiento.",0,1705.2,38.2,1536.8,853,151,98.3
+31,DefenseKnifeAttack0183.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. El hombre en la izquierda está con un cinturón y parece estar hablando o discutiendo con el otro hombre, quien tiene una camiseta negra con texto blanco y está con una mano levantada hacia arriba.",0,1425.5,38.0,1269.0,853,125,98.5
+32,DefenseKnifeAttack0184.jpg,arma,no_arma,1.0,Dos hombres en un dojo de jiu-jitsu. Uno está demostrando una técnica de lucha y el otro está observando la demostración.,0,1230.4,194.1,931.6,853,92,98.8
+33,DefenseKnifeAttack0218.jpg,arma,no_arma,1.0,"dos hombres en una sala de entrenamiento de lucha libre, uno con un cinturón y el otro con una camiseta negra y una camisa de músculo, ambos con manos levantadas. No se observan armas peligrosas.",0,1467.2,194.3,1157.6,853,114,98.5
+34,DefenseKnifeAttack0315.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento de jiu-jitsu. El hombre en la izquierda está con los brazos cruzados y el otro con sus manos en el suelo. Ambos están usando camisetas de jiu-jitsu y pantalones de mata prisa.,0,1569.9,192.8,1269.1,853,125,98.5
+35,DefenseKnifeAttack0320.jpg,arma,no_arma,1.0,"dos personas en una sala de entrenamiento de lucha libre, con una persona en el centro y otra a su lado izquierdo. Ambas personas están usando guantes y parecen estar practicando técnicas de lucha libre.",0,1385.1,192.7,1084.8,853,107,98.6
+36,DefenseKnifeAttack0376.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. Uno de ellos tiene un cinturón blanco con texto y logotipos, mientras que el otro está con una mano sobre su pecho y la otra en su cinto. Ambos están vestidos con camisetas de lucha libre y pantalones negros.",0,1643.6,193.3,1337.9,853,132,98.7
+37,DefenseKnifeAttack0399.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. El hombre en la izquierda está con un cinturón y parece estar hablando o discutiendo con el otro hombre, quien tiene su mano en su pecho. Ambos están vestidos con camisetas de lucha libre y pantalones cortos.",0,1634.8,194.0,1331.8,853,131,98.4
+38,DefenseKnifeAttack0443.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de jiu-jitsu. El hombre en la izquierda está con un cuchillo en su mano derecha y el otro hombre está con sus brazos abiertas, posiblemente intentando evitar que el primero lo atace.",0,1527.6,194.2,1217.5,853,120,98.6
+39,DefenseKnifeAttack0451.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. Uno de ellos está con un cinturón y parece estar discutiendo o explicando algo al otro, quien está con una camiseta de luchador y tiene su brazo levantado. Ambos están frente a una pared decorada con imágenes de luchadores.",0,1684.6,193.6,1370.5,853,135,98.5
+40,DefenseKnifeAttack0476.jpg,arma,no_arma,1.0,"Dos hombres en un dojo de jiu-jitsu, uno con una mano en el aire y el otro con una mano en la espalda del otro, ambos con atuendo deportivo y sin armas visibles.",0,1350.7,194.7,1053.8,853,104,98.7
+41,DefenseKnifeAttack0690.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento de jiu-jitsu. Uno de ellos tiene un cuchillo en su mano mientras se enfrentan. No hay ningún objeto que parezca un arma peligrosa en la imagen.,0,1459.1,193.8,1129.7,853,111,98.3
+42,DefenseKnifeAttack0734.jpg,arma,no_arma,1.0,"Dos hombres en un dojo de jiu-jitsu. El hombre en la izquierda está apuntando con su mano hacia el otro, quien parece estar defendiéndose o bloqueando el ataque.",0,1354.3,193.8,1032.1,853,101,97.9
+43,DefenseKnifeAttack0784.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. Uno de ellos tiene un cinturón blanco y está con los brazos cruzados mientras el otro, con una camiseta negra, le aplica un golpe en la cara.",0,1448.7,193.6,1143.4,853,112,98.0
+44,DefenseKnifeAttack0798.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento de lucha libre. Uno tiene un cinturón negro con texto y el otro es más grande y parece estar hablando o discutiendo algo con el otro.,0,1334.4,194.3,1030.2,853,101,98.0
+45,DefenseKnifeAttack1072.jpg,arma,no_arma,1.0,"Dos personas en un dojo de jiu-jitsu, una pareja practica técnicas de lucha. La persona en la izquierda tiene el brazo extendido mientras la otra personaje se apoya con sus manos en los hombros de la primera persona.",0,1462.1,193.7,1142.9,853,112,98.0
+46,DefenseKnifeAttack1115.jpg,arma,no_arma,1.0,"Dos personas en una sala de entrenamiento de jiu-jitsu, con una persona en el fondo y otra en primer plano. Ambas personas están usando uniformes de jiu-jitsu y parecen estar practicando técnicas de lucha. No se observan armas peligrosas en la imagen.",0,1633.0,194.2,1309.1,853,129,98.5
+47,DefenseKnifeAttack1223.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1019.0,195.2,700.8,853,69,98.5
+48,DefenseKnifeAttack1224.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. El hombre en la izquierda está hablando con el otro, quien parece estar escuchando. Ambos están vestidos con camisetas y pantalones de lucha libre, y hay un cinturón de lucha visible en la izquierda.",0,1625.3,192.6,1313.1,853,129,98.2
+49,HBbframe00145.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1083.7,194.7,698.5,853,69,98.8
+50,HBbframe00181.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1067.4,194.0,700.5,853,69,98.5
+51,HBbframe00316.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1071.4,195.1,700.5,853,69,98.5
+52,HBbframe00361.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1078.2,194.7,703.4,853,69,98.1
+53,HBmframe00151.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1083.7,194.7,702.0,853,69,98.3
+54,HBmframe00163.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1068.3,194.8,702.3,853,69,98.2
+55,HBmframe00172.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1084.3,193.5,702.2,853,69,98.3
+56,HBmframe00256.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1071.9,194.9,701.7,853,69,98.3
+57,HBmframe00310.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1064.9,194.4,700.0,853,69,98.6
+58,HBmframe00379.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1103.4,194.9,698.3,853,69,98.8
+59,HBsframe00094.jpg,arma,no_arma,1.0,No se observan armas en la imagen.,0,1000.4,194.6,607.9,853,60,98.7
+60,HBsframe00235.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1087.2,195.3,701.3,853,69,98.4
+61,HBsframe00337.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1074.8,194.7,698.2,853,69,98.8
+62,HBsframe00403.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1084.5,194.9,701.0,853,69,98.4
+63,KnifeDefenseKrav078.jpg,arma,no_arma,1.0,imagen muestra un entrenamiento de jiu-jitsu en una sala de entrenamiento con dos personas practicando técnicas de lucha. No se observan armas peligrosas en la imagen.,0,1364.7,195.0,1043.4,853,102,97.8
+64,KravMagaKnifeDefenseTechniques023.jpg,arma,no_arma,1.0,La imagen muestra a dos personas en un entrenamiento de jiu-jitsu. No se observan armas peligrosas como cuchillos o pistolas.,0,1217.6,195.6,908.4,853,89,98.0
+65,KravMagaKnifeDefenseTechniques024.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1015.0,195.4,704.2,853,69,98.0
+66,KravMagaKnifeDefenseTechniques037.jpg,arma,no_arma,1.0,La imagen muestra a dos hombres en una sala de entrenamiento. El hombre en la izquierda está con un bastón y el otro con una espada. Ambos están practicando técnicas de combate. No se observan armas peligrosas como cuchillos o pistolas.,0,1567.0,195.5,1246.2,853,122,97.9
+67,KravMagaKnifeDefenseTechniques062.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1022.7,193.9,702.4,853,69,98.2
+68,KravMagaKnifeDefenseTechniques078.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.3,194.6,700.6,853,69,98.5
+69,KravMagaKnifeDefenseTechniques080.jpg,arma,no_arma,1.0,"La imagen muestra a dos personas en una sala de entrenamiento. Una persona está agarrando la otra por el brazo, lo que sugiere un entrenamiento o práctica de jiu-jitsu o similar. No se observan armas peligrosas como cuchillos, pistolas o cualquier otro objeto que parezca arma.",0,1669.2,194.5,1354.2,853,133,98.2
+70,KravMagaKnifeDefenseTechniques090.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1019.2,194.0,701.8,853,69,98.3
+71,KravMagaKnifeDefenseTechniques099.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento, uno con una camiseta blanca y el otro con una camiseta azul. El hombre con la camiseta blanca tiene su brazo extendido hacia el otro, quien parece estar siendo golpeado. Ambos están en posición de lucha o combate.",0,1597.2,194.9,1273.5,853,125,98.2
+72,KravMagaKnifeDefenseTechniques120.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1018.7,193.9,704.4,853,69,98.0
+73,KravMagaKnifeDefenseTechniques129.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1017.5,194.2,705.2,853,69,97.8
+74,KravMagaKnifeDefenseTechniques131.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.8,194.3,698.9,853,69,98.7
+75,KravMagaKnifeDefenseTechniques137.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.2,193.7,699.0,853,69,98.7
+76,KravMagaKnifeDefenseTechniques151.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento, uno con una mano en el aire y el otro con una mano en la espalda del otro. Ambos están vestidos casualmente y parecen estar en un momento de juego o práctica.",0,1415.8,193.0,1108.7,853,109,98.3
+77,KravMagaKnifeDefenseTechniques153.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre, uno con una camiseta blanca y el otro con una camiseta azul, ambos con pantalones azules y calzado deportivo. Ambos están en posición de lucha, con un movimiento que sugiere que uno está intentando tomar control del otro.",0,1654.2,193.9,1343.0,853,132,98.3
+78,KravMagaKnifeDefenseTechniques155.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre, uno con un cinturón blanco y el otro con una camiseta azul y pantalones blancos. Ambos están enfrentados y parecen estar en una posición de combate. No se observan armas peligrosas en la imagen.",0,1614.6,194.2,1294.5,853,127,98.1
+79,KravMagaKnifeDefenseTechniques180.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento, uno con un cinturón y el otro con una camiseta blanca y azul, luchando entre sí.",0,1211.0,194.1,905.0,853,89,98.3
+80,KravMagaKnifeDefenseTechniques185.jpg,arma,no_arma,1.0,Dos hombres en una lucha de jiu-jitsu. No se observan armas peligrosas en la imagen.,0,1142.7,194.2,823.8,853,81,98.3
+81,KravMagaKnifeDefenseTechniques212.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento con un cuchillo en la mano del hombre que está siendo golpeado.,0,1128.6,192.7,813.4,853,80,98.4
+82,KravMagaKnifeDefenseTechniques223.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento de lucha libre. Uno tiene un cuchillo en la mano y está atacando al otro que se defiende con sus brazos.,0,1280.2,194.7,977.2,853,96,98.2
+83,KravMagaKnifeDefenseTechniques230.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. El hombre en la izquierda tiene un cinturón blanco y está con los brazos cruzados mientras el otro hombre, que parece ser su oponente, le hace una maniobra de lucha libre.",0,1539.4,194.4,1232.8,853,121,98.1
+84,KravMagaKnifeDefenseTechniques233.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento de lucha libre. Uno de ellos tiene un cuchillo en su mano mientras se enfrentan. Ambos están usando camisetas y pantalones de lucha libre.,0,1387.7,193.5,1078.7,853,106,98.3
+85,KravMagaKnifeDefenseTechniques236.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. El hombre en la izquierda está con un cinturón y parece estar en una posición defensiva mientras que el otro hombre, en la derecha, tiene su mano extendida hacia él, probablemente para darle un golpe o aplicar una técnica de lucha libre. Ambos están usando camisetas y pantalones de lucha libre.",0,1892.0,193.3,1581.1,853,155,98.0
+86,KravMagaKnifeDefenseTechniques238.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. El hombre en la izquierda tiene un cinturón blanco y está con los brazos cruzados mientras el otro hombre, que parece ser su oponente, le aplica un golpe en el pecho con una mano abierta.",0,1590.4,194.6,1281.4,853,126,98.3
+87,KravMagaKnifeDefenseTechniques239.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento con un cuchillo en la mano del hombre que está detrás del otro,0,1134.4,193.9,821.6,853,81,98.6
+88,KravMagaKnifeDefenseTechniques248.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre, uno con una camiseta roja y el otro con una camiseta blanca, ambos con pantalones azules y calzado deportivo. Ambos tienen cinturones de lucha y están realizando un movimiento de lucha libre que parece ser una técnica de suelo.",0,1713.3,194.6,1404.3,853,138,98.3
+89,KravMagaKnifeDefenseTechniques249.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre, uno con una camiseta roja y el otro con una camiseta blanca, ambos con pantalones azules y calzado deportivo. Ambos tienen cinturones de lucha y están realizando un movimiento de lucha libre.",0,1604.3,194.3,1293.7,853,127,98.2
+90,KravMagaKnifeDefenseTechniques254.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. Uno tiene un cinturón rojo y el otro tiene una camiseta blanca con detalles azules. Ambos están en posición de lucha, pero no hay ningún objeto que parezca un arma en la imagen.",0,1606.4,194.7,1283.9,853,126,98.1
+91,KravMagaKnifeDefenseTechniques264.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1020.1,194.7,699.8,853,69,98.6
+92,KravMagaKnifeDefenseTechniques284.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1015.5,193.9,700.1,853,69,98.6
+93,KravMagaKnifeDefenseTechniques288.jpg,arma,no_arma,1.0,La imagen muestra a dos hombres en un entrenamiento de lucha libre. No se observan armas peligrosas como cuchillos o pistolas.,0,1204.2,194.3,893.5,853,88,98.5
+94,KravMagaKnifeDefenseTechniques363.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1003.2,193.6,701.5,853,69,98.4
+95,KravMagaKnifeDefenseTechniques365.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1013.9,194.3,699.5,853,69,98.6
+96,KravMagaKnifeDefenseTechniques370.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1000.4,194.1,699.8,853,69,98.6
+97,KravMagaKnifeDefenseTechniques416.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1014.6,193.8,700.3,853,69,98.5
+98,KravMagaKnifeDefenseTechniques442.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.6,194.0,700.7,853,69,98.5
+99,KravMagaKnifeDefenseTechniques597.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1017.8,194.9,699.1,853,69,98.7
+100,KravMagaKnifeDefenseTechniques658.jpg,arma,no_arma,1.0,"Dos hombres en un dojo de jiu-jitsu, uno con una mano en el pecho del otro, ambos con camisetas y pantalones de entrenamiento.",0,1247.1,193.2,943.6,853,93,98.6
+101,KravMagaKnifeDefenseTechniques674.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de jiu-jitsu. El hombre en la izquierda tiene un cinturón blanco y está con los brazos cruzados sobre el pecho del otro hombre, quien parece estar siendo atacado o defendido. Ambos están usando camisetas de entrenamiento y pantalones de jiu-jitsu. No se observan armas peligrosas en la imagen.",0,1899.9,192.9,1598.3,853,157,98.2
+102,KravMagaKnifeDefenseTechniques724.jpg,arma,no_arma,1.0,"Dos hombres en un dojo de jiu-jitsu, uno con una camiseta roja y el otro con una camiseta blanca, ambos con pantalones azules y calzado deportivo. Ambos están entrenando y se encuentran en posición de lucha. No hay ningún objeto que parezca un arma en la imagen.",0,1700.0,195.0,1392.6,853,137,98.4
+103,KravMagaKnifeDefenseTechniques750.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.6,193.6,698.8,853,69,98.7
+104,KravMagaKnifeDefenseTechniques757.jpg,arma,no_arma,1.0,Dos hombres en una sala de entrenamiento de lucha libre. Uno de ellos tiene un cinturón blanco y está con los brazos cruzados mientras el otro se acerca a él con una postura agresiva.,0,1379.6,194.8,1075.7,853,106,98.5
+105,KravMagaKnifeDefenseTechniques777.jpg,arma,no_arma,1.0,"Dos hombres en una sala de entrenamiento de lucha libre. Uno tiene un cinturón blanco y azul mientras el otro tiene una camiseta roja con un logotipo en la parte superior izquierda. Ambos están en posición de lucha, pero no hay ningún objeto que parezca un arma peligrosa en la imagen.",0,1715.6,193.3,1420.6,853,140,98.6
+106,LBbframe00142.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1046.1,194.8,696.9,853,69,99.0
+107,LBbframe00151.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1042.3,193.2,697.5,853,69,98.9
+108,LBbframe00289.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1053.2,195.2,698.0,853,69,98.8
+109,LBmframe00160.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1200.3,195.1,839.1,853,69,82.2
+110,LBmframe00244.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1047.4,193.8,689.0,853,69,100.1
+111,LBsframe00298.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1041.1,191.8,689.7,853,69,100.0
+112,LBsframe00304.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1039.3,191.9,695.1,853,69,99.3
+113,LBsframe00316.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1036.9,191.5,684.7,853,69,100.8
+114,LBsframe00361.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1041.9,192.0,685.0,853,69,100.7
+115,MBbframe00139.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1060.4,191.0,683.6,853,69,100.9
+116,MBbframe00244.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1062.5,191.5,685.6,853,69,100.6
+117,MBbframe00325.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1066.9,192.0,683.9,853,69,100.9
+118,MBbframe00388.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1060.4,191.3,685.8,853,69,100.6
+119,MBmframe00130.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1061.0,192.6,685.3,853,69,100.7
+120,MBmframe00211.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1069.7,192.7,686.2,853,69,100.6
+121,MBmframe00241.jpg,arma,no_arma,1.0,No se observan armas en la imagen.,0,972.6,192.6,595.4,853,60,100.8
+122,MBmframe00316.jpg,arma,no_arma,1.0,No se observan armas en la imagen.,0,962.8,191.1,594.8,853,60,100.9
+123,MBsframe00154.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1067.3,191.3,685.5,853,69,100.7
+124,MBsframe00181.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1060.2,191.6,684.8,853,69,100.8
+125,MBsframe00289.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1062.0,192.6,684.0,853,69,100.9
+126,MBsframe00334.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1078.8,191.5,685.9,853,69,100.6
+127,MBsframe00352.jpg,arma,no_arma,1.0,No se observan armas en la imagen.,0,967.8,190.4,597.2,853,60,100.5
+128,MBsframe00439.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1070.0,191.0,686.4,853,69,100.5
+129,RealityKnifeAttacks0651.jpg,arma,no_arma,1.0,No se ven armas en la imagen.,0,896.4,192.1,587.2,853,59,100.5
+130,RusoClases005.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,996.9,192.4,687.4,853,69,100.4
+131,RusoClases262.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,987.4,191.5,689.0,853,69,100.1
+132,RusoClases307.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,995.6,191.6,689.0,853,69,100.2
+133,RusoClases418.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1002.2,192.8,689.0,853,69,100.1
+134,RusoClases463.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,994.1,191.9,688.6,853,69,100.2
+135,billete_0102.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,969.1,190.8,688.3,853,69,100.2
+136,billete_0104.jpg,no_arma,no_arma,1.0,imagen de una persona cerrando un banco con dinero,1,980.1,191.9,637.0,853,64,100.5
+137,billete_0106.jpg,no_arma,no_arma,1.0,persona cargando dinero en una máquina de cambio,1,1051.8,192.9,645.3,853,65,100.7
+138,billete_0113.jpg,no_arma,no_arma,1.0,un billete de euros con el número 500 y la palabra 'EURO' en el centro,1,1131.3,190.8,756.5,853,76,100.5
+139,billete_0142.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.6,191.5,685.3,853,69,100.7
+140,billete_0149.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1024.0,192.5,687.4,853,69,100.4
+141,billete_0151.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1075.2,192.7,685.0,853,69,100.7
+142,billete_0154.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1092.9,191.8,684.5,853,69,100.8
+143,billete_0156.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1118.8,192.1,685.1,853,69,100.7
+144,billete_0157.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1118.7,191.5,684.6,853,69,100.8
+145,billete_0158.JPG,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,1086.4,191.1,592.8,853,60,101.2
+146,billete_2190.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,963.0,190.6,688.1,853,69,100.3
+147,billete_2191.jpg,no_arma,no_arma,1.0,un banco de dinero en manos humanas,1,928.9,190.3,606.0,853,61,100.7
+148,billete_2192.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,995.8,191.7,685.7,853,69,100.6
+149,billete_2193.jpg,no_arma,no_arma,1.0,un billete de euros con un incendio simulado en la parte superior,1,1003.2,190.6,675.0,853,68,100.7
+150,billete_2194.jpg,no_arma,no_arma,1.0,un billete de euros,1,845.2,191.8,556.1,853,56,100.7
+151,billete_2198.jpg,no_arma,no_arma,1.0,un banco de dinero con una imagen de la reina Isabel II de Inglaterra,1,1025.4,191.7,705.3,853,71,100.7
+152,billete_2203.jpg,no_arma,no_arma,1.0,la imagen muestra una mano sosteniendo un billete de cinco euros,1,994.4,192.6,686.3,853,69,100.5
+153,billete_2204.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,996.1,192.5,686.2,853,69,100.6
+154,billete_2205.JPG,no_arma,no_arma,1.0,un banco de dinero en una mano,1,890.4,190.7,595.7,853,60,100.7
+155,billete_2207.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1137.5,190.0,682.8,853,69,101.1
+156,billete_2208.jpg,no_arma,no_arma,1.0,imagen de una persona cortando un billete de euros,1,921.1,191.8,627.2,853,63,100.5
+157,billete_2209.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,962.7,191.1,687.8,853,69,100.3
+158,billete_2210.jpeg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1098.9,191.7,685.2,853,69,100.7
+159,billete_2211.jpg,no_arma,no_arma,1.0,un billete de euros en mano,1,906.2,191.1,586.2,853,59,100.7
+160,billete_2213.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1003.9,191.8,687.8,853,69,100.3
+161,billete_2217.jpg,no_arma,no_arma,1.0,"la imagen muestra una persona con dinero en la mano y un billete de 2000 pesetas en su otra mano, pero no hay ningún objeto que parezca un arma.",1,1262.4,191.6,977.1,853,98,100.3
+162,billete_2219.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,970.1,192.3,686.5,853,69,100.5
+163,billete_2221.jpg,no_arma,no_arma,1.0,la persona está mostrando un billete de euros,1,892.8,192.5,616.6,853,62,100.6
+164,billete_2224.jpg,no_arma,no_arma,1.0,un billete de dinero en la mano,1,898.0,192.5,599.3,853,60,100.1
+165,billete_2229.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,974.1,193.3,689.2,853,69,100.1
+166,billete_2231.jpg,no_arma,no_arma,1.0,un billete de 20 euros,1,874.7,192.0,589.2,853,59,100.1
+167,billete_2233.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,970.0,192.3,687.9,853,69,100.3
+168,billete_2349.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1012.1,190.4,688.8,853,69,100.2
+169,billete_2350.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1037.4,192.8,686.7,853,69,100.5
+170,billete_2352.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.1,192.2,686.4,853,69,100.5
+171,billete_2355.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1026.8,192.4,688.1,853,69,100.3
+172,billete_2356.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.7,192.8,686.7,853,69,100.5
+173,billete_2357.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1173.5,191.1,684.4,853,69,100.8
+174,billete_2358.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1049.1,190.6,687.6,853,69,100.4
+175,billete_2359.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1028.8,191.6,687.1,853,69,100.4
+176,billete_2360.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1137.7,192.4,685.3,853,69,100.7
+177,billete_2361.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1131.4,191.7,687.0,853,69,100.4
+178,billete_2372.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1128.3,191.8,689.1,853,69,100.1
+179,billete_2373.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.6,192.4,688.2,853,69,100.3
+180,img1102.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1012.7,192.4,694.3,853,69,99.4
+181,img1139.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.9,192.5,693.6,853,69,99.5
+182,img1241.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1007.8,191.7,691.1,853,69,99.8
+183,img1261.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.2,192.1,692.2,853,69,99.7
+184,img1273.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1010.8,191.6,692.4,853,69,99.7
+185,img1296.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1022.5,191.7,691.9,853,69,99.7
+186,img1302.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1018.5,192.7,693.6,853,69,99.5
+187,img1364.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1017.0,192.6,693.1,853,69,99.5
+188,img1463.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.6,192.1,694.1,853,69,99.4
+189,img1475.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1007.2,191.9,693.5,853,69,99.5
+190,img1490.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.9,192.9,693.9,853,69,99.4
+191,img1542.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1011.4,191.4,695.2,853,69,99.3
+192,img1558.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.8,192.7,692.7,853,69,99.6
+193,img1590.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.0,192.2,692.0,853,69,99.7
+194,img1616.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1011.6,192.8,692.3,853,69,99.7
+195,img1625.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1007.5,192.7,690.2,853,69,100.0
+196,img1641.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,999.2,191.8,686.2,853,69,100.6
+197,img1652.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.3,192.2,685.8,853,69,100.6
+198,img1690.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1017.9,191.3,687.1,853,69,100.4
+199,img1728.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1003.1,191.0,687.8,853,69,100.3
+200,img1733.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,911.7,192.3,598.3,853,60,100.3
+201,img1733v2.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,789.9,10.4,687.5,853,69,100.4
+202,img1749.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1002.7,192.1,689.5,853,69,100.1
+203,img1773.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1009.4,192.5,689.1,853,69,100.1
+204,img1831.jpg,no_arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,1,1008.7,191.4,698.8,853,70,100.2
+205,img1857.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1009.8,191.1,688.2,853,69,100.3
+206,img1887.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1007.6,191.7,688.5,853,69,100.2
+207,img1900.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1004.8,192.3,688.0,853,69,100.3
+208,img1980.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1004.5,191.3,687.5,853,69,100.4
+209,img2005.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1003.9,192.4,686.8,853,69,100.5
+210,img2050.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1005.7,191.5,687.5,853,69,100.4
+211,img2051.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.1,191.9,687.3,853,69,100.4
+212,img2105.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.5,191.3,686.7,853,69,100.5
+213,img2127.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,914.6,191.3,598.4,853,60,100.3
+214,img2167.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,910.6,190.9,597.3,853,60,100.4
+215,img2233.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,999.7,191.1,689.9,853,69,100.0
+216,img2294.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1001.4,192.4,690.1,853,69,100.0
+217,img2367.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1000.4,191.4,687.7,853,69,100.3
+218,img238.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1005.2,192.4,688.6,853,69,100.2
+219,img2396.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,999.0,190.5,690.7,853,69,99.9
+220,img2456.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.3,192.3,692.0,853,69,99.7
+221,img2476.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1007.2,191.6,692.4,853,69,99.6
+222,img2517.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,999.2,192.4,688.9,853,69,100.2
+223,img2728.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1043.7,192.2,687.8,853,69,100.3
+224,img279.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.7,192.4,686.3,853,69,100.5
+225,img2862.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1018.2,192.6,687.5,853,69,100.4
+226,img2875.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,996.1,192.5,686.3,853,69,100.5
+227,img2876.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1016.6,191.8,686.3,853,69,100.5
+228,img2890.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,995.9,192.8,687.6,853,69,100.3
+229,img2904.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.0,191.1,689.4,853,69,100.1
+230,img2983.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1000.6,192.9,688.7,853,69,100.2
+231,img3033.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,998.2,191.5,688.8,853,69,100.2
+232,img3094.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,999.3,191.8,690.5,853,69,99.9
+233,img3115.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,998.0,193.1,687.6,853,69,100.4
+234,img3218.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1038.7,192.7,685.7,853,69,100.6
+235,img3244.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,998.3,191.7,686.4,853,69,100.5
+236,img3262.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1018.4,191.4,685.2,853,69,100.7
+237,img3378.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,996.4,192.6,686.1,853,69,100.6
+238,img3436.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,993.2,191.2,686.1,853,69,100.6
+239,img3571.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1028.7,191.3,686.7,853,69,100.5
+240,img3593.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1026.5,192.8,686.1,853,69,100.6
+241,img36.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1009.5,191.9,686.1,853,69,100.6
+242,img3640.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1009.0,192.0,686.2,853,69,100.6
+243,img3659.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1028.7,191.9,685.9,853,69,100.6
+244,img3711.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.0,191.2,684.1,853,69,100.9
+245,img3748.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1034.0,191.3,684.7,853,69,100.8
+246,img3783.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.4,191.3,685.7,853,69,100.6
+247,img381.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1015.3,192.3,686.3,853,69,100.5
+248,img3820.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.6,191.7,685.5,853,69,100.7
+249,img3844.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1020.3,192.6,686.0,853,69,100.6
+250,img388.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,997.5,192.8,686.2,853,69,100.6
+251,img3884.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.1,192.4,685.9,853,69,100.6
+252,img3921.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1011.6,192.1,684.8,853,69,100.8
+253,img3948.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1029.9,192.6,690.3,853,69,100.0
+254,img4004.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1023.2,191.7,687.3,853,69,100.4
+255,img4032.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1010.6,192.9,685.2,853,69,100.7
+256,img409.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.1,191.6,689.0,853,69,100.1
+257,img4113.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1011.1,191.7,687.8,853,69,100.3
+258,img4157.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1010.9,191.3,687.6,853,69,100.4
+259,img4232.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1012.1,192.5,686.2,853,69,100.6
+260,img4270.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1003.1,193.1,685.1,853,69,100.7
+261,img4333.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1000.7,190.9,685.3,853,69,100.7
+262,img452.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1001.2,192.3,686.2,853,69,100.6
+263,img470.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,998.7,190.8,687.0,853,69,100.4
+264,img4809.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1001.2,192.3,686.5,853,69,100.5
+265,img483.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.3,191.2,690.4,853,69,99.9
+266,img4864.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1010.5,192.8,689.5,853,69,100.1
+267,img498.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1011.2,192.8,689.7,853,69,100.0
+268,img498v2.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.6,192.7,691.6,853,69,99.8
+269,img5050.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1028.2,192.5,690.8,853,69,99.9
+270,img510.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1003.1,191.6,688.9,853,69,100.2
+271,img530.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,998.1,190.7,687.4,853,69,100.4
+272,img533.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.9,192.3,686.7,853,69,100.5
+273,img5353.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1011.2,192.6,687.3,853,69,100.4
+274,img5449.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1007.3,191.4,687.2,853,69,100.4
+275,img545.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1005.8,193.1,687.1,853,69,100.4
+276,img5887.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1011.2,192.8,687.2,853,69,100.4
+277,img5915.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1015.9,192.7,687.5,853,69,100.4
+278,img6000.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1012.2,192.8,687.3,853,69,100.4
+279,img601.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,917.8,192.2,599.9,853,60,100.0
+280,img616.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1003.1,191.1,687.8,853,69,100.3
+281,img6251.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1022.8,192.0,686.1,853,69,100.6
+282,img6303.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1022.1,191.3,687.6,853,69,100.4
+283,img6368.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1022.5,191.2,688.7,853,69,100.2
+284,img641.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1001.6,190.7,686.1,853,69,100.6
+285,img6452.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.2,191.9,686.9,853,69,100.5
+286,img65.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.1,192.6,686.7,853,69,100.5
+287,img6501.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1023.0,192.9,687.3,853,69,100.4
+288,img651.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1004.2,192.2,687.3,853,69,100.4
+289,img653.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1006.6,191.7,688.1,853,69,100.3
+290,img6585.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1018.4,192.5,687.1,853,69,100.4
+291,img6653.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.0,192.7,686.9,853,69,100.5
+292,img6732.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1026.2,192.0,688.9,853,69,100.2
+293,img6874.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1032.4,191.9,688.4,853,69,100.2
+294,img701.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.7,192.0,689.0,853,69,100.1
+295,img7197.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1012.5,192.3,689.5,853,69,100.1
+296,img7322.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1007.6,190.5,688.8,853,69,100.2
+297,img7356.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1014.4,192.8,688.6,853,69,100.2
+298,img7532.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,940.7,192.2,598.4,853,60,100.3
+299,img759.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1005.0,191.8,689.1,853,69,100.1
+300,img7665.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1032.2,192.6,689.0,853,69,100.1
+301,img772.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1003.9,191.3,689.8,853,69,100.0
+302,img7773.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1032.9,191.9,689.0,853,69,100.1
+303,img815.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1006.0,192.7,690.5,853,69,99.9
+304,img859.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,915.1,190.9,599.5,853,60,100.1
+305,img931.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1001.2,191.6,689.1,853,69,100.1
+306,knifeDefenseTechnique070.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,987.8,192.0,689.5,853,69,100.1
+307,knifeDefenseTechnique116.jpg,arma,no_arma,1.0,No se observan armas peligrosas en la imagen.,0,953.2,192.2,636.2,853,64,100.6
+308,knife_1000.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.5,191.3,686.2,853,69,100.6
+309,knife_1011.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1009.0,191.9,685.5,853,69,100.7
+310,knife_1012.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.2,192.4,686.1,853,69,100.6
+311,knife_1016.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.4,192.5,685.8,853,69,100.6
+312,knife_1019.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1018.4,192.3,686.6,853,69,100.5
+313,knife_102.jpg,arma,no_arma,1.0,un cuchillo de madera con una hoja metálica y un mano en la parte inferior,0,1000.0,191.2,715.9,853,72,100.6
+314,knife_103.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,972.7,191.9,688.1,853,69,100.3
+315,knife_1030.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1030.4,192.3,685.4,853,69,100.7
+316,knife_1037.jpg,arma,no_arma,1.0,No se observan armas en la imagen.,0,918.0,191.8,595.8,853,60,100.7
+317,knife_1041.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1003.1,191.6,684.7,853,69,100.8
+318,knife_1043.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1002.7,191.4,685.5,853,69,100.7
+319,knife_1045.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1001.7,191.6,683.8,853,69,100.9
+320,knife_1051.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1016.7,192.6,685.4,853,69,100.7
+321,knife_1054.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1036.4,191.5,686.2,853,69,100.6
+322,knife_1060.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.8,192.2,684.9,853,69,100.7
+323,knife_1063.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1019.6,190.8,685.5,853,69,100.7
+324,knife_1067.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.2,193.0,685.1,853,69,100.7
+325,knife_1073.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.3,191.1,685.5,853,69,100.7
+326,knife_1084.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1020.1,190.7,685.7,853,69,100.6
+327,knife_1085.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1014.1,191.4,695.3,853,70,100.7
+328,knife_1087.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.7,191.4,685.5,853,69,100.7
+329,knife_1088.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1026.2,192.7,684.4,853,69,100.8
+330,knife_1092.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1016.2,192.5,685.8,853,69,100.6
+331,knife_1093.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1045.2,192.4,695.0,853,70,100.7
+332,knife_1098.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.9,190.9,685.2,853,69,100.7
+333,knife_110.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,966.8,190.7,686.3,853,69,100.5
+334,knife_1101.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1014.5,191.1,685.8,853,69,100.6
+335,knife_1102.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1025.1,192.4,685.2,853,69,100.7
+336,knife_111.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,971.7,191.9,685.7,853,69,100.6
+337,knife_1116.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1020.2,191.6,685.5,853,69,100.7
+338,knife_1117.jpg,arma,no_arma,1.0,No se observan armas en la imagen.,0,920.5,192.6,594.5,853,60,100.9
+339,knife_1122.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.6,191.7,687.1,853,69,100.4
+340,knife_1127.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.6,191.9,686.4,853,69,100.5
+341,knife_113.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,988.0,191.8,686.4,853,69,100.5
+342,knife_1136.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1013.6,192.2,686.5,853,69,100.5
+343,knife_1137.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.2,192.3,686.3,853,69,100.5
+344,knife_1144.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.9,192.1,686.5,853,69,100.5
+345,knife_115.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,959.4,193.0,687.4,853,69,100.4
+346,knife_1153.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1048.1,192.6,685.7,853,69,100.6
+347,knife_1157.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1037.9,191.6,684.7,853,69,100.8
+348,knife_1164.jpg,arma,no_arma,1.0,Dos hombres conversando en una cocina con varios utensilios y ingredientes de cocina.,0,1052.5,193.0,726.4,853,73,100.5
+349,knife_1166.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1003.3,192.6,685.6,853,69,100.6
+350,knife_1168.jpg,arma,no_arma,1.0,"Dos hombres sentados en una cocina, uno de ellos con una barba y un tatuaje visible en su brazo izquierdo. Ambos están hablando entre sí, mientras que el otro tiene una hoja de papel con algunas marcas y texto en su mano derecha.",0,1473.5,191.3,1156.3,853,116,100.3
+351,knife_1171.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1035.9,193.5,686.7,853,69,100.5
+352,knife_1173.jpg,arma,no_arma,1.0,un cuchillo de caza y algunas herramientas de construcción,0,985.8,191.3,665.6,853,67,100.7
+353,knife_1186.jpg,arma,no_arma,1.0,Dos hombres sentados en una cocina con un mesón de madera y algunas herramientas en la superficie.,0,1097.7,192.5,775.9,853,78,100.5
+354,knife_1190.jpg,arma,no_arma,1.0,"Dos hombres sentados en una cocina con un fondo de azulejos y una mesa de madera. El hombre de la izquierda tiene una barba corta y está usando una camiseta negra con un diseño en el pecho, mientras que el otro hombre tiene una barba larga y una camiseta verde con un diseño en el pecho. Ambos están sentados frente a una mesa de madera con algunas herramientas y materiales de construcción en ella.",0,1987.5,192.3,1668.9,853,167,100.1
+355,knife_1209.jpg,arma,no_arma,1.0,"No se observan armas en la imagen. Se ve a un hombre con una camisa verde y una camisa de manga corta, trabajando en una mesa con herramientas y materiales de construcción.",0,1336.0,191.2,996.6,853,100,100.3
+356,knife_1212.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1032.6,191.3,684.9,853,69,100.7
+357,knife_1214.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1034.2,193.0,686.6,853,69,100.5
+358,knife_1215.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1009.4,193.0,685.4,853,69,100.7
+359,knife_1218.jpg,arma,no_arma,1.0,"Dos hombres sentados en una cocina, uno de ellos con una navaja en su mano mientras el otro escribe algo en un papel",0,1137.3,192.7,816.5,853,82,100.4
+360,knife_123.jpg,arma,no_arma,1.0,"un objeto que parece ser un cuchillo o una navaja, pero no es un arma peligrosa",0,1054.4,191.8,755.8,853,76,100.6
+361,knife_1236.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.3,192.9,686.5,853,69,100.5
+362,knife_1237.jpg,arma,no_arma,1.0,un hombre trabajando con herramientas en un ambiente al aire libre,0,1006.7,192.0,674.4,853,68,100.8
+363,knife_1239.jpg,arma,no_arma,1.0,"Dos hombres en una cocina, uno de ellos con un cuchillo en la mano mientras el otro señala algo en la mesa.",0,1127.9,191.5,806.8,853,81,100.4
+364,knife_1242.jpg,arma,no_arma,1.0,"Dos hombres sentados en una cocina, uno de ellos con una navaja en la mano mientras habla con el otro.",0,1096.2,190.9,775.6,853,78,100.6
+365,knife_1253.jpg,arma,no_arma,1.0,"Dos hombres en una cocina, uno de ellos con un cuchillo en la mano mientras el otro le muestra algo. No hay ningún objeto que parezca un arma peligrosa en la imagen.",0,1326.1,191.9,1006.6,853,101,100.3
+366,knife_1258.jpg,arma,no_arma,1.0,"Dos hombres en una cocina, uno con una navaja y el otro con un cuchillo. No hay ningún objeto que parezca un arma peligrosa.",0,1226.5,192.1,906.7,853,91,100.4
+367,knife_1261.jpg,arma,no_arma,1.0,"Dos hombres sentados en una cocina, uno de ellos con una barba y un tatuaje visible en su brazo izquierdo. El otro hombre tiene una camisa de manga corta y está haciendo un gesto con la mano derecha.",0,1410.9,192.9,1086.8,853,109,100.3
+368,knife_1268.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1000.2,191.9,685.2,853,69,100.7
+369,knife_1270.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1002.3,191.9,685.6,853,69,100.6
+370,knife_1272.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1002.5,192.2,685.4,853,69,100.7
+371,knife_1286.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.0,193.2,686.2,853,69,100.6
+372,knife_1287.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,998.5,192.7,684.4,853,69,100.8
+373,knife_1288.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1001.7,192.5,687.1,853,69,100.4
+374,knife_1289.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,999.9,191.7,685.7,853,69,100.6
+375,knife_1293.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,999.9,192.7,686.0,853,69,100.6
+376,knife_1297.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1002.1,192.1,687.8,853,69,100.3
+377,knife_1298.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1003.1,192.6,685.9,853,69,100.6
+378,knife_13.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,960.5,190.9,687.4,853,69,100.4
+379,knife_130.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,964.1,192.2,687.3,853,69,100.4
+380,knife_1308.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1000.6,192.0,686.4,853,69,100.5
+381,knife_1314.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1001.3,191.6,685.5,853,69,100.7
+382,knife_1315.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,999.1,192.2,685.8,853,69,100.6
+383,knife_1318.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1002.6,193.2,686.5,853,69,100.5
+384,knife_132.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1540.4,398.4,683.8,853,69,100.9
+385,knife_1323.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1001.2,192.4,686.5,853,69,100.5
+386,knife_1332.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,997.5,192.4,686.1,853,69,100.6
+387,knife_1333.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.4,192.7,685.8,853,69,100.6
+388,knife_1341.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1003.5,193.0,685.2,853,69,100.7
+389,knife_1345.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1000.0,192.4,685.9,853,69,100.6
+390,knife_135.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,978.5,192.4,686.6,853,69,100.5
+391,knife_138.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,977.7,191.8,697.2,853,70,100.4
+392,knife_139.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,994.0,192.4,696.5,853,70,100.5
+393,knife_145.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,965.3,191.5,687.9,853,69,100.3
+394,knife_150.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,971.6,193.3,687.7,853,69,100.3
+395,knife_16.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,966.9,192.7,688.2,853,69,100.3
+396,knife_160.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,965.6,192.6,688.0,853,69,100.3
+397,knife_161.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,985.5,192.9,691.1,853,69,99.8
+398,knife_163.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,973.9,193.4,692.3,853,69,99.7
+399,knife_167.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,964.1,191.6,689.1,853,69,100.1
+400,knife_173.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,963.0,191.3,690.7,853,69,99.9
+401,knife_182.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,986.7,192.1,690.3,853,69,100.0
+402,knife_193.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,970.0,193.7,687.5,853,69,100.4
+403,knife_195.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,974.1,191.9,688.5,853,69,100.2
+404,knife_196.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,967.7,193.1,688.5,853,69,100.2
+405,knife_221.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1009.6,193.1,690.8,853,69,99.9
+406,knife_227.jpg,arma,no_arma,1.0,"La imagen muestra una persona con un cuchillo en la mano, pero no hay ningún objeto que parezca un arma peligrosa. La persona está usando el cuchillo para cortar ramas de árbol.",0,1343.6,191.5,1053.5,853,105,99.7
+407,knife_231.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,972.3,192.4,691.1,853,69,99.8
+408,knife_235.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,975.3,192.6,693.3,853,69,99.5
+409,knife_236.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,964.4,192.3,691.1,853,69,99.8
+410,knife_247.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,979.1,192.2,692.7,853,69,99.6
+411,knife_25.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,970.1,192.4,689.2,853,69,100.1
+412,knife_252.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1003.4,193.0,687.1,853,69,100.4
+413,knife_254.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,983.2,192.8,689.3,853,69,100.1
+414,knife_256.jpg,arma,no_arma,1.0,un objeto que no parece ser un arma peligrosa,0,987.0,191.6,649.1,853,65,100.1
+415,knife_257.jpg,arma,no_arma,1.0,"la imagen muestra un cuchillo y una pistola, pero no hay ningún objeto que parezca un arma peligrosa en la imagen.",0,1157.1,191.4,871.3,853,87,99.9
+416,knife_259.jpg,arma,no_arma,1.0,un objeto que parece ser un cuchillo con una mancha de color rojo en la parte superior,0,1025.2,192.1,729.9,853,73,100.0
+417,knife_26.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,965.4,192.1,687.2,853,69,100.4
+418,knife_268.jpg,arma,no_arma,1.0,un cuchillo de corte con un diseño decorativo en su mango,0,944.2,192.6,666.9,853,67,100.5
+419,knife_27.jpg,arma,no_arma,1.0,la mano de un hombre con una herramienta en la palma,0,940.1,192.5,666.6,853,67,100.5
+420,knife_271.jpg,arma,no_arma,1.0,"un objeto que parece ser un cuchillo de caza o una navaja, pero no es un arma peligrosa",0,1070.2,192.7,787.2,853,79,100.4
+421,knife_272.jpg,arma,no_arma,1.0,"la imagen muestra un cuchillo de caza con una hoja de acero y mano de madera, pero no se puede considerar como arma peligrosa debido a su diseño y tamaño.",0,1279.0,192.7,987.2,853,99,100.3
+422,knife_280.jpg,arma,no_arma,1.0,"la imagen muestra un objeto que parece ser una herramienta de corte o un objeto de seguridad, pero no se puede considerar como arma peligrosa.",0,1201.7,192.8,918.0,853,92,100.2
+423,knife_282.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,970.8,193.1,697.6,853,70,100.3
+424,knife_288.jpg,arma,no_arma,1.0,"un objeto que parece ser un cuchillo o una navaja, pero no es un arma peligrosa",0,1038.0,192.3,756.9,853,76,100.4
+425,knife_29.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,978.0,193.2,696.3,853,70,100.5
+426,knife_290.jpg,arma,no_arma,1.0,La imagen muestra un cuchillo con una mata de hueso y una mancha de color negro y blanco en su parte superior. El cuchillo parece ser de metal y tiene una hoja serrada. No se pueden ver otras armas o objetos peligrosos en la imagen.,0,1475.1,193.5,1186.5,853,119,100.3
+427,knife_294.jpg,arma,no_arma,1.0,la imagen muestra un cuchillo de caza en su caja de transporte,0,972.6,193.4,686.8,853,69,100.5
+428,knife_298.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,963.8,193.3,687.0,853,69,100.4
+429,knife_309.jpg,arma,no_arma,1.0,"La imagen muestra un cuchillo de caza con una hoja serrada y una mano en el mango, junto con su caja de transporte.",0,1388.6,190.6,854.0,853,86,100.7
+430,knife_312.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1027.1,192.9,684.9,853,69,100.7
+431,knife_318.jpg,arma,no_arma,1.0,"la imagen muestra un objeto que parece ser una navaja de caza con un mango y un cuchillo, pero no hay ningún arma peligrosa en la imagen.",0,1209.3,192.6,937.9,853,94,100.2
+432,knife_319.jpg,arma,no_arma,1.0,un cuchillo con un diseño decorativo en su mango,0,977.6,193.0,636.6,853,64,100.5
+433,knife_32.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,966.8,192.7,687.6,853,69,100.4
+434,knife_326.jpg,arma,no_arma,1.0,La imagen muestra un cuchillo de caza con una hoja de acero y un mango de madera. También se puede ver un accesorio que parece ser una cinta de seguridad para el cuchillo.,0,1293.7,192.9,1008.6,853,101,100.1
+435,knife_329.jpg,arma,no_arma,1.0,"un objeto que parece ser un cuchillo o una herramienta de corte, pero no es un arma peligrosa",0,1085.5,193.1,808.7,853,81,100.2
+436,knife_33.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,969.3,192.6,691.1,853,69,99.8
+437,knife_337.jpg,arma,no_arma,1.0,un objeto que parece ser un cuchillo de bolsillo con una mano de gatillo y una mano de cierre,0,1079.5,192.4,801.1,853,80,99.9
+438,knife_339.jpg,arma,no_arma,1.0,"la imagen muestra un cuchillo de caza con una etiqueta que dice 'Gerber' y la marca 'Black Ops Concealed Carry'. El cuchillo tiene un diseño moderno con una paleta de colores principalmente en gris, rojo y negro. También hay una etiqueta que dice 'BGK', lo que sugiere que es un modelo específico del fabricante.",0,1731.2,192.3,1448.3,853,144,99.4
+439,knife_34.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,970.1,192.7,690.2,853,69,100.0
+440,knife_349.jpg,arma,no_arma,1.0,"la imagen muestra un cuchillo y una pistola, ambos son armas peligrosas",0,1042.8,193.0,731.7,853,73,99.8
+441,knife_35.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1036.2,191.7,703.4,853,70,99.5
+442,knife_355.jpg,arma,no_arma,1.0,un cuchillo con un pasador de cinto,0,1039.1,193.9,608.9,853,61,100.2
+443,knife_358.jpg,arma,no_arma,1.0,"la imagen muestra un cuchillo de caza con una mancha roja en su superficie, junto con un accesorio que parece ser una cinta de seguridad o una correa de carga. No se observan armas peligrosas como pistolas ni otros objetos que puedan considerarse arma.",0,1534.4,192.0,1223.2,853,122,99.7
+444,knife_359.jpg,arma,no_arma,1.0,un par de cuchillos en un empaque,0,910.7,191.4,620.7,853,62,99.9
+445,knife_361.jpg,arma,no_arma,1.0,la imagen muestra dos cuchillos de caza con manejadores de acero y una etiqueta que dice 'MUELA KNIVES' en la parte inferior.,0,1218.1,193.7,911.9,853,91,99.8
+446,knife_368.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,967.2,193.9,690.9,853,69,99.9
+447,knife_375.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,986.8,193.1,691.5,853,69,99.8
+448,knife_387.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1028.0,191.7,687.8,853,69,100.3
+449,knife_388.jpg,arma,no_arma,1.0,"un objeto que parece ser un cuchillo de caza o una navaja, junto con su embalaje y un paquete de armas",0,1179.3,192.1,826.6,853,83,100.4
+450,knife_390.jpg,arma,no_arma,1.0,un cuchillo de caza con una navaja y un cuchillo de caza en su lugar,0,1157.4,192.9,716.2,853,72,100.5
+451,knife_393.jpg,arma,no_arma,1.0,"la imagen muestra un objeto que parece ser una herramienta de corte o un objeto relacionado con la seguridad, pero no se considera arma peligrosa.",0,1208.5,192.8,940.0,853,94,100.0
+452,knife_397.jpg,arma,no_arma,1.0,"la imagen muestra una serie de cuchillos y un arma de fuego en el fondo, pero no hay ningún objeto que parezca un arma peligrosa en la parte central del cuadro",0,1345.9,193.3,1008.4,853,101,100.2
+453,knife_402.jpg,arma,no_arma,1.0,"la imagen muestra un par de cuchillos con una etiqueta que dice 'SEA-BORNS' y la palabra 'KNIFE' en el centro, lo que indica que son cuchillos. No hay ningún objeto que parezca un arma peligrosa en la imagen.",0,1536.5,192.9,1250.3,853,125,100.0
+454,knife_404.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,997.7,193.1,696.7,853,70,100.5
+455,knife_408.jpg,arma,no_arma,1.0,un objeto que no parece ser un arma peligrosa,0,942.9,191.4,645.5,853,65,100.7
+456,knife_410.jpg,arma,no_arma,1.0,"La imagen muestra un cuchillo de caza con una mancha roja en la parte inferior, junto con su sheath y un pequeño accesorio que parece ser una lata de aceite o lubricante para el cuchillo. No se pueden ver armas peligrosas como pistolas ni cualquier otra cosa que pueda considerarse arma.",0,1593.6,191.5,1307.9,853,131,100.2
+457,knife_412.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,968.6,191.6,687.5,853,69,100.4
+458,knife_416.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1065.6,192.8,736.4,853,74,100.5
+459,knife_423.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,987.5,193.2,687.6,853,69,100.4
+460,knife_424.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,981.4,192.3,687.2,853,69,100.4
+461,knife_425.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,992.3,192.6,685.8,853,69,100.6
+462,knife_430.jpg,arma,no_arma,1.0,un objeto que parece ser un cuchillo o una navaja con un diseño decorativo en su mango,0,1031.6,193.3,746.6,853,75,100.5
+463,knife_433.jpg,arma,no_arma,1.0,"un objeto que parece ser un cuchillo o una navaja con un diseño de mano ergonómica y una hoja serrada, pero no se puede confirmar si es realmente un arma peligrosa sin más información.",0,1337.0,192.3,1048.5,853,105,100.1
+464,knife_437.jpg,arma,no_arma,1.0,un cuchillo con una navaja y un machete en el fondo,0,965.8,193.2,664.8,853,67,100.8
+465,knife_438.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,983.6,192.5,686.9,853,69,100.4
+466,knife_442.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,976.9,192.1,686.7,853,69,100.5
+467,knife_466.jpg,arma,no_arma,1.0,un cuchillo de caza con una hoja serrada y un mecanismo de seguridad,0,1662.4,331.2,724.5,853,73,100.8
+468,knife_480.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,975.2,191.9,686.3,853,69,100.5
+469,knife_482.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,964.8,191.7,688.1,853,69,100.3
+470,knife_487.jpg,arma,no_arma,1.0,"La imagen muestra a una mujer con un cuchillo en su mano derecha. Sin embargo, el cuchillo no es peligroso ya que parece ser una propiedad de la escena y no está siendo utilizado como arma.",0,1338.7,192.1,1047.0,853,105,100.3
+471,knife_502.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,980.4,193.1,688.0,853,69,100.3
+472,knife_507.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,974.9,192.9,687.7,853,69,100.3
+473,knife_510.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,982.2,193.9,689.1,853,69,100.1
+474,knife_524.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,983.1,192.2,687.1,853,69,100.4
+475,knife_529.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,993.7,191.1,690.1,853,69,100.0
+476,knife_538.jpg,arma,no_arma,1.0,un cuchillo de bolsillo con un diseño decorativo en la mano,0,971.8,193.1,678.9,853,68,100.2
+477,knife_539.jpg,arma,no_arma,1.0,"La imagen muestra a una mujer con un cuchillo en su mano, pero no hay ningún otro objeto que parezca un arma peligrosa. La mujer está posando para la fotografía y no hay ninguna amenaza visible.",0,1364.4,192.2,1090.3,853,109,100.0
+478,knife_541.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1261.0,192.0,685.0,853,69,100.7
+479,knife_547.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,992.9,192.9,689.4,853,69,100.1
+480,knife_549.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,971.0,192.1,686.6,853,69,100.5
+481,knife_551.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,958.8,191.5,688.8,853,69,100.2
+482,knife_556.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,970.7,192.2,688.9,853,69,100.2
+483,knife_564.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,964.5,192.5,688.3,853,69,100.2
+484,knife_565.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,982.8,193.0,689.0,853,69,100.1
+485,knife_566.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,993.0,191.9,689.5,853,69,100.1
+486,knife_571.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,964.7,192.3,689.3,853,69,100.1
+487,knife_573.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,965.9,193.3,688.4,853,69,100.2
+488,knife_574.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,969.0,192.2,688.6,853,69,100.2
+489,knife_576.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,969.1,192.0,687.4,853,69,100.4
+490,knife_581.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,969.5,191.6,687.1,853,69,100.4
+491,knife_592.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,968.7,191.3,688.6,853,69,100.2
+492,knife_600.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,967.5,191.5,688.8,853,69,100.2
+493,knife_604.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,968.2,193.1,689.0,853,69,100.1
+494,knife_61.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,968.3,193.0,687.9,853,69,100.3
+495,knife_617.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.0,192.5,688.5,853,69,100.2
+496,knife_618.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1014.1,193.8,689.0,853,69,100.1
+497,knife_621.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.0,192.8,687.8,853,69,100.3
+498,knife_623.jpg,arma,no_arma,1.0,No se observan armas en la imagen.,0,922.4,192.2,597.5,853,60,100.4
+499,knife_63.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,963.6,191.4,688.5,853,69,100.2
+500,knife_638.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,992.4,193.2,685.1,853,69,100.7
+501,knife_64.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,964.6,193.1,687.3,853,69,100.4
+502,knife_649.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1009.6,192.1,687.2,853,69,100.4
+503,knife_65.jpg,arma,no_arma,1.0,"la imagen muestra una mano sosteniendo un objeto que parece ser un cuchillo de caza con un mango verde y una hoja metálica. Sin embargo, no se puede confirmar si es real o una réplica, por lo tanto, la categoría predicha es 'no_arma'.",0,1504.5,192.7,1222.1,853,122,99.8
+504,knife_659.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.2,191.0,686.0,853,69,100.6
+505,knife_664.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1005.0,193.2,702.6,853,70,99.6
+506,knife_667.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1016.9,192.2,691.6,853,69,99.8
+507,knife_67.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,987.8,193.9,691.8,853,69,99.7
+508,knife_688.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1014.5,191.7,690.7,853,69,99.9
+509,knife_690.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1015.8,192.7,691.9,853,69,99.7
+510,knife_695.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1000.6,191.8,686.1,853,69,100.6
+511,knife_712.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.7,193.0,688.1,853,69,100.3
+512,knife_722.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1009.3,192.7,687.1,853,69,100.4
+513,knife_728.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.4,193.6,686.6,853,69,100.5
+514,knife_734.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1001.9,193.2,685.7,853,69,100.6
+515,knife_736.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.0,191.2,686.4,853,69,100.5
+516,knife_74.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,972.3,193.4,686.1,853,69,100.6
+517,knife_753.jpg,arma,no_arma,1.0,"la imagen muestra a una persona trabajando con un tronco de madera en un entorno natural, pero no se puede ver ningún objeto que parezca un arma peligrosa.",0,1259.6,192.9,948.5,853,95,100.2
+518,knife_769.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.4,191.1,689.2,853,69,100.1
+519,knife_78.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,975.1,191.8,686.5,853,69,100.5
+520,knife_8.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,962.2,192.1,688.2,853,69,100.3
+521,knife_808.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.4,192.3,688.4,853,69,100.2
+522,knife_809.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.3,193.4,687.1,853,69,100.4
+523,knife_812.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1011.8,192.9,687.8,853,69,100.3
+524,knife_813.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1017.1,192.6,687.7,853,69,100.3
+525,knife_818.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.2,192.5,688.5,853,69,100.2
+526,knife_820.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.5,191.6,686.0,853,69,100.6
+527,knife_822.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.8,192.2,685.0,853,69,100.7
+528,knife_825.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1006.1,190.9,686.9,853,69,100.5
+529,knife_828.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.6,193.1,685.1,853,69,100.7
+530,knife_830.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.4,191.1,686.9,853,69,100.4
+531,knife_853.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.0,191.8,685.1,853,69,100.7
+532,knife_856.jpg,arma,no_arma,1.0,Dos hombres conversando en un ambiente al aire libre.,0,957.7,192.5,636.1,853,64,100.6
+533,knife_857.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.7,193.1,687.5,853,69,100.4
+534,knife_86.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,980.9,192.6,687.3,853,69,100.4
+535,knife_863.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.7,192.9,686.8,853,69,100.5
+536,knife_867.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.3,191.9,687.6,853,69,100.3
+537,knife_869.jpg,arma,no_arma,1.0,"Dos hombres conversando en un ambiente al aire libre, uno de ellos con una manzana en su mano.",0,1090.1,193.1,767.5,853,77,100.3
+538,knife_870.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1013.7,191.7,687.2,853,69,100.4
+539,knife_875.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1011.0,191.2,686.9,853,69,100.5
+540,knife_877.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.1,193.6,686.2,853,69,100.6
+541,knife_88.jpg,arma,no_arma,1.0,un cuchillo de caza con una hoja serrada y un mecanismo de seguridad,0,1294.2,192.0,724.2,853,73,100.8
+542,knife_886.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.9,192.6,685.3,853,69,100.7
+543,knife_893.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.0,191.5,686.8,853,69,100.5
+544,knife_9.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1055.4,191.5,683.5,853,69,101.0
+545,knife_905.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1011.6,193.0,686.5,853,69,100.5
+546,knife_906.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.2,191.8,686.2,853,69,100.5
+547,knife_907.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.5,192.0,685.7,853,69,100.6
+548,knife_908.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1008.4,191.6,686.7,853,69,100.5
+549,knife_91.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1039.6,192.2,695.6,853,70,100.6
+550,knife_915.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.5,192.9,686.9,853,69,100.5
+551,knife_919.jpg,arma,no_arma,1.0,Dos hombres conversando en un ambiente al aire libre.,0,956.4,191.5,635.7,853,64,100.7
+552,knife_925.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1002.8,192.8,684.8,853,69,100.8
+553,knife_930.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.7,193.1,686.6,853,69,100.5
+554,knife_931.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.9,191.2,686.8,853,69,100.5
+555,knife_937.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.8,192.7,686.7,853,69,100.5
+556,knife_941.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1002.8,191.8,686.0,853,69,100.6
+557,knife_946.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.3,190.8,686.1,853,69,100.6
+558,knife_947.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1014.5,192.8,686.3,853,69,100.5
+559,knife_972.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1007.7,191.3,686.5,853,69,100.5
+560,knife_973.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.6,192.9,686.3,853,69,100.5
+561,knife_977.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.7,191.9,685.5,853,69,100.7
+562,knife_99.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,960.1,192.5,687.5,853,69,100.4
+563,knife_995.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1010.6,191.9,686.1,853,69,100.6
+564,knife_996.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1013.8,192.9,687.7,853,69,100.3
+565,monedero_1133.jpg,no_arma,no_arma,1.0,"la imagen muestra una mano abriendo un bolsillo de cuero que contiene dinero, pero no hay ningún objeto que parezca un arma en la imagen.",1,1210.9,193.0,928.5,853,93,100.2
+566,monedero_1140.jpg,no_arma,no_arma,1.0,la imagen muestra una mano cerrando un bolsillo de plástico,1,964.5,193.7,686.6,853,69,100.5
+567,monedero_1160.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1046.1,193.2,685.0,853,69,100.7
+568,monedero_1173.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1055.7,193.0,685.6,853,69,100.6
+569,monedero_1181.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1044.3,192.6,684.7,853,69,100.8
+570,monedero_1186.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1148.0,193.5,683.4,853,69,101.0
+571,monedero_1187.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1025.0,193.0,685.4,853,69,100.7
+572,monedero_1190.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1156.7,191.1,685.8,853,69,100.6
+573,monedero_1191.JPG,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,1042.2,192.5,594.7,853,60,100.9
+574,monedero_1192.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1105.5,192.4,684.2,853,69,100.9
+575,monedero_1193.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1096.0,192.6,683.2,853,69,101.0
+576,monedero_1509.jpg,no_arma,no_arma,1.0,un objeto que parece ser un cuchillo o una navaja,1,1098.1,191.2,644.1,853,65,100.9
+577,monedero_1514.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1042.4,190.7,686.0,853,69,100.6
+578,monedero_1516.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,976.2,192.9,687.8,853,69,100.3
+579,monedero_1517.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,970.0,193.2,686.9,853,69,100.4
+580,monedero_1522.jpg,no_arma,no_arma,1.0,un objeto que parece un cuchillo o una navaja,1,948.7,193.2,636.4,853,64,100.6
+581,monedero_1523.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1134.7,192.1,684.2,853,69,100.9
+582,monedero_1550.jpg,no_arma,no_arma,1.0,un pasaporte o documento de identidad con una marca en la parte superior,1,961.4,190.9,667.1,853,67,100.4
+583,monedero_1571.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1107.6,192.5,684.0,853,69,100.9
+584,monedero_1575.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.7,192.1,685.6,853,69,100.6
+585,monedero_1581.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1146.3,192.3,684.1,853,69,100.9
+586,monedero_1583.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1170.2,190.6,682.7,853,69,101.1
+587,monedero_1585.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.3,191.5,685.6,853,69,100.6
+588,monedero_1587.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1116.2,192.6,683.5,853,69,101.0
+589,pistol_5000.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1160.6,191.6,683.3,853,69,101.0
+590,pistol_5003.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,995.2,193.2,686.1,853,69,100.6
+591,pistol_5006.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1022.7,193.1,686.0,853,69,100.6
+592,pistol_5009.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1100.9,191.3,683.4,853,69,101.0
+593,pistol_5011.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,992.6,192.7,686.0,853,69,100.6
+594,pistol_5012.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,997.4,191.8,686.5,853,69,100.5
+595,pistol_5013.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1110.6,191.1,684.8,853,69,100.8
+596,pistol_5020.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1000.9,192.0,685.2,853,69,100.7
+597,pistol_5027.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1128.7,192.1,684.8,853,69,100.8
+598,pistol_5034.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1138.3,191.4,684.5,853,69,100.8
+599,pistol_5041.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1100.7,191.9,684.3,853,69,100.8
+600,pistol_5048.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,997.2,191.6,686.2,853,69,100.6
+601,pistol_5055.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.7,191.9,686.4,853,69,100.5
+602,pistol_5062.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,998.8,192.2,686.6,853,69,100.5
+603,pistol_5069.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1017.2,192.5,686.8,853,69,100.5
+604,pistol_5076.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1021.2,192.3,685.8,853,69,100.6
+605,pistol_5083.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1011.6,191.2,685.6,853,69,100.6
+606,pistol_5153.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.3,192.9,686.3,853,69,100.5
+607,pistol_9001.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,998.1,191.3,686.7,853,69,100.5
+608,pistol_9002.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,996.2,191.9,687.3,853,69,100.4
+609,pistol_9003.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,995.7,191.6,686.0,853,69,100.6
+610,pistol_9008.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1076.1,192.2,683.9,853,69,100.9
+611,pistol_9009.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1087.4,192.2,684.9,853,69,100.7
+612,pistol_9010.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1191.9,191.9,683.1,853,69,101.0
+613,pistol_9011.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1035.7,192.1,686.8,853,69,100.5
+614,pistol_9012.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1197.8,192.7,684.1,853,69,100.9
+615,pistol_9014.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1121.7,192.6,684.7,853,69,100.8
+616,pistol_9015.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1067.5,192.2,699.0,853,70,100.1
+617,pistol_9016.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1116.9,193.4,686.8,853,69,100.5
+618,pistol_9017.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,991.7,191.4,689.5,853,69,100.1
+619,pistol_9019.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,989.6,193.4,691.4,853,69,99.8
+620,pistol_9020.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,997.5,192.6,691.2,853,69,99.8
+621,pistol_9021.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,990.9,190.9,688.6,853,69,100.2
+622,pistol_9022.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,997.6,192.4,689.0,853,69,100.1
+623,pistol_9023.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,982.1,191.1,687.8,853,69,100.3
+624,pistol_9024.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1004.1,191.1,691.6,853,69,99.8
+625,pistol_9025.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,984.7,192.5,691.9,853,69,99.7
+626,pistol_9026.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,982.1,192.4,691.1,853,69,99.8
+627,pistol_9027.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1049.2,192.7,689.7,853,69,100.0
+628,pistol_9028.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1021.2,191.9,691.1,853,69,99.8
+629,pistol_9029.jpg,arma,no_arma,1.0,la imagen muestra una mujer con un arma de fuego en su mano,0,996.0,192.8,692.0,853,69,99.7
+630,pistol_9030.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1047.2,193.3,690.4,853,69,99.9
+631,pistol_9031.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1009.6,192.2,688.7,853,69,100.2
+632,pistol_9033.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1017.0,193.2,688.7,853,69,100.2
+633,pistol_9034.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,998.5,193.1,687.9,853,69,100.3
+634,pistol_9035.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1024.7,192.5,688.2,853,69,100.3
+635,pistol_9036.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1003.8,192.0,685.6,853,69,100.6
+636,pistol_9038.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1023.1,192.6,685.5,853,69,100.7
+637,pistol_9039.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,998.3,191.2,686.1,853,69,100.6
+638,pistol_9040.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1005.5,193.0,685.3,853,69,100.7
+639,pistol_9042.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1059.7,191.5,683.6,853,69,100.9
+640,pistol_9043.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1054.6,192.6,684.5,853,69,100.8
+641,pistol_9044.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1060.0,192.1,683.4,853,69,101.0
+642,pistol_9046.JPG,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1060.4,192.3,683.3,853,69,101.0
+643,pistol_9047.JPG,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1074.6,193.0,683.1,853,69,101.0
+644,pistol_9048.JPG,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1094.1,193.2,683.8,853,69,100.9
+645,pistol_9049.JPG,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1100.7,191.7,683.0,853,69,101.0
+646,pistol_9051.JPG,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1093.1,192.2,683.1,853,69,101.0
+647,pistola_z1v14_07.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1042.1,191.3,685.3,853,69,100.7
+648,pistola_z3v2_09.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1029.2,191.9,686.1,853,69,100.6
+649,pistola_z3v2_10.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1027.5,193.3,684.3,853,69,100.8
+650,pistola_z3v2_11.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1029.6,192.3,685.7,853,69,100.6
+651,pistola_z3v3_09.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1031.0,191.3,686.2,853,69,100.6
+652,pistola_z3v3_10.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1034.1,192.5,690.0,853,69,100.0
+653,pistola_z3v5_08.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1065.6,191.5,691.2,853,69,99.8
+654,pistola_z3v5_09.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1040.1,192.8,688.3,853,69,100.2
+655,pistola_z3v6_03.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1029.2,191.4,687.8,853,69,100.3
+656,pistola_z3v6_04.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1032.3,193.2,687.9,853,69,100.3
+657,pistola_z3v6_06.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1037.5,193.0,687.1,853,69,100.4
+658,pistola_z3v6_10.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1049.5,193.2,696.4,853,70,100.5
+659,pistola_z3v6_11.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1054.6,193.2,686.7,853,69,100.5
+660,pistola_z3v7_01.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1035.3,192.0,689.3,853,69,100.1
+661,pistola_z3v7_02.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1024.9,193.0,686.4,853,69,100.5
+662,pistola_z3v7_05.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1051.2,191.9,687.0,853,69,100.4
+663,pistola_z3v7_06.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1033.7,192.4,688.3,853,69,100.2
+664,pistola_z3v7_08.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1032.9,192.2,688.9,853,69,100.2
+665,pistola_z3v7_09.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1028.5,191.4,686.1,853,69,100.6
+666,pistola_z3v8_04.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1032.6,192.8,688.0,853,69,100.3
+667,sharpenKnife028.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1019.0,192.7,687.3,853,69,100.4
+668,sharpenKnife032.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1012.0,191.9,686.5,853,69,100.5
+669,sharpenKnife039.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1013.7,192.7,685.0,853,69,100.7
+670,sharpenKnife041.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1023.7,192.9,686.4,853,69,100.5
+671,sharpenKnife089.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1016.3,192.7,685.3,853,69,100.7
+672,sharpenKnife163.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1029.8,192.8,684.4,853,69,100.8
+673,sharpenKnife194.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1036.2,190.9,695.4,853,70,100.7
+674,sharpenKnife202.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1034.8,193.1,686.0,853,69,100.6
+675,sharpenKnife226.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1028.3,191.9,686.7,853,69,100.5
+676,sharpenKnife242.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1028.2,191.8,686.5,853,69,100.5
+677,sharpenKnife298.jpg,arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,0,1000.6,190.9,686.1,853,69,100.6
+678,sharpenKnife299.jpg,arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,0,1015.8,191.7,694.0,853,70,100.9
+679,smartphone_0801.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1125.0,192.2,683.9,853,69,100.9
+680,smartphone_0805.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1122.2,192.1,683.3,853,69,101.0
+681,smartphone_0806.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1104.9,191.2,683.9,853,69,100.9
+682,smartphone_0807.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1115.2,192.5,684.6,853,69,100.8
+683,smartphone_0808.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1140.6,192.5,683.8,853,69,100.9
+684,smartphone_0809.JPG,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,1071.5,191.2,593.7,853,60,101.1
+685,smartphone_0810.JPG,no_arma,no_arma,1.0,No se observan armas en la imagen.,1,1085.1,190.9,593.9,853,60,101.0
+686,smartphone_0811.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1059.4,191.8,687.7,853,69,100.3
+687,smartphone_0812.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1107.3,192.5,685.1,853,69,100.7
+688,smartphone_0813.JPG,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1099.1,192.3,687.1,853,69,100.4
+689,smartphone_1000.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1059.2,191.9,685.0,853,69,100.7
+690,smartphone_1001.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1140.1,190.7,684.4,853,69,100.8
+691,smartphone_1002.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1155.4,191.7,684.8,853,69,100.8
+692,smartphone_1003.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.7,191.0,686.5,853,69,100.5
+693,smartphone_1004.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1117.2,192.1,684.7,853,69,100.8
+694,smartphone_1005.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1122.5,190.6,684.4,853,69,100.8
+695,smartphone_1006.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1014.9,192.6,685.9,853,69,100.6
+696,smartphone_1007.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.1,191.6,686.2,853,69,100.6
+697,smartphone_1008.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1141.8,192.2,686.3,853,69,100.5
+698,smartphone_1009.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1127.3,192.5,685.9,853,69,100.6
+699,smartphone_1010.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1015.8,191.9,686.2,853,69,100.5
+700,smartphone_1011.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1132.4,190.5,686.4,853,69,100.5
+701,smartphone_1012.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1090.6,192.0,687.5,853,69,100.4
+702,smartphone_1013.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1089.7,191.3,683.5,853,69,101.0
+703,smartphone_1014.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1039.8,191.4,685.6,853,69,100.6
+704,smartphone_1015.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1138.2,191.6,684.3,853,69,100.8
+705,smartphone_1016.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1027.5,191.0,687.5,853,69,100.4
+706,smartphone_1017.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1126.1,192.8,683.6,853,69,100.9
+707,smartphone_1018.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1038.6,192.4,685.1,853,69,100.7
+708,smartphone_1019.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1016.8,192.5,686.6,853,69,100.5
+709,smartphone_1020.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1148.1,192.3,684.6,853,69,100.8
+710,smartphone_1021.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1052.7,191.6,687.0,853,69,100.4
+711,smartphone_1022.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.6,192.6,687.9,853,69,100.3
+712,smartphone_1023.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1103.1,191.8,686.0,853,69,100.6
+713,smartphone_1024.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1130.4,192.0,685.3,853,69,100.7
+714,smartphone_1025.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1064.7,192.9,685.4,853,69,100.7
+715,smartphone_1026.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1129.4,192.3,684.1,853,69,100.9
+716,smartphone_1027.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1142.9,191.0,684.1,853,69,100.9
+717,smartphone_1028.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.3,192.2,687.1,853,69,100.4
+718,smartphone_1029.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1036.5,191.4,685.0,853,69,100.7
+719,smartphone_1030.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1124.8,192.9,685.8,853,69,100.6
+720,smartphone_1031.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1045.7,191.8,685.6,853,69,100.6
+721,smartphone_1032.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1057.3,193.4,685.7,853,69,100.6
+722,smartphone_1033.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1119.9,191.4,685.9,853,69,100.6
+723,smartphone_1034.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1055.5,192.3,685.6,853,69,100.6
+724,smartphone_1035.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1126.6,192.7,685.6,853,69,100.6
+725,smartphone_1036.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1190.7,192.0,685.6,853,69,100.6
+726,smartphone_1037.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1143.5,193.1,683.9,853,69,100.9
+727,smartphone_1038.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1115.5,192.4,683.2,853,69,101.0
+728,smartphone_1039.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.5,190.6,686.7,853,69,100.5
+729,smartphone_1040.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1020.8,190.7,687.7,853,69,100.3
+730,smartphone_1041.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1160.6,192.2,685.8,853,69,100.6
+731,smartphone_1042.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1108.4,190.8,685.6,853,69,100.6
+732,smartphone_1043.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1145.9,191.8,685.3,853,69,100.7
+733,smartphone_1044.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen. Se ve una persona tomar una selfie con un dispositivo móvil que muestra una flor en el fondo.,1,1216.2,191.4,875.1,853,88,100.6
+734,smartphone_1045.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1016.2,192.7,685.9,853,69,100.6
+735,smartphone_1046.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1118.7,192.4,684.2,853,69,100.8
+736,smartphone_1047.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1123.5,192.6,683.3,853,69,101.0
+737,smartphone_1048.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1005.6,191.6,685.6,853,69,100.6
+738,smartphone_1049.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1111.9,192.9,684.1,853,69,100.9
+739,smartphone_1050.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1134.5,190.5,682.8,853,69,101.1
+740,smartphone_1051.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1012.4,191.7,684.9,853,69,100.8
+741,smartphone_1052.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1050.7,192.1,684.8,853,69,100.8
+742,smartphone_1053.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1134.8,191.8,682.4,853,69,101.1
+743,smartphone_1054.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1107.2,192.5,684.2,853,69,100.8
+744,smartphone_1055.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1045.7,193.2,684.8,853,69,100.8
+745,smartphone_1056.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1143.9,192.2,683.0,853,69,101.0
+746,smartphone_1057.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1040.4,192.1,684.2,853,69,100.8
+747,smartphone_1058.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1171.7,191.7,683.0,853,69,101.0
+748,smartphone_1059.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1061.4,191.1,684.0,853,69,100.9
+749,smartphone_1060.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1128.1,191.4,682.9,853,69,101.0
+750,smartphone_1061.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1122.4,191.3,683.8,853,69,100.9
+751,smartphone_1062.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1128.6,191.4,683.2,853,69,101.0
+752,smartphone_1063.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1052.5,192.6,685.2,853,69,100.7
+753,smartphone_1064.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1087.1,192.6,683.7,853,69,100.9
+754,smartphone_1065.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1014.2,191.1,686.0,853,69,100.6
+755,smartphone_1067.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1128.3,192.3,684.2,853,69,100.8
+756,smartphone_1068.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1148.5,191.6,683.9,853,69,100.9
+757,smartphone_1069.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1017.8,191.3,686.4,853,69,100.5
+758,smartphone_1070.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1108.1,191.7,683.8,853,69,100.9
+759,smartphone_1071.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1015.5,191.5,686.0,853,69,100.6
+760,smartphone_1115.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1086.7,192.7,684.5,853,69,100.8
+761,smartphone_9001.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1035.4,192.5,685.7,853,69,100.6
+762,smartphone_9003.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen. La persona está mostrando un teléfono con una pantalla que muestra una aplicación de mensajería y algunos iconos de aplicaciones. No hay ningún objeto que parezca un arma visible en la imagen.,1,1549.4,190.5,1167.4,853,117,100.2
+763,smartphone_9004.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,988.3,192.6,687.0,853,69,100.4
+764,smartphone_9005.jpg,no_arma,no_arma,1.0,"No se observan armas en la imagen. Se ve una persona usando un dispositivo móvil con una pantalla que muestra una serie de imágenes, pero no hay ningún objeto que parezca un arma.",1,1370.7,192.4,1037.7,853,104,100.2
+765,smartphone_9009.jpg,no_arma,no_arma,1.0,La imagen muestra una mano sosteniendo un teléfono con la pantalla mostrando el horario de cierre de una tienda. No se observan armas en la imagen.,1,1253.1,191.5,936.6,853,94,100.4
+766,smartphone_9010.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1031.3,192.2,685.5,853,69,100.7
+767,smartphone_9011.jpg,no_arma,no_arma,1.0,La imagen muestra una mano sosteniendo un iPhone blanco en una mesa. No se pueden ver cuchillos o armas peligrosas en la imagen.,1,1193.7,192.8,887.1,853,89,100.3
+768,smartphone_9012.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1008.2,192.2,685.4,853,69,100.7
+769,smartphone_9014.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen. Se ve una mano sosteniendo un dispositivo de comunicación móvil.,1,1110.0,192.4,795.9,853,80,100.5
+770,smartphone_9015.jpg,no_arma,no_arma,1.0,No se observan armas en la imagen. Se ve una persona sosteniendo un dispositivo móvil con la pantalla hacia arriba.,1,1132.3,192.0,826.4,853,83,100.4
+771,smartphone_z3v2_02.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1026.2,192.4,685.5,853,69,100.7
+772,smartphone_z3v2_28.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1032.9,191.9,684.9,853,69,100.7
+773,smartphone_z3v7_05.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1029.0,192.4,685.7,853,69,100.6
+774,smartphone_z3v7_06.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1023.9,191.0,685.7,853,69,100.6
+775,smartphone_z3v7_07.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1026.2,192.1,685.6,853,69,100.6
+776,smartphone_z3v7_08.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1021.5,192.5,685.8,853,69,100.6
+777,smartphone_z3v7_09.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1030.9,193.0,685.7,853,69,100.6
+778,smartphone_z3v7_10.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1026.7,191.1,685.8,853,69,100.6
+779,smartphone_z3v7_26.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1033.2,193.1,685.0,853,69,100.7
+780,smartphone_z3v8_07.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1027.1,192.9,685.4,853,69,100.7
+781,smartphone_z3v8_08.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1031.9,192.0,686.4,853,69,100.5
+782,smartphone_z3v8_09.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1027.4,193.2,685.6,853,69,100.6
+783,tarjeta_2144.jpg,no_arma,no_arma,1.0,Una persona usando una tarjeta de crédito en un punto de venta,1,968.9,192.3,687.9,853,69,100.3
+784,tarjeta_2150.jpg,no_arma,no_arma,1.0,la imagen muestra una tarjeta de crédito Mastercard con el nombre 'Ripley' y la palabra 'Mastercard' en ella.,1,1120.9,192.8,838.5,853,84,100.2
+785,tarjeta_2361.jpg,no_arma,no_arma,1.0,"la imagen muestra una tarjeta de crédito con un diseño que parece ser una pistola, pero en realidad es solo un diseño gráfico en la tarjeta.",1,1256.9,192.1,916.6,853,92,100.4
+786,tarjeta_2362.jpg,no_arma,no_arma,1.0,La imagen muestra a un empleado en una tienda de conveniencia entregando dinero a otra persona. No se observan armas peligrosas en la imagen.,1,1188.8,193.2,906.9,853,91,100.3
+787,tarjeta_2363.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1006.6,192.9,684.9,853,69,100.7
+788,tarjeta_2366.jpg,no_arma,no_arma,1.0,"la imagen muestra una tarjeta de crédito de la India Sind Bank con el número de cuenta y la fecha de caducidad, pero no hay ningún objeto que parezca un arma en ella.",1,1285.6,191.9,997.1,853,100,100.3
+789,tarjeta_2367.jpg,no_arma,no_arma,1.0,la imagen muestra una mano sosteniendo un billete de crédito,1,957.8,193.0,676.8,853,68,100.5
+790,tarjeta_2368.jpg,no_arma,no_arma,1.0,la imagen muestra una mano sosteniendo un billete de banco,1,943.0,191.4,666.6,853,67,100.5
+791,tarjeta_2369.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1013.8,190.8,685.6,853,69,100.6
+792,tarjeta_2370.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,967.6,193.1,687.1,853,69,100.4
+793,tarjeta_2372.jpeg,no_arma,no_arma,1.0,"la imagen muestra una mano sosteniendo un billete de crédito, pero no hay ningún objeto que parezca un arma en la imagen.",1,1240.7,193.2,877.3,853,88,100.3
+794,tarjeta_2373.jpg,no_arma,no_arma,1.0,la imagen muestra una tarjeta de crédito de DirecteXpress,1,969.9,192.8,676.9,853,68,100.5
+795,tarjeta_2374.jpg,no_arma,no_arma,1.0,Una persona usando una máquina de pago con una tarjeta de crédito,1,981.3,193.1,707.6,853,71,100.3
+796,tarjeta_2377.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1019.7,192.3,686.9,853,69,100.5
+797,tarjeta_2378.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,995.0,193.7,685.0,853,69,100.7
+798,tarjeta_2381.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1119.8,193.1,684.3,853,69,100.8
+799,tarjeta_2382.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1151.4,193.1,682.9,853,69,101.0
+800,tarjeta_2384.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1184.5,192.7,683.0,853,69,101.0
+801,tarjeta_2386.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1120.2,192.2,683.0,853,69,101.0
+802,tarjeta_2393.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1159.5,193.4,683.4,853,69,101.0
+803,tarjeta_2399.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1113.1,191.7,682.5,853,69,101.1
+804,tarjeta_2405.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1135.5,193.0,683.1,853,69,101.0
+805,tarjeta_2407.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1149.0,191.1,684.7,853,69,100.8
+806,tarjeta_2409.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1092.0,190.8,684.6,853,69,100.8
+807,tarjeta_2418.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1120.6,192.1,684.6,853,69,100.8
+808,tarjeta_2421.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1100.2,192.3,685.1,853,69,100.7
+809,tarjeta_2508.jpg,no_arma,no_arma,1.0,No se puede ver ningún objeto que parezca un arma en la imagen.,1,1106.5,191.2,694.0,853,70,100.9
+810,tarjeta_2512.jpg,no_arma,no_arma,1.0,No se ve ningún objeto que parezca un arma en la imagen.,1,1129.7,190.5,683.5,853,69,100.9

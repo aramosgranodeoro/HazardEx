@@ -14,7 +14,7 @@ from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
 from app.agent.graph import build_agent_graph
 from fastapi.middleware.cors import CORSMiddleware
 from app.storage.conversations import list_conversations, delete_conversation_metadata, save_conversation_metadata
-from app.agent.rag.embeddings import load_document, delete_document
+from app.agent.rag.embeddings import load_document, delete_document, get_vectorstore
 from dotenv import load_dotenv
 import os
 import re
@@ -32,16 +32,19 @@ AÑADIR CÓDIGOS DE ERROR HTTP PARA LOS ENDPOINTS DE RAG Y ANALYZE, POR EJEMPLO:
 """
 agent = None
 
+vectorstore = None
+
 EXTENSIONES_PERMITIDAS = {".pdf", ".docx", ".txt", ".md"}
 
 DOCUMENTS_FOLDER = os.getenv("DOCUMENTS_FOLDER")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global agent
+    global agent, vectorstore
     async with AsyncSqliteSaver.from_conn_string("checkpoints.db") as checkpointer:
         agent_builder = build_agent_graph()
         agent = agent_builder.compile(checkpointer=checkpointer)
+        vectorstore = get_vectorstore()
         yield
 
  
@@ -151,7 +154,7 @@ async def query(payload: QueryRequest):
     )
 
     if is_new_conversation:
-        save_conversation_metadata(thread_id, truncate_title(payload.question), "text")
+        save_conversation_metadata(thread_id, truncate_title(payload.question))
 
     return {
         "thread_id": thread_id,

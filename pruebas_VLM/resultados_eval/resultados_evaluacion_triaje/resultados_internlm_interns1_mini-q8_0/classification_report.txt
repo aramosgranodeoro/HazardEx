@@ -1,0 +1,18 @@
+Modelo  : resultados_internlm_interns1_mini-q8_0
+Idioma  : EN
+Archivo : resultados_internlm_interns1_mini-q8_0.csv
+Muestras válidas: 1491 / 1500
+Predicciones inválidas ('ERROR'): 9 (0.6%)
+
+              precision    recall  f1-score   support
+
+   accidente       0.75      0.22      0.34       250
+       armas       1.00      0.95      0.97       243
+       fuego       0.99      0.98      0.98       250
+     grafico       0.98      1.00      0.99       250
+      normal       0.43      0.92      0.58       250
+   violencia       0.89      0.52      0.66       248
+
+    accuracy                           0.76      1491
+   macro avg       0.84      0.76      0.75      1491
+weighted avg       0.84      0.76      0.75      1491

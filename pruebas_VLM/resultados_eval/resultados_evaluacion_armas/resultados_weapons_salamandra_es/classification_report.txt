@@ -1,0 +1,14 @@
+Modelo  : resultados_weapons_salamandra_es
+Idioma  : ES
+Archivo : resultados_weapons_salamandra_es.csv
+Muestras válidas: 703 / 856
+Predicciones inválidas ('ERROR'): 153 (17.87%)
+
+              precision    recall  f1-score   support
+
+        arma       0.95      0.50      0.66       376
+     no_arma       0.63      0.97      0.76       327
+
+    accuracy                           0.72       703
+   macro avg       0.79      0.74      0.71       703
+weighted avg       0.80      0.72      0.71       703

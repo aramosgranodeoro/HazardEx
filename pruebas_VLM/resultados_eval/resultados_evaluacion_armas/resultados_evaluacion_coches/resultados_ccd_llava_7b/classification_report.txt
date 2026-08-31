@@ -1,0 +1,14 @@
+Modelo  : resultados_ccd_llava_7b
+Idioma  : EN
+Archivo : resultados_ccd_llava_7b.csv
+Muestras válidas: 2000 / 2000
+Predicciones inválidas ('ERROR'/UNKNOWN): 0 (0.0%)
+
+              precision    recall  f1-score   support
+
+   accidente       0.00      0.00      0.00      1000
+no_accidente       0.50      1.00      0.67      1000
+
+    accuracy                           0.50      2000
+   macro avg       0.25      0.50      0.33      2000
+weighted avg       0.25      0.50      0.33      2000

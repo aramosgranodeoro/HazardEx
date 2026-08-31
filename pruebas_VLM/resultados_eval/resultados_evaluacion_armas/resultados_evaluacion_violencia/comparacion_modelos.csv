@@ -1,0 +1,9 @@
+model,language,csv_file,n_samples,n_invalid,pct_invalid,n_classes,classes,accuracy,accuracy_penalizada,precision,recall,f1,mcc,auc_roc,mean_total_ms,mean_prompt_ms,mean_eval_ms,mean_prompt_tokens,mean_generated_tokens,mean_tokens_per_sec
+resultados_rwf_qwen3.5_latest_es,es,resultados_rwf_qwen3.5_latest_es.csv,1274,326,20.38,2,no_violencia|violencia,0.9207,0.7331,0.9241,0.9197,0.9204,0.8438,0.3248,16306.89,2244.27,13525.87,2512.0,982.64,72.68
+resultados_rwf_qwen3.5_latest,en,resultados_rwf_qwen3.5_latest.csv,1499,101,6.31,2,no_violencia|violencia,0.8999,0.8431,0.9026,0.8995,0.8997,0.8021,0.2946,15602.18,2190.52,12945.11,2170.0,862.14,66.77
+resultados_rwf_internlm_interns1_mini-q8_0_es,es,resultados_rwf_internlm_interns1_mini-q8_0_es.csv,1563,37,2.31,2,no_violencia|violencia,0.7972,0.7788,0.8013,0.7968,0.7964,0.5982,0.4392,11142.77,928.56,9416.73,3150.0,465.36,49.44
+resultados_rwf_salamandra_v2,es,resultados_rwf_salamandra_v2.csv,1598,2,0.12,2,no_violencia|violencia,0.5688,0.5681,0.6512,0.5693,0.5016,0.2047,0.5,5515.81,0.0,5515.81,3236.0,65.11,11.75
+resultados_rwf_llava_7b_es,es,resultados_rwf_llava_7b_es.csv,1597,3,0.19,2,no_violencia|violencia,0.516,0.515,0.5683,0.5168,0.4041,0.0677,0.4987,1276.83,207.9,851.01,909.0,85.18,100.32
+resultados_rwf_llava_7b,en,resultados_rwf_llava_7b.csv,1600,0,0.0,2,no_violencia|violencia,0.5112,0.5112,0.6529,0.5112,0.3639,0.0829,0.5,1251.15,173.53,872.61,784.0,93.89,107.67
+resultados_rwf_internlm_interns1_mini-q8_0,en,resultados_rwf_internlm_interns1_mini-q8_0.csv,1590,10,0.62,2,no_violencia|violencia,0.5308,0.5275,0.3565,0.3537,0.345,0.0655,0.4997,9635.88,107.93,9012.09,491.0,484.15,53.84
+resultados_rwf_salamandra,es,resultados_rwf_salamandra.csv,1598,2,0.12,2,no_violencia|violencia,0.4994,0.4988,0.2497,0.5,0.3331,0.0,0.5,5303.21,0.0,5303.21,3186.0,61.71,11.61

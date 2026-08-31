@@ -1,0 +1,17 @@
+Modelo  : resultados_fuego_salamandra_es
+Idioma  : ES
+Archivo : resultados_fuego_salamandra_es.csv
+Columnas: real='etiqueta' pred='categoria_predicha' conf='confianza'
+Muestras válidas: 2986 / 3099
+Predicciones inválidas (ERROR/unknown): 113 (3.65%)
+
+              precision    recall  f1-score   support
+
+       ambos       0.07      0.03      0.04       470
+       fuego       0.12      0.75      0.20       148
+        humo       0.20      0.89      0.33       424
+        none       0.00      0.00      0.00      1944
+
+    accuracy                           0.17      2986
+   macro avg       0.10      0.42      0.14      2986
+weighted avg       0.05      0.17      0.06      2986

@@ -1,0 +1,17 @@
+Modelo  : resultados_fuego_internlm_interns1_mini-q8_0
+Idioma  : EN
+Archivo : resultados_fuego_internlm_interns1_mini-q8_0.csv
+Columnas: real='label' pred='predicted_category' conf='confidence'
+Muestras válidas: 3094 / 3099
+Predicciones inválidas (ERROR/unknown): 5 (0.16%)
+
+              precision    recall  f1-score   support
+
+       ambos       0.51      0.83      0.63       471
+       fuego       0.31      0.31      0.31       148
+        humo       0.24      0.32      0.28       424
+        none       0.82      0.65      0.72      2051
+
+    accuracy                           0.61      3094
+   macro avg       0.47      0.53      0.48      3094
+weighted avg       0.67      0.61      0.63      3094

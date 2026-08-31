@@ -1,0 +1,14 @@
+Modelo  : resultados_ccd_internlm_interns1_mini-q8_0_es
+Idioma  : ES
+Archivo : resultados_ccd_internlm_interns1_mini-q8_0_es.csv
+Muestras válidas: 1999 / 2000
+Predicciones inválidas ('ERROR'/UNKNOWN): 1 (0.05%)
+
+              precision    recall  f1-score   support
+
+   accidente       0.63      0.43      0.51       999
+no_accidente       0.57      0.75      0.65      1000
+
+    accuracy                           0.59      1999
+   macro avg       0.60      0.59      0.58      1999
+weighted avg       0.60      0.59      0.58      1999

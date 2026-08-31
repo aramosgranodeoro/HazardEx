@@ -1,0 +1,14 @@
+Modelo  : resultados_ccd_salamandra_es
+Idioma  : ES
+Archivo : resultados_ccd_salamandra_es.csv
+Muestras válidas: 927 / 2000
+Predicciones inválidas ('ERROR'/UNKNOWN): 1073 (53.65%)
+
+              precision    recall  f1-score   support
+
+   accidente       0.65      0.99      0.78       582
+no_accidente       0.86      0.09      0.16       345
+
+    accuracy                           0.66       927
+   macro avg       0.75      0.54      0.47       927
+weighted avg       0.73      0.66      0.55       927

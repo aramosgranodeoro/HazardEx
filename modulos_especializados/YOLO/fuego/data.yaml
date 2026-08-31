@@ -1,0 +1,11 @@
+path: D:/fuego_dataset/data
+
+train: train/images
+val: val/images
+test: test/images
+# Classes
+names: ['smoke', 'fire']  
+nc: 2 # number of classes
+train_count: 14122
+val_count: 3099
+test_count: 4306

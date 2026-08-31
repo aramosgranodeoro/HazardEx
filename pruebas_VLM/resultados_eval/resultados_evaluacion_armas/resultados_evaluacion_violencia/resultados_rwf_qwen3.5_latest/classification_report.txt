@@ -1,0 +1,14 @@
+Modelo  : resultados_rwf_qwen3.5_latest
+Idioma  : EN
+Archivo : resultados_rwf_qwen3.5_latest.csv
+Muestras válidas: 1499 / 1600
+Predicciones inválidas ('ERROR'): 101 (6.31%)
+
+              precision    recall  f1-score   support
+
+no_violencia       0.87      0.94      0.90       758
+   violencia       0.93      0.86      0.89       741
+
+    accuracy                           0.90      1499
+   macro avg       0.90      0.90      0.90      1499
+weighted avg       0.90      0.90      0.90      1499

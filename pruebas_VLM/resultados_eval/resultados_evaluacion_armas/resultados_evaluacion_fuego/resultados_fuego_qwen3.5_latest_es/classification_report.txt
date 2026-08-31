@@ -1,0 +1,17 @@
+Modelo  : resultados_fuego_qwen3.5_latest_es
+Idioma  : ES
+Archivo : resultados_fuego_qwen3.5_latest_es.csv
+Columnas: real='etiqueta' pred='categoria_predicha' conf='confianza'
+Muestras válidas: 2865 / 3099
+Predicciones inválidas (ERROR/unknown): 234 (7.55%)
+
+              precision    recall  f1-score   support
+
+       ambos       0.48      0.92      0.63       417
+       fuego       0.52      0.29      0.37       118
+        humo       0.38      0.51      0.44       371
+        none       0.88      0.67      0.76      1959
+
+    accuracy                           0.67      2865
+   macro avg       0.56      0.60      0.55      2865
+weighted avg       0.74      0.67      0.68      2865
