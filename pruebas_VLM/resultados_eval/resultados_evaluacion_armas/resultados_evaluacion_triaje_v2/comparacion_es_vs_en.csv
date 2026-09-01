@@ -1,5 +1,0 @@
-base_model,model_es,model_en,accuracy_es,accuracy_en,accuracy_penalizada_es,accuracy_penalizada_en,mean_total_ms_es,mean_total_ms_en,mean_prompt_ms_es,mean_prompt_ms_en,mean_eval_ms_es,mean_eval_ms_en,mean_prompt_tokens_es,mean_prompt_tokens_en,mean_generated_tokens_es,mean_generated_tokens_en,mean_tokens_per_sec_es,mean_tokens_per_sec_en,accuracy_diff_es_minus_en,accuracy_penalizada_diff_es_minus_en
-resultados_internlm_interns1_mini-q8_0,resultados_internlm_interns1_mini-q8_0_es,resultados_internlm_interns1_mini-q8_0,0.7439,0.7639,0.73,0.7593,8958.69,8678.92,376.84,661.56,8209.63,7601.02,1594.26,1533.7,418.11,386.83,51.02,50.91,-0.02,-0.0293
-resultados_llava_7b,resultados_llava_7b_es,resultados_llava_7b,0.6953,0.6604,0.6953,0.66,1847.95,943.14,211.6,171.42,1525.34,495.78,990.0,850.0,148.95,70.38,98.37,145.36,0.0349,0.0353
-resultados_qwen3.5_latest,resultados_qwen3.5_latest_es,resultados_qwen3.5_latest,0.8298,0.8575,0.7867,0.8107,12619.18,13567.49,362.4,591.03,11841.53,12522.45,738.82,701.76,871.46,862.85,73.77,69.04,-0.0277,-0.024
-resultados_salamandra_vl_7b,resultados_salamandra_vl_7b,—,0.5224,,0.5213,,5760.29,,0.0,,5760.29,,3204.0,,73.92,,12.68,,,

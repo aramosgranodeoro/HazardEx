@@ -1,8 +1,0 @@
-model,language,csv_file,n_samples,n_invalid,pct_invalid,n_classes,classes,accuracy,accuracy_penalizada,mean_total_ms,mean_prompt_ms,mean_eval_ms,mean_prompt_tokens,mean_generated_tokens,mean_tokens_per_sec
-resultados_fuego_qwen3.5_latest,en,resultados_fuego_qwen3.5_latest.csv,3005,94,3.03,4,ambos|fuego|humo|none,0.6656,0.6454,11911.24,650.75,10969.48,1152.61,733.8,66.98
-resultados_fuego_llava_7b,en,resultados_fuego_llava_7b.csv,3099,0,0.0,4,ambos|fuego|humo|none,0.626,0.626,826.75,263.81,475.31,1201.0,50.52,107.44
-resultados_fuego_qwen3.5_latest_es,es,resultados_fuego_qwen3.5_latest_es.csv,2865,234,7.55,4,ambos|fuego|humo|none,0.6705,0.6199,15473.1,979.51,14073.56,1285.91,894.87,63.71
-resultados_fuego_internlm_interns1_mini-q8_0,en,resultados_fuego_internlm_interns1_mini-q8_0.csv,3094,5,0.16,4,ambos|fuego|humo|none,0.6128,0.6118,8447.93,197.8,7818.58,859.0,418.58,53.6
-resultados_fuego_llava_7b_es,es,resultados_fuego_llava_7b_es.csv,3099,0,0.0,4,ambos|fuego|humo|none,0.5515,0.5515,2033.99,555.12,1344.04,1448.0,123.93,92.28
-resultados_fuego_internlm_interns1_mini-q8_0_es,es,resultados_fuego_internlm_interns1_mini-q8_0_es.csv,1134,1965,63.41,4,ambos|fuego|humo|none,0.5873,0.2149,9122.09,983.18,7740.6,2967.71,365.76,47.34
-resultados_fuego_salamandra_es,es,resultados_fuego_salamandra_es.csv,2986,113,3.65,4,ambos|fuego|humo|none,0.1681,0.162,5689.48,0.0,5689.48,3343.0,60.52,10.52

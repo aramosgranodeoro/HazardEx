@@ -1,15 +1,15 @@
 import base64
-from http.client import HTTPException
 import os
 import shutil
 from typing import Optional
 import uuid
 from fastapi.concurrency import asynccontextmanager
-from langchain.messages import AIMessage, HumanMessage
-from fastapi import FastAPI, File, Form, Request, Response, UploadFile
+from langchain.messages import HumanMessage
+from fastapi import FastAPI, File, Form, Request, Response, UploadFile, HTTPException
+from minio import S3Error
 from app.triage.triage import classify_image, run_specialized_modules
-from app.triage.utils import build_analysis_text, generic_media_title, truncate_title, frame_to_jpeg_bytes, extract_frames, transcode_to_h264, frames_a_grid
-from app.storage.minio_client import upload_media, get_media, delete_media
+from app.triage.utils import build_analysis_text, generic_media_title, truncate_title, frame_to_jpeg_bytes, extract_frames, transcode_to_h264, frames_a_grid, parse_conversation_messages, build_annotated_image
+from app.storage.minio_client import upload_media, get_media
 from pydantic import BaseModel
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver  
 from app.agent.graph import build_agent_graph
@@ -19,6 +19,9 @@ from app.agent.rag.embeddings import load_document, delete_document, get_vectors
 from dotenv import load_dotenv
 import os
 import re
+from app.routers.analysis import router as analysis_router
+from app.routers.conversations import router as conversations_router
+from app.routers.media import router as media_router
 
 
 MEDIA_MARKER_RE = re.compile(r"\[Image attached, media_id=([a-f0-9\-]+)\]")
@@ -31,12 +34,11 @@ AÑADIR CÓDIGOS DE ERROR HTTP PARA LOS ENDPOINTS DE RAG Y ANALYZE, POR EJEMPLO:
 - 409 Conflict: Cuando se intenta subir un archivo que ya existe.
 - 500 Internal Server Error: Para errores inesperados durante el procesamiento.
 """
-agent = None
 
+agent = None
 vectorstore = None
 
 EXTENSIONES_PERMITIDAS = {".pdf", ".docx", ".txt", ".md"}
-
 DOCUMENTS_FOLDER = os.getenv("DOCUMENTS_FOLDER")
 
 @asynccontextmanager
@@ -74,6 +76,11 @@ app.add_middleware(
     expose_headers=["Content-Range", "Accept-Ranges", "Content-Length"],
 )
 
+
+app.include_router(analysis_router)
+app.include_router(conversations_router)
+app.include_router(media_router)
+
 @app.get("/")
 def root():
     return {"message": "Backend funcionando"}
@@ -96,22 +103,45 @@ async def analyze(
     media_bytes = await file.read()
     categories, image = classify_image(media_bytes, file.filename)
     result = await run_specialized_modules(categories, image)
+
     analysis_text = build_analysis_text(result)
     content_type = file.content_type or "application/octet-stream"
 
     media_id = str(uuid.uuid4())
+
+    # ---------------------------------------------------------
+    # Generar UNA imagen con todos los bounding boxes
+    # ---------------------------------------------------------
+    annotated_media_id = None
+
+    annotated_bytes = build_annotated_image(
+        image,
+        result
+    )
+
+    if annotated_bytes:
+        annotated_media_id = f"{media_id}_annotated"
+
+        upload_media(
+            thread_id,
+            annotated_media_id,
+            annotated_bytes,
+            "image/jpeg"
+        )
+
+    
     media_type = "video" if content_type.startswith("video") else "photo"
     if media_type == "video":
         # Transcodifica para asegurar reproducción en navegador
         h264_bytes = transcode_to_h264(media_bytes)
         upload_media(thread_id, media_id, h264_bytes, "video/mp4")
 
-       # Genera thumbnail a partir del vídeo ORIGINAL (OpenCV suele leer HEVC bien)
+       # Genera thumbnail a partir del vídeo 
         frames = extract_frames(media_bytes)
         thumb_bytes = frame_to_jpeg_bytes(frames[0])
         upload_media(thread_id, f"{media_id}_thumb", thumb_bytes, "image/jpeg")
 
-        # Grid de frames (base64) → decodificar antes de subir a MinIO como bytes
+        # Grid de frames (base64) 
         grid_b64 = frames_a_grid(frames)
         grid_bytes = base64.b64decode(grid_b64)
         upload_media(thread_id, f"{media_id}_grid", grid_bytes, "image/jpeg")
@@ -147,6 +177,7 @@ async def analyze(
     return {
         "thread_id": thread_id,
         "media_id": media_id,
+        "annotated_media_id": annotated_media_id,
         "analysis": ai_message.content
     }
 
@@ -182,27 +213,16 @@ async def get_conversation(thread_id: str):
     """Devuelve el historial de mensajes para poder reanudar la conversación."""
     config = {"configurable": {"thread_id": thread_id}}
     state = await agent.aget_state(config)
+
     if not state or not state.values.get("messages"):
-        raise HTTPException(status_code=404, detail="Conversación no encontrada")
+        raise HTTPException(
+            status_code=404, detail="Conversación no encontrada"
+        )
 
-    available_media = state.values.get("available_media", {})
-
-    items = []
-    for msg in state.values["messages"]:
-        if isinstance(msg, HumanMessage):
-            content = msg.content if isinstance(msg.content, str) else ""
-            match = MEDIA_MARKER_RE.search(content)
-            if match:
-                media_id = match.group(1)
-                items.append({
-                    "type": "media",
-                    "media_id": media_id,
-                    "media_type": available_media.get(media_id, "photo"),
-                })
-                continue
-            items.append({"type": "message", "role": "user", "text": content})
-        elif isinstance(msg, AIMessage) and msg.content:
-            items.append({"type": "message", "role": "assistant", "text": msg.content})
+    items = parse_conversation_messages(
+        messages=state.values["messages"],
+        available_media=state.values.get("available_media", {}),
+    )
 
     return {
         "thread_id": thread_id,
@@ -210,17 +230,47 @@ async def get_conversation(thread_id: str):
     }
 
 @app.get("/media/{thread_id}/{media_id}")
-async def get_media_endpoint(thread_id: str, media_id: str, request: Request):
-    """Devuelve el archivo multimedia (imagen o vídeo) solicitado, soportando rangos para streaming."""
-    data = get_media(thread_id, media_id)
+async def get_media_endpoint(
+    thread_id: str,
+    media_id: str,
+    request: Request
+):
+    """Devuelve multimedia, soportando rangos para streaming."""
+
+    try:
+        data = get_media(thread_id, media_id)
+
+    except S3Error as e:
+        if e.code == "NoSuchKey":
+            raise HTTPException(
+                status_code=404,
+                detail="Media no encontrada"
+            )
+
+        raise
+
     if data is None:
         raise HTTPException(status_code=404, detail="Media no encontrada")
 
-    config = {"configurable": {"thread_id": thread_id}}
+    config = {
+        "configurable": {"thread_id": thread_id}
+    }
+
     state = await agent.aget_state(config)
-    available_media = state.values.get("available_media", {}) if state else {}
+
+    available_media = (
+        state.values.get("available_media", {})
+        if state
+        else {}
+    )
+
     media_type = available_media.get(media_id)
-    content_type = "video/mp4" if media_type == "video" else "image/jpeg"
+
+    content_type = (
+        "video/mp4"
+        if media_type == "video"
+        else "image/jpeg"
+    )
 
     file_size = len(data)
     range_header = request.headers.get("range")
@@ -229,14 +279,33 @@ async def get_media_endpoint(thread_id: str, media_id: str, request: Request):
         return Response(
             content=data,
             media_type=content_type,
-            headers={"Accept-Ranges": "bytes", "Content-Length": str(file_size)},
+            headers={
+                "Accept-Ranges": "bytes",
+                "Content-Length": str(file_size)
+            },
         )
 
-    # Parsear "bytes=start-end"
-    range_value = range_header.replace("bytes=", "").split("-")
-    start = int(range_value[0]) if range_value[0] else 0
-    end = int(range_value[1]) if len(range_value) > 1 and range_value[1] else file_size - 1
+    # Parsear bytes=start-end
+    range_value = (
+        range_header
+        .replace("bytes=", "")
+        .split("-")
+    )
+
+    start = (
+        int(range_value[0])
+        if range_value[0]
+        else 0
+    )
+
+    end = (
+        int(range_value[1])
+        if len(range_value) > 1 and range_value[1]
+        else file_size - 1
+    )
+
     end = min(end, file_size - 1)
+
     chunk = data[start:end + 1]
 
     headers = {
@@ -245,7 +314,12 @@ async def get_media_endpoint(thread_id: str, media_id: str, request: Request):
         "Content-Length": str(len(chunk)),
     }
 
-    return Response(content=chunk, status_code=206, media_type=content_type, headers=headers)
+    return Response(
+        content=chunk,
+        status_code=206,
+        media_type=content_type,
+        headers=headers
+    )
 
 
 @app.delete("/conversation/{thread_id}")
@@ -257,7 +331,6 @@ async def delete_conversation(thread_id: str):
         raise HTTPException(status_code=500, detail=f"Error al eliminar el estado del agente: {str(e)}")
 
     delete_conversation_metadata(thread_id)
-    delete_media(thread_id)
 
     return {"message": "Conversación eliminada correctamente", "thread_id": thread_id}
 

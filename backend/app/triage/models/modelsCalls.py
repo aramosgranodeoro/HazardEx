@@ -83,26 +83,37 @@ async def run_traffic_module(media):
     )
     return result
 
-def run_weapons_module(raw_image):
-    # 1. Decodificar el string Base64 a bytes puros
+def run_weapons_module(raw_image, annotate=False):
+    # Decodificar Base64
     image_bytes = base64.b64decode(raw_image)
 
-    # 2. Convertir los bytes a una imagen de PIL
-    pil_image = Image.open(BytesIO(image_bytes))
+    # Convertir a PIL
+    pil_image = Image.open(BytesIO(image_bytes)).convert("RGB")
 
+    # Ejecutar detector
     weapons_detector = WeaponDetector()
-    weapons_detected = weapons_detector.predict(pil_image)
+    weapons_detected = weapons_detector.predict(
+        pil_image,
+        annotate=annotate
+    )
+
     return weapons_detected
 
-def run_fire_smoke_module(raw_image):
-    # 1. Decodificar el string Base64 a bytes puros
+
+def run_fire_smoke_module(raw_image, annotate=False):
+    # Decodificar Base64
     image_bytes = base64.b64decode(raw_image)
 
-    # 2. Convertir los bytes a una imagen de PIL
-    pil_image = Image.open(BytesIO(image_bytes))
+    # Convertir a PIL
+    pil_image = Image.open(BytesIO(image_bytes)).convert("RGB")
 
+    # Ejecutar detector
     fire_detector = FireSmokeDetector()
-    fire_detected = fire_detector.predict(pil_image)
+    fire_detected = fire_detector.predict(
+        pil_image,
+        annotate=annotate
+    )
+
     return fire_detected
 
 async def run_news_module(image):

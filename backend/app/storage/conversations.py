@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from minio.error import S3Error
 from app.storage.minio_client import client, ensure_bucket, BUCKET_NAME
+from minio.deleteobjects import DeleteObject
 
 """
 Funciones para gestionar los metadatos de las conversaciones en MinIO.
@@ -61,8 +62,33 @@ def list_conversations() -> list[dict]:
     return conversations
 
 def delete_conversation_metadata(thread_id: str):
+    """Borra todos los archivos asociados a una conversación."""
+
     try:
-        client.remove_object(BUCKET_NAME, _meta_object_name(thread_id))
+        prefix = f"{thread_id}/"
+
+        objects = client.list_objects(
+            BUCKET_NAME,
+            prefix=prefix,
+            recursive=True
+        )
+
+        delete_objects = (
+            DeleteObject(obj.object_name)
+            for obj in objects
+        )
+
+        errors = client.remove_objects(
+            BUCKET_NAME,
+            delete_objects
+        )
+
+        for error in errors:
+            print(
+                f"Error eliminando {error.object_name}: "
+                f"{error.code} - {error.message}"
+            )
+
     except S3Error as e:
-        if e.code != "NoSuchKey":
-            raise
+        print(f"Error eliminando conversación {thread_id}: {e}")
+        raise

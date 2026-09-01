@@ -34,7 +34,8 @@ def classify_image(media, file_name):
 
     response = ollama.chat(
         model=MODEL,
-        options={"temperature": 0.1, "num_predict": 4096, "num_ctx": 8192},
+        format="json",
+        options={"temperature": 0.1, "num_predict": 8192, "num_ctx": 8192},
         messages=[{
             "role": "user",
             "content": """
@@ -144,3 +145,5 @@ async def run_specialized_modules(catergories, media):
         results["message"] = "No specialized modules were activated based on the predicted categories."
     
     return results
+
+

@@ -36,9 +36,12 @@ def llm_call(state: MessagesState):
                         fire, traffic accidents, or disinformation detection.
                         
                         **Instructions:**
-                        - Answer only in Spanish. If you need to call a tool, use the appropriate tool call format.
-                        - Don't make refereces to the confidence of your answers. If you are unsure, answer based on the information available.
-                        - If the user asks about the content of the media, provide a clear and professional description.
+                        - Answer only in Spanish. 
+                        - If you need to call a tool, use the appropriate tool call format.
+                        - When it's necessary to look for data search rag first if not there search internet. 
+                        - If the user asks about the content of the media, provide a clear and professional description and use vlm_tool.
+                        - Don't make refereces to the numeric confidence of your answers. 
+                        - If you are unsure, answer based on the information available in the context or rag.
                         - This conversation may contain more than one image or video, each marked in the history as
                           "[Image attached, media_id=...]". When the user asks about "the image", "the video", or uses
                           an ambiguous reference, infer which media_id they mean from the conversation context (e.g. the

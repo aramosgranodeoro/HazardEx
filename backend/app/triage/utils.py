@@ -8,6 +8,11 @@ import tempfile
 import os
 from datetime import datetime
 import json
+from langchain_core.messages import AIMessage, HumanMessage
+
+import re
+
+MEDIA_MARKER_RE = re.compile(r"\[Image attached, media_id=([a-f0-9\-]+)\]")
 
 MESES_ES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
 
@@ -156,27 +161,45 @@ def frames_a_grid(frames, cols=3):
 
 def build_analysis_text(result: dict) -> str:
     """Convierte el dict de módulos especializados en texto legible.
-    
+
     Soporta varios formatos de salida:
     - Detección (fuego, armas): {"detected": bool, "detections": [...]}
-    - VLM tipo respuesta (news, etc.): {"answer": str, "confidence": float} o string JSON de eso
-    - Clasificación (violencia, tráfico): {"predicted_category": str, "confidence": float, "description": str}
+    - VLM tipo respuesta: {"answer": str, "confidence": float}
+    - Clasificación: {"predicted_category": str, "confidence": float, "description": str}
+    - Múltiples categorías: {"predicted_categories": [...]}
     """
+
     partes = []
 
+    # Análisis general
     if "general" in result:
-        general = result.pop("general")
+        general = result.get("general")
+
         if isinstance(general, dict):
             desc = general.get("description", "")
+
             top_cats = sorted(
                 general.get("predicted_categories", []),
                 key=lambda c: c.get("confidence", 0),
                 reverse=True
             )
-            top_text = ", ".join(f"{c['category']} ({c['confidence']:.2f})" for c in top_cats[:3])
-            partes.append(f"Análisis general del contenido: {desc} Categorías más probables: {top_text}.")
 
+            top_text = ", ".join(
+                f"{c['category']} ({c['confidence']:.2f})"
+                for c in top_cats[:3]
+            )
+
+            partes.append(
+                f"Análisis general del contenido: {desc} "
+                f"Categorías más probables: {top_text}."
+            )
+
+    # Módulos especializados
     for categoria, data in result.items():
+
+        if categoria == "general":
+            continue
+
         # Si viene como string, intentar parsear JSON
         if isinstance(data, str):
             try:
@@ -189,51 +212,104 @@ def build_analysis_text(result: dict) -> str:
             partes.append(f"{categoria}: {data}")
             continue
 
-        # Formato 1: detección con bounding boxes (fuego, armas)
+        # -----------------------------------------------------
+        # Formato 1: detecciones YOLO (fuego, humo, armas...)
+        # -----------------------------------------------------
         if "detected" in data:
             detected = data.get("detected", False)
+
             if not detected:
                 partes.append(f"{categoria}: no detectado")
                 continue
+
             detections = data.get("detections", [])
-            if detections:
-                confs = ", ".join(f"{d['confidence']:.2f}" for d in detections)
-                partes.append(
-                    f"{categoria}: detectado ({len(detections)} detección(es), "
-                    f"confianza: {confs})"
-                )
-            else:
+
+            if not detections:
                 partes.append(f"{categoria}: detectado")
+                continue
+
+            detections_text = []
+
+            for detection in detections:
+                class_name = detection.get("class", "objeto")
+                confidence = detection.get("confidence", 0.0)
+                bbox = detection.get("bbox")
+
+                text = (
+                    f"{class_name} "
+                    f"(confianza: {confidence:.2f})"
+                )
+
+                if bbox:
+                    bbox_text = ", ".join(
+                        f"{coord:.1f}" for coord in bbox
+                    )
+                    text += f" [bbox: {bbox_text}]"
+
+                detections_text.append(text)
+
+            partes.append(
+                f"{categoria}: {len(detections)} detección(es): "
+                + ", ".join(detections_text)
+            )
+
             continue
 
-        # Formato 2: respuesta VLM tipo pregunta/respuesta (news, OCR, etc.)
+        # -----------------------------------------------------
+        # Formato 2: respuesta VLM
+        # -----------------------------------------------------
         if "answer" in data:
             confidence = data.get("confidence")
-            conf_text = f" (confianza: {confidence:.2f})" if isinstance(confidence, (int, float)) else ""
-            partes.append(f"{categoria}: {data['answer']}{conf_text}")
+
+            conf_text = (
+                f" (confianza: {confidence:.2f})"
+                if isinstance(confidence, (int, float))
+                else ""
+            )
+
+            partes.append(
+                f"{categoria}: {data['answer']}{conf_text}"
+            )
+
             continue
 
-        # Formato 3: clasificación con categoría predicha (violencia, tráfico)
+        # -----------------------------------------------------
+        # Formato 3: clasificación
+        # -----------------------------------------------------
         if "predicted_category" in data:
             confidence = data.get("confidence", 0.0)
             description = data.get("description", "")
+
             partes.append(
                 f"{categoria}: {data['predicted_category']} "
                 f"(confianza: {confidence:.2f}) - {description}"
             )
+
             continue
 
-        # Formato 4: múltiples categorías predichas (predicted_categories)
+        # -----------------------------------------------------
+        # Formato 4: múltiples categorías
+        # -----------------------------------------------------
         if "predicted_categories" in data:
-            top = max(data["predicted_categories"], key=lambda c: c.get("confidence", 0))
-            description = data.get("description", "")
-            partes.append(
-                f"{categoria}: {top['category']} "
-                f"(confianza: {top['confidence']:.2f}) - {description}"
-            )
+            categories = data.get("predicted_categories", [])
+
+            if categories:
+                top = max(
+                    categories,
+                    key=lambda c: c.get("confidence", 0)
+                )
+
+                description = data.get("description", "")
+
+                partes.append(
+                    f"{categoria}: {top['category']} "
+                    f"(confianza: {top['confidence']:.2f}) "
+                    f"- {description}"
+                )
+
             continue
 
-        # Fallback: formato no reconocido, lo mostramos tal cual
+        # Fallback
         partes.append(f"{categoria}: {data}")
 
     if not partes:
@@ -283,3 +359,151 @@ def resize_image(image_bytes: bytes, max_size: int = 1024) -> bytes:
 
     return output.getvalue()
 
+from typing import Any, Dict, List
+from langchain_core.messages import AIMessage, HumanMessage
+
+
+def parse_conversation_messages(
+    messages: List[Any],
+    available_media: Dict[str, str] = None,
+    media_pattern=MEDIA_MARKER_RE,
+) -> List[Dict[str, Any]]:
+    """Transforma y filtra los mensajes crudos del estado de LangGraph
+
+    a un formato estructurado y limpio para el frontend.
+    """
+    if available_media is None:
+        available_media = {}
+
+    items = []
+
+    for msg in messages:
+        # 1. Mensaje de Usuario (o Media)
+        if isinstance(msg, HumanMessage):
+            content = msg.content if isinstance(msg.content, str) else ""
+            match = media_pattern.search(content)
+
+            if match:
+                media_id = match.group(1)
+                items.append({
+                    "type": "media",
+                    "media_id": media_id,
+                    "media_type": available_media.get(media_id, "photo"),
+                })
+            elif content.strip():
+                items.append({
+                    "type": "message",
+                    "role": "user",
+                    "text": content.strip(),
+                })
+
+        # 2. Mensaje del Asistente (ignora tool_calls y ToolMessages)
+        elif isinstance(msg, AIMessage):
+            if getattr(msg, "tool_calls", None):
+                continue
+
+            # Normalización del contenido
+            raw_content = msg.content
+            if isinstance(raw_content, list):
+                textos = [
+                    b.get("text", "") if isinstance(b, dict) else str(b)
+                    for b in raw_content
+                ]
+                final_text = "\n".join(t for t in textos if t).strip()
+            elif isinstance(raw_content, str):
+                final_text = raw_content.strip()
+            else:
+                final_text = str(raw_content).strip() if raw_content else ""
+
+            if final_text:
+                items.append({
+                    "type": "message",
+                    "role": "assistant",
+                    "text": final_text,
+                })
+
+    return items
+
+def build_annotated_image(raw_image, result):
+    """
+    Genera una única imagen con todos los bounding boxes
+    producidos por los módulos especializados.
+
+    Devuelve bytes JPEG o None si no existen detecciones.
+    """
+
+    image_bytes = base64.b64decode(raw_image)
+
+    pil_image = Image.open(
+        io.BytesIO(image_bytes)
+    ).convert("RGB")
+
+    draw = ImageDraw.Draw(pil_image)
+
+    has_detections = False
+
+    for category, data in result.items():
+
+        if not isinstance(data, dict):
+            continue
+
+        detections = data.get("detections")
+
+        if not detections:
+            continue
+
+        for detection in detections:
+
+            bbox = detection.get("bbox")
+
+            if not bbox or len(bbox) != 4:
+                continue
+
+            has_detections = True
+
+            x1, y1, x2, y2 = bbox
+
+            class_name = detection.get(
+                "class",
+                category
+            )
+
+            confidence = detection.get(
+                "confidence",
+                0
+            )
+
+            label = (
+                f"{class_name} "
+                f"{confidence:.2f}"
+            )
+
+            # Bounding box
+            draw.rectangle(
+                [x1, y1, x2, y2],
+                outline="red",
+                width=4
+            )
+
+            # Texto encima del bbox
+            draw.text(
+                (
+                    x1,
+                    max(0, y1 - 18)
+                ),
+                label,
+                fill="red"
+            )
+
+    if not has_detections:
+        return None
+
+    output = io.BytesIO()
+
+    pil_image.save(
+        output,
+        format="JPEG",
+        quality=90
+    )
+
+    return output.getvalue()

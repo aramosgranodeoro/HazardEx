@@ -1,8 +1,0 @@
-model,language,csv_file,n_samples,n_invalid,pct_invalid,n_classes,classes,accuracy,accuracy_penalizada,mean_total_ms,mean_prompt_ms,mean_eval_ms,mean_prompt_tokens,mean_generated_tokens,mean_tokens_per_sec
-resultados_qwen3.5_latest,en,resultados_qwen3.5_latest.csv,1418,82,5.47,6,accidente|armas|fuego|grafico|normal|violencia,0.8575,0.8107,13567.49,591.03,12522.45,701.76,862.85,69.04
-resultados_qwen3.5_latest_es,es,resultados_qwen3.5_latest_es.csv,1422,78,5.2,6,accidente|armas|fuego|grafico|normal|violencia,0.8298,0.7867,12619.18,362.4,11841.53,738.82,871.46,73.77
-resultados_internlm_interns1_mini-q8_0,en,resultados_internlm_interns1_mini-q8_0.csv,1491,9,0.6,6,accidente|armas|fuego|grafico|normal|violencia,0.7639,0.7593,8678.92,661.56,7601.02,1533.7,386.83,50.91
-resultados_internlm_interns1_mini-q8_0_es,es,resultados_internlm_interns1_mini-q8_0_es.csv,1472,28,1.87,6,accidente|armas|fuego|grafico|normal|violencia,0.7439,0.73,8958.69,376.84,8209.63,1594.26,418.11,51.02
-resultados_llava_7b_es,es,resultados_llava_7b_es.csv,1500,0,0.0,6,accidente|armas|fuego|grafico|normal|violencia,0.6953,0.6953,1847.95,211.6,1525.34,990.0,148.95,98.37
-resultados_llava_7b,en,resultados_llava_7b.csv,1499,1,0.07,6,accidente|armas|fuego|grafico|normal|violencia,0.6604,0.66,943.14,171.42,495.78,850.0,70.38,145.36
-resultados_salamandra_vl_7b,es,resultados_salamandra_vl_7b.csv,1497,3,0.2,6,accidente|armas|fuego|grafico|normal|violencia,0.5224,0.5213,5760.29,0.0,5760.29,3204.0,73.92,12.68

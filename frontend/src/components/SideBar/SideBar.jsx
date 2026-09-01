@@ -91,13 +91,12 @@ export default function Sidebar({ onNewChat, onSelectConversation, activeThreadI
     </div>
 
       <nav className="hx-sidebar-nav">
-        {/* AQUÍ ESTÁ EL CAMBIO PRINCIPAL */}
         <button 
           type="button" 
           className="hx-nav-item" 
           onClick={() => {
-            onNewChat?.();           // 1. Limpia el chat actual en App.jsx
-            loadConversations();     // 2. Vuelve a pedirle el historial actualizado a la API
+            onNewChat?.();           
+            loadConversations();    
           }}
         >
           <span className="hx-nav-icon"><i className="fa-regular fa-square-plus"></i></span>

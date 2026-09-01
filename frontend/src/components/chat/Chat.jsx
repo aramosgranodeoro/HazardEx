@@ -4,55 +4,6 @@ import "./Chat.css";
 import ReactMarkdown from 'react-markdown'; 
 import remarkGfm from 'remark-gfm'; 
 
-function captureVideoThumbnail(file) {
-  return new Promise((resolve, reject) => {
-    const video = document.createElement("video");
-    video.preload = "metadata";
-    video.muted = true;
-    video.playsInline = true;
-    video.style.display = "none";
-    document.body.appendChild(video);
-
-    const cleanup = () => {
-      document.body.removeChild(video);
-      URL.revokeObjectURL(video.src);
-    };
-
-    video.onloadedmetadata = () => {
-      video.currentTime = Math.min(0.1, video.duration / 2);
-    };
-
-    video.onseeked = () => {
-      try {
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        canvas.toBlob((blob) => {
-          cleanup();
-          if (!blob) {
-            reject(new Error("No se pudo generar el blob del thumbnail"));
-            return;
-          }
-          resolve(URL.createObjectURL(blob));
-        }, "image/jpeg", 0.9);
-      } catch (err) {
-        cleanup();
-        reject(err);
-      }
-    };
-
-    video.onerror = () => {
-      const err = video.error;
-      cleanup();
-      reject(new Error(`No se pudo cargar el vídeo (code=${err?.code}, message=${err?.message})`));
-    };
-
-    video.src = URL.createObjectURL(file);
-  });
-}
-
 export default function Chat({ threadId, setThreadId, messages, setMessages }) {
   const [input, setInput] = useState(""); 
   const [isLoading, setIsLoading] = useState(false); 
@@ -94,7 +45,33 @@ const handleFileChange = async (e) => {
       ));
     }
 
-    setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: data.analysis }]);
+    const annotatedImage = data.annotated_media_id
+      ? ApiService.getMediaUrl(
+          data.thread_id,
+          data.annotated_media_id
+        )
+      : null;
+
+   setMessages((prev) => {
+  const newMessages = [
+    ...prev,
+    {
+      id: userMsgId + 1,
+      role: "assistant",
+      text: data.analysis,
+    }
+  ];
+
+  if (annotatedImage) {
+    newMessages.push({
+      id: userMsgId + 2,
+      role: "assistant",
+      annotatedImage,
+    });
+  }
+
+  return newMessages;
+});
   } catch (err) {
     setMessages((prev) => [...prev, { id: userMsgId + 1, role: "assistant", text: "Error al analizar el archivo. Inténtalo de nuevo.", isError: true }]);
   } finally {
@@ -129,10 +106,11 @@ const handleFileChange = async (e) => {
     }
   }; 
 
-  // Función para las sugerencias de la pantalla de bienvenida
-  const handleSuggestionClick = (suggestionText) => {
-    setInput(suggestionText);
-  };
+ const handleAnnotatedImageError = (messageId) => {
+  setMessages((prev) =>
+    prev.filter((msg) => msg.id !== messageId)
+  );
+};
 
   return (
     <section className="hx-chat">
@@ -160,6 +138,16 @@ const handleFileChange = async (e) => {
                     </div>
                   )}
 
+                  {msg.annotatedImage && (
+                    <div className="hx-image-attachment">
+                      <img
+                        src={msg.annotatedImage}
+                        alt="Detecciones"
+                        className="hx-chat-image"
+                        onError={() => handleAnnotatedImageError(msg.id)}
+                      />
+                    </div>
+                  )}
                   {msg.text && (
                     msg.role === "assistant" ? (
                       <div className="hx-markdown">

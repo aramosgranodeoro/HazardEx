@@ -17,7 +17,7 @@ export const analyze = async (file, threadId) => {
         },
       }
     );
-    return response.data; // { thread_id, media_id, analysis, is_new_thread }
+    return response.data; // { thread_id, media_id, analysis, is_new_thread , annotated_media }
   } catch (error) {
     console.error("Error analyzing file:", error);
     throw error;
