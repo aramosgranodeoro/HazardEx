@@ -7,7 +7,7 @@ class FireSmokeDetector:
     _instance = None
 
     def __init__(self):
-        self.model = YOLO("./app/triage/models/fire.pt")
+        self.model = YOLO("./app/triage/models/YOLO/fire.pt")
 
     def predict(self, image, annotate=False) -> dict:
         results = self.model.predict(

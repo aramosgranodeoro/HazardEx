@@ -19,9 +19,9 @@ from app.agent.rag.embeddings import load_document, delete_document, get_vectors
 from dotenv import load_dotenv
 import os
 import re
-from app.routers.analysis import router as analysis_router
-from app.routers.conversations import router as conversations_router
-from app.routers.media import router as media_router
+# from app.routers.analysis import router as analysis_router
+# from app.routers.conversations import router as conversations_router
+# from app.routers.media import router as media_router
 
 
 MEDIA_MARKER_RE = re.compile(r"\[Image attached, media_id=([a-f0-9\-]+)\]")
@@ -77,9 +77,9 @@ app.add_middleware(
 )
 
 
-app.include_router(analysis_router)
-app.include_router(conversations_router)
-app.include_router(media_router)
+# app.include_router(analysis_router)
+# app.include_router(conversations_router)
+# app.include_router(media_router)
 
 @app.get("/")
 def root():

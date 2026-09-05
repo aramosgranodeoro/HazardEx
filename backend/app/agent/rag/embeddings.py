@@ -41,14 +41,16 @@ def load_document(ruta_archivo: str, vectorstore) -> int:
         loader = Docx2txtLoader(ruta_archivo)
     elif extension == ".txt":
         loader = TextLoader(ruta_archivo, encoding="utf-8")
+    elif extension == ".md":
+        loader = TextLoader(ruta_archivo, encoding="utf-8")
     else:
         raise ValueError(f"Extensión no soportada: {extension}")
 
     documentos = loader.load()
 
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
-        chunk_overlap=50,
+        chunk_size=800,
+        chunk_overlap=80,
         separators=["\n\n", "\n", ". ", " ", ""]
     )
     chunks = splitter.split_documents(documentos)
@@ -103,8 +105,8 @@ def build_index():
     documentos = load_documents()
 
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
-        chunk_overlap=50,
+        chunk_size=800,
+        chunk_overlap=80,
         separators=["\n\n", "\n", ". ", " ", ""]
     )
     chunks = splitter.split_documents(documentos)

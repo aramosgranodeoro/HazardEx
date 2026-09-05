@@ -7,7 +7,7 @@ class WeaponDetector:
     _instance = None
 
     def __init__(self):
-        self.model = YOLO("./app/triage/models/weapons.pt")
+        self.model = YOLO("./app/triage/models/YOLO/weapons.pt")
 
     def predict(self, image, annotate=False) -> dict:
         results = self.model.predict(

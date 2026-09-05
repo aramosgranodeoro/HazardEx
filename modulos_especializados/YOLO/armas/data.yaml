@@ -1,9 +1,0 @@
-train: D:/OD-WeaponDetection-master/OD-WeaponDetection-master/Weapons and similar handled objects/Sohas_weapon-Detection-YOLOv5\obj_train_data\images\train
-val: D:/OD-WeaponDetection-master/OD-WeaponDetection-master/Weapons and similar handled objects/Sohas_weapon-Detection-YOLOv5\obj_train_data\images\val
-test: D:/OD-WeaponDetection-master/OD-WeaponDetection-master/Weapons and similar handled objects/Sohas_weapon-Detection-YOLOv5\obj_train_data\images\test
-
-# number of classes
-nc: 2
-
-# class names
-names: ['pistol', 'knife']

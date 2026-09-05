@@ -75,7 +75,7 @@ def internet_tool(query: str) -> dict:
     """
 
     with DDGS() as ddgs:
-        results = list(ddgs.text(query, max_results=3))
+        results = list(ddgs.text(query, max_results=5))
 
     return {
         "results": [
