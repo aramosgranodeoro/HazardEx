@@ -5,7 +5,7 @@ from .models.modelsCalls import run_violence_module, run_traffic_module, run_wea
 import json
 from .models.model_manager import vlm_manager
 
-MODEL = "qwen3.5:latest"
+MODEL = "internlm/interns1:mini-q8_0"
 
 VIDEO_EXTENSIONS = ["mp4", "avi", "mov", "mkv", "flv", "wmv"]
 

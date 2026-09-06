@@ -1,15 +1,30 @@
-import os
+
 from langchain_community.document_loaders import (
     PyPDFLoader, TextLoader, DirectoryLoader, Docx2txtLoader
 )
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DOCUMENTS_FOLDER = os.path.join(_BASE_DIR, "documents")
-INDEX_FOLDER = os.path.join(_BASE_DIR, "chroma_db")
-MODELO_EMBEDDINGS = "intfloat/multilingual-e5-small"
+
+DOCUMENTS_FOLDER = os.getenv(
+    "DOCUMENTS_FOLDER",
+    os.path.join(_BASE_DIR, "documents")
+)
+
+INDEX_FOLDER = os.getenv(
+    "INDEX_FOLDER",
+    os.path.join(_BASE_DIR, "chroma_db")
+)
+
+MODELO_EMBEDDINGS = os.getenv(
+    "MODELO_EMBEDDINGS",
+    "intfloat/multilingual-e5-small"
+)
 
 
 class EmbeddingsE5(HuggingFaceEmbeddings):

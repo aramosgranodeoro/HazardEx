@@ -1,0 +1,2 @@
+agent = None
+vectorstore = None

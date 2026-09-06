@@ -62,33 +62,20 @@ def list_conversations() -> list[dict]:
     return conversations
 
 def delete_conversation_metadata(thread_id: str):
-    """Borra todos los archivos asociados a una conversación."""
-
+    """Borra los archivos multimedia y el JSON de metadatos de una conversación."""
     try:
+        # Borra los archivos multimedia (media_id, thumbs, grids, annotated...)
         prefix = f"{thread_id}/"
-
-        objects = client.list_objects(
-            BUCKET_NAME,
-            prefix=prefix,
-            recursive=True
-        )
-
-        delete_objects = (
-            DeleteObject(obj.object_name)
-            for obj in objects
-        )
-
-        errors = client.remove_objects(
-            BUCKET_NAME,
-            delete_objects
-        )
-
+        objects = client.list_objects(BUCKET_NAME, prefix=prefix, recursive=True)
+        delete_objects = (DeleteObject(obj.object_name) for obj in objects)
+        errors = client.remove_objects(BUCKET_NAME, delete_objects)
         for error in errors:
-            print(
-                f"Error eliminando {error.object_name}: "
-                f"{error.code} - {error.message}"
-            )
+            print(f"Error eliminando {error.object_name}: {error.code} - {error.message}")
+
+        # Borra el JSON de metadata de la conversación
+        client.remove_object(BUCKET_NAME, _meta_object_name(thread_id))
 
     except S3Error as e:
-        print(f"Error eliminando conversación {thread_id}: {e}")
-        raise
+        if e.code != "NoSuchKey":
+            print(f"Error eliminando conversación {thread_id}: {e}")
+            raise

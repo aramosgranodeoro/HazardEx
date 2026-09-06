@@ -2,7 +2,9 @@
 
 Sistema multimodal para el análisis de contenido visual orientado a la detección de amenazas y situaciones de riesgo.
 
-Este documento describe los pasos necesarios para instalar y ejecutar **HazardEx** en un entorno local, incluyendo la configuración del **backend**, **frontend**, almacenamiento con **MinIO** y los distintos modelos utilizados por el sistema.
+Este documento describe los pasos necesarios para instalar y ejecutar **HazardEx** en un entorno local, incluyendo la configuración del **backend**, **frontend**, el almacenamiento mediante **MinIO** y los distintos modelos utilizados por el sistema.
+
+Además, en la [carpeta de Google Drive](https://drive.google.com/drive/folders/1fRb3FB_Bg10luqy1vYH5JEOSdl4FMErG?usp=sharing) se encuentran disponibles los **scripts utilizados para realizar las pruebas y entrenamientos de los modelos**, así como los **resultados obtenidos**, incluyendo archivos CSV, gráficas y otros recursos generados durante el proceso de evaluación.
 
 ---
 

@@ -1,4 +1,6 @@
 # app/storage/minio_client.py
+import os
+
 from minio import Minio
 from minio.error import S3Error
 import io
@@ -8,11 +10,15 @@ Funciones para gestionar archivos en MinIO.
 """
 
 BUCKET_NAME = "hazardex-media"
+MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "localhost:9000")
+MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY", "minioadmin")
+MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY", "minioadmin")
+BUCKET_NAME = os.getenv("BUCKET_NAME", "hazardex-media")
 
 client = Minio(
-    "localhost:9000",
-    access_key="minioadmin",
-    secret_key="minioadmin",
+    MINIO_ENDPOINT,
+    access_key=MINIO_ACCESS_KEY,
+    secret_key=MINIO_SECRET_KEY,
     secure=False,  
 )
 

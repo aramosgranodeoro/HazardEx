@@ -3,8 +3,17 @@ import gc
 import torch
 from transformers import LlavaForConditionalGeneration, AutoProcessor
 from peft import PeftModel
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+ADAPTERS_DIR = os.getenv("ADAPTERS_DIR")
 
 class VLMModelManager:
+    """
+    Gestor de modelos de visión por computadora (VLM) para la generación de texto a partir de imágenes.
+    Este gestor permite cargar y descargar modelos de manera eficiente, evitando la recarga innecesaria.
+    """
     def __init__(self):
         self.base_model_path = "unsloth/llava-1.5-7b-hf-bnb-4bit"
         self.processor = None
@@ -24,11 +33,11 @@ class VLMModelManager:
         )
         model = PeftModel.from_pretrained(
             base_model,
-            "C:/dev/fine_tuning/violencia/llava-violence-adapter_v2",
+            os.path.join(ADAPTERS_DIR,"llava-violence-adapter"),
             adapter_name="violence",
         )
         model.load_adapter(
-            "C:/dev/fine_tuning/coches/llava-crash-adapter_v1",
+            os.path.join(ADAPTERS_DIR, "llava-crash-adapter"),
             adapter_name="traffic_accident",
         )
         self.model = model
